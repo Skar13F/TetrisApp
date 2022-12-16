@@ -352,9 +352,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
     public void aniadirItem(JComboBox jcRol) {
         RolServiceImpl impl = new RolServiceImpl();
         List<Rol> listaRol = impl.obtenerRegistro();
-//        for (Rol rol : listaRol) {
-//            jcRol.addItem(rol.getRol());
-//        }
+        for (Rol rol : listaRol) {
+            jcRol.addItem(rol.getRol());
+        }
     }
 
 }
