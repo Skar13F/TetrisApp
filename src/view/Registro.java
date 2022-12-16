@@ -133,8 +133,8 @@ public class Registro extends JFrame implements ActionListener {
 
         jContrasenia = new JPasswordField();
         jContrasenia.setText("////////");
-        jContrasenia.setSize(120, tamanioY);
-        jContrasenia.setLocation(obtenerPosicionX(120),
+        jContrasenia.setSize(tamJtexts, tamanioY);
+        jContrasenia.setLocation(obtenerPosicionX(tamJtexts),
                 tNombreJugador.getY() + tamanioY + 20);
         jContrasenia.setHorizontalAlignment(SwingConstants.CENTER);
         jContrasenia.setForeground(Color.BLACK);
