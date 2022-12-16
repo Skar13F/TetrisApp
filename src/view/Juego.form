@@ -116,8 +116,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/fondo6.png&quot;)" type="code"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/oscar/NetBeansProjects/TetrisApp/resourses/images/fondo6.png"/>
         </Property>
       </Properties>
       <Constraints>

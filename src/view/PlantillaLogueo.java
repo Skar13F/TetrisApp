@@ -166,16 +166,16 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         });
 
         cbTipoUsuario = new JComboBox();
-        addItem(cbTipoUsuario);
-        cbTipoUsuario.setSize(220, 30);
-        cbTipoUsuario.setLocation((panelDerecho.getWidth()
-                - cbTipoUsuario.getWidth()) / 2, jContrasenia.getY()
-                + jContrasenia.getHeight() + 10);
-        cbTipoUsuario.setBackground(Color.WHITE);
-        cbTipoUsuario.setForeground(colorPrincipal);
-        ((JLabel) cbTipoUsuario.getRenderer()).setHorizontalAlignment(
-                SwingConstants.CENTER);
-        panelDerecho.add(cbTipoUsuario);
+//        cbTipoUsuario.addItem(cbTipoUsuario);
+//        cbTipoUsuario.setSize(220, 30);
+//        cbTipoUsuario.setLocation((panelDerecho.getWidth()
+//                - cbTipoUsuario.getWidth()) / 2, jContrasenia.getY()
+//                + jContrasenia.getHeight() + 10);
+//        cbTipoUsuario.setBackground(Color.WHITE);
+//        cbTipoUsuario.setForeground(colorPrincipal);
+//        ((JLabel) cbTipoUsuario.getRenderer()).setHorizontalAlignment(
+//                SwingConstants.CENTER);
+//        panelDerecho.add(cbTipoUsuario);
 
         //Botones
         this.bCerrar = new JButton("X");
@@ -352,9 +352,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
     public void addItem(JComboBox jcRol) {
         RolServiceImpl impl = new RolServiceImpl();
         List<Rol> listaRol = impl.obtenerRegistro();
-        for (Rol rol : listaRol) {
-            jcRol.addItem(rol.getRol());
-        }
+//        for (Rol rol : listaRol) {
+//            jcRol.addItem(rol.getRol());
+//        }
     }
 
 }
