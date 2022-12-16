@@ -36,7 +36,7 @@ public class Conexion {
         this.puerto = "3306";
         this.db = "Juego";
         this.user = "root";
-        this.pwd = "Roo.t123";
+        this.pwd = "root123";
     }
 
     /**
