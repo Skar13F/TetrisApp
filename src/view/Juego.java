@@ -19,7 +19,7 @@ public class Juego extends javax.swing.JFrame {
     private void initComponents() {
 
         panelJuego = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        encabezado = new javax.swing.JLabel();
         btnArriba = new javax.swing.JButton();
         btnIzquierda = new javax.swing.JButton();
         btnDerecha = new javax.swing.JButton();
@@ -31,21 +31,19 @@ public class Juego extends javax.swing.JFrame {
 
         panelJuego.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("resourses/images/nn.png"));
+        encabezado.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/Titulo.png")); // NOI18N
 
         javax.swing.GroupLayout panelJuegoLayout = new javax.swing.GroupLayout(panelJuego);
         panelJuego.setLayout(panelJuegoLayout);
         panelJuegoLayout.setHorizontalGroup(
             panelJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelJuegoLayout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(encabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelJuegoLayout.setVerticalGroup(
             panelJuegoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelJuegoLayout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(0, 500, Short.MAX_VALUE))
+                .addComponent(encabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 417, Short.MAX_VALUE))
         );
 
         getContentPane().add(panelJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 370, 500));
@@ -86,8 +84,8 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JButton btnArriba;
     private javax.swing.JButton btnDerecha;
     private javax.swing.JButton btnIzquierda;
+    private javax.swing.JLabel encabezado;
     private javax.swing.JLabel fondoJuego;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel panelJuego;
     // End of variables declaration//GEN-END:variables
 }
