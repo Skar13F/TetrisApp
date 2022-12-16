@@ -99,7 +99,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
         labelNombreUsuario = new javax.swing.JLabel();
         textFieldNombre = new javax.swing.JTextField();
         passwordField = new javax.swing.JPasswordField();
-        jLabel4 = new javax.swing.JLabel();
+        labelContraseña = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
@@ -213,7 +213,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
 
         labelNombreUsuario.setText("Nombre del usuario");
 
-        jLabel4.setText("Contraseña");
+        labelContraseña.setText("Contraseña");
 
         jTable1.setBackground(new java.awt.Color(102, 255, 102));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -257,7 +257,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelNombreUsuario)
                     .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
+                    .addComponent(labelContraseña)
                     .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -282,7 +282,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel4)
+                        .addComponent(labelContraseña)
                         .addGap(2, 2, 2)
                         .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
@@ -415,13 +415,13 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox<String> cbRol;
     private javax.swing.JComboBox<String> cbTelefono;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelAdministrador;
+    private javax.swing.JLabel labelContraseña;
     private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelUsuario;
     private javax.swing.JPasswordField passwordField;
