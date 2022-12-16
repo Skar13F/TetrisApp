@@ -94,7 +94,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
         cbRol = new javax.swing.JComboBox<>();
         cbTelefono = new javax.swing.JComboBox<>();
         btnEliminar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -192,10 +192,10 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Actualizar");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnActualizar.setText("Actualizar");
+        btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                btnActualizarMouseClicked(evt);
             }
         });
 
@@ -265,7 +265,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(10, 10, 10)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -292,7 +292,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addComponent(jButton3)
                         .addGap(9, 9, 9)
-                        .addComponent(jButton2)
+                        .addComponent(btnActualizar)
                         .addGap(10, 10, 10)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -353,7 +353,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
         userController.mostrarRegistros(modelo);
     }//GEN-LAST:event_btnEliminarMouseClicked
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void btnActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarMouseClicked
         String telefono = cbTelefono.getSelectedItem().toString();
         String rolA = cbRol.getSelectedItem().toString();
 
@@ -370,7 +370,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
 
         userController.crearActualizarUsuario(usuario);
         userController.mostrarRegistros(modelo);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_btnActualizarMouseClicked
 
     private void bSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSalirMouseClicked
         this.setVisible(false);
@@ -410,10 +410,10 @@ public class SuperAdministrador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bConfiguracion;
     private javax.swing.JButton bSalir;
+    private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JComboBox<String> cbRol;
     private javax.swing.JComboBox<String> cbTelefono;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
