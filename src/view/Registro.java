@@ -80,7 +80,7 @@ public class Registro extends JFrame implements ActionListener {
         //configuración de cuadros de texto
         tNombreUsuario = crearCuadroTexto("Nombre",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
-                40, Color.BLUE, Color.WHITE,
+                80, Color.BLUE, Color.WHITE,
                 Color.gray, bInferiorAzul);
         pPrincipal.add(tNombreUsuario);
         cajaTexto(tNombreUsuario, "Nombre");
@@ -158,7 +158,7 @@ public class Registro extends JFrame implements ActionListener {
 
         this.bRegistrar.setLocation(
                 (pPrincipal.getWidth() - bRegistrar.getWidth()) / 2,
-                pPrincipal.getHeight() - 100);
+                pPrincipal.getHeight() - 65);
 
         this.pPrincipal.add(
                 this.bRegistrar);
