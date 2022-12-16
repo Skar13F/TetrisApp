@@ -9,6 +9,7 @@ package principal;
 
 import javax.swing.SwingUtilities;
 import view.PlantillaLogueo;
+import view.Registro;
 
 public class App {
 
@@ -17,9 +18,10 @@ public class App {
 
             @Override
             public void run() {
-                PlantillaLogueo logueo = new PlantillaLogueo();
-                logueo.getClass();
-
+//                PlantillaLogueo logueo = new PlantillaLogueo();
+//                logueo.getClass();
+                Registro r = new Registro();
+                r.getClass();
             }
         };
         SwingUtilities.invokeLater(runApplication);
