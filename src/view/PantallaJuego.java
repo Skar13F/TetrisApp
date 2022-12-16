@@ -20,8 +20,8 @@ public class PantallaJuego extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        tituloBienvenida = new javax.swing.JLabel();
+        fondoPantalla = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(550, 450));
@@ -42,9 +42,7 @@ public class PantallaJuego extends javax.swing.JFrame {
         jButton2.setContentAreaFilled(false);
         jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton2.setFocusPainted(false);
-        jButton2.setPressedIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/tetrix/resourses/images/JUGAR_1.png")); // NOI18N
         jButton2.setRequestFocusEnabled(false);
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/tetrix/resourses/images/JUGAR.png")); // NOI18N
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -57,11 +55,11 @@ public class PantallaJuego extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 300, 120));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("resourses/images/hola.gif"));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 570, 150));
+        tituloBienvenida.setIcon(new javax.swing.ImageIcon("resourses/images/hola.gif"));
+        getContentPane().add(tituloBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 570, 150));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("resourses/images/fondo1.png"));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 500));
+        fondoPantalla.setIcon(new javax.swing.ImageIcon("resourses/images/fondo1.png"));
+        getContentPane().add(fondoPantalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 500));
 
         pack();
         setLocationRelativeTo(null);
@@ -121,9 +119,9 @@ public class PantallaJuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fondoPantalla;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel tituloBienvenida;
     // End of variables declaration//GEN-END:variables
 }
