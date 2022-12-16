@@ -54,10 +54,13 @@ public class Registro extends JFrame implements ActionListener {
 
     //borde
     private Border bInferiorAzul;
+    
+    //Tamaño de todos los cuadros de texto
+    private final int tamJtexts=200;
 
     public Registro() {
         //imagenes
-        final int tamañoY = 30;
+        final int tamanioY = 30;
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
 
         //fuente de texto
@@ -76,7 +79,7 @@ public class Registro extends JFrame implements ActionListener {
         this.add(pPrincipal);
         //configuración de cuadros de texto
         tNombreUsuario = crearCuadroTexto("Nombre",
-                120, tamañoY, obtenerPosicionX(120),
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
                 40, Color.BLUE, Color.WHITE,
                 Color.gray, bInferiorAzul);
         pPrincipal.add(tNombreUsuario);
@@ -84,8 +87,8 @@ public class Registro extends JFrame implements ActionListener {
 
         //    private JTextField tEdad;
         tEdad = crearCuadroTexto("Edad",
-                120, tamañoY, obtenerPosicionX(120),
-                (tNombreUsuario.getY() + tamañoY + 20), Color.BLUE,
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                (tNombreUsuario.getY() + tamanioY + 20), Color.BLUE,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tEdad);
         cajaTexto(tEdad, "Edad");
@@ -94,9 +97,9 @@ public class Registro extends JFrame implements ActionListener {
         cbSexo = new JComboBox();
         cbSexo.addItem("Hombre");
         cbSexo.addItem("Mujer");
-        cbSexo.setSize(120, tamañoY);
-        cbSexo.setLocation(obtenerPosicionX(120), tEdad.getY()
-                + tamañoY + 20);
+        cbSexo.setSize(tamJtexts, tamanioY);
+        cbSexo.setLocation(obtenerPosicionX(tamJtexts), tEdad.getY()
+                + tamanioY + 20);
         cbSexo.setBackground(Color.WHITE);
         cbSexo.setForeground(Color.BLACK);
 
@@ -106,33 +109,33 @@ public class Registro extends JFrame implements ActionListener {
 
         //    private JTextField tTelefono;
         tTelefono = crearCuadroTexto("Teléfono",
-                120, tamañoY, obtenerPosicionX(120),
-                cbSexo.getY() + tamañoY + 20, Color.BLUE,
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                cbSexo.getY() + tamanioY + 20, Color.BLUE,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tTelefono);
         cajaTexto(tTelefono, "Teléfono");
 
         //    private JTextField tCorreo;
         tCorreo = crearCuadroTexto("Correo",
-                120, tamañoY, obtenerPosicionX(120),
-                tTelefono.getY() + tamañoY + 20, Color.BLUE,
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                tTelefono.getY() + tamanioY + 20, Color.BLUE,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tCorreo);
         cajaTexto(tCorreo, "Correo");
 
         //private JTextField tNombreJugador;
         tNombreJugador = crearCuadroTexto("Nombre Usuario",
-                120, tamañoY, obtenerPosicionX(120),
-                tCorreo.getY() + tamañoY + 20, Color.BLUE,
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                tCorreo.getY() + tamanioY + 20, Color.BLUE,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tNombreJugador);
         cajaTexto(tNombreJugador, "Nombre Usuario");
 
         jContrasenia = new JPasswordField();
         jContrasenia.setText("////////");
-        jContrasenia.setSize(120, tamañoY);
+        jContrasenia.setSize(120, tamanioY);
         jContrasenia.setLocation(obtenerPosicionX(120),
-                tNombreJugador.getY() + tamañoY + 20);
+                tNombreJugador.getY() + tamanioY + 20);
         jContrasenia.setHorizontalAlignment(SwingConstants.CENTER);
         jContrasenia.setForeground(Color.BLACK);
         jContrasenia.setBackground(Color.WHITE);
