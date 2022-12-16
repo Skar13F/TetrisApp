@@ -45,7 +45,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
     public SuperAdministrador() {
         initComponents();
 
-        modelo = (DefaultTableModel) jTable1.getModel();
+        modelo = (DefaultTableModel) tablaUsuario.getModel();
         userController = new UsuarioController();
         rolController = new RolController();
         jugadorController = new JugadorController();
@@ -100,8 +100,8 @@ public class SuperAdministrador extends javax.swing.JFrame {
         textFieldNombre = new javax.swing.JTextField();
         passwordField = new javax.swing.JPasswordField();
         labelContraseña = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        scrollPanelTabla = new javax.swing.JScrollPane();
+        tablaUsuario = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -215,8 +215,8 @@ public class SuperAdministrador extends javax.swing.JFrame {
 
         labelContraseña.setText("Contraseña");
 
-        jTable1.setBackground(new java.awt.Color(102, 255, 102));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaUsuario.setBackground(new java.awt.Color(102, 255, 102));
+        tablaUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -232,14 +232,14 @@ public class SuperAdministrador extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        tablaUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                tablaUsuarioMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
+        scrollPanelTabla.setViewportView(tablaUsuario);
+        if (tablaUsuario.getColumnModel().getColumnCount() > 0) {
+            tablaUsuario.getColumnModel().getColumn(0).setResizable(false);
         }
 
         jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
@@ -268,7 +268,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
                             .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(10, 10, 10)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(scrollPanelTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,7 +295,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
                         .addComponent(btnActualizar)
                         .addGap(10, 10, 10)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(scrollPanelTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, -3, 620, 390));
@@ -339,14 +339,14 @@ public class SuperAdministrador extends javax.swing.JFrame {
         userController.mostrarRegistros(modelo);
     }//GEN-LAST:event_btnGuardarMouseClicked
 
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        idUsuario = Integer.parseInt(jTable1.getValueAt(
-                jTable1.getSelectedRow(), 0).toString());
-        textFieldNombre.setText(jTable1.getValueAt(jTable1.getSelectedRow(),
+    private void tablaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaUsuarioMouseClicked
+        idUsuario = Integer.parseInt(tablaUsuario.getValueAt(
+                tablaUsuario.getSelectedRow(), 0).toString());
+        textFieldNombre.setText(tablaUsuario.getValueAt(tablaUsuario.getSelectedRow(),
                 1).toString());
-        passwordField.setText(jTable1.getValueAt(
-                jTable1.getSelectedRow(), 2).toString());
-    }//GEN-LAST:event_jTable1MouseClicked
+        passwordField.setText(tablaUsuario.getValueAt(
+                tablaUsuario.getSelectedRow(), 2).toString());
+    }//GEN-LAST:event_tablaUsuarioMouseClicked
 
     private void btnEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseClicked
         userController.eliminarRegistro(idUsuario);
@@ -418,13 +418,13 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelAdministrador;
     private javax.swing.JLabel labelContraseña;
     private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelUsuario;
     private javax.swing.JPasswordField passwordField;
+    private javax.swing.JScrollPane scrollPanelTabla;
+    private javax.swing.JTable tablaUsuario;
     private javax.swing.JTextField textFieldNombre;
     // End of variables declaration//GEN-END:variables
 }
