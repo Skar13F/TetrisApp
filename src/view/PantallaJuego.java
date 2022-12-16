@@ -18,7 +18,7 @@ public class PantallaJuego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         btnJugar = new javax.swing.JButton();
         tituloBienvenida = new javax.swing.JLabel();
         fondoPantalla = new javax.swing.JLabel();
@@ -28,14 +28,14 @@ public class PantallaJuego extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(550, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton1.setFocusPainted(false);
-        jButton1.setPressedIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 350, 140));
+        btnSalir.setIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnSalir.setFocusPainted(false);
+        btnSalir.setPressedIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
+        btnSalir.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 350, 140));
 
         btnJugar.setIcon(new javax.swing.ImageIcon("resourses/images/JUGAR_1.png"));
         btnJugar.setBorderPainted(false);
@@ -120,8 +120,8 @@ public class PantallaJuego extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnJugar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel fondoPantalla;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel tituloBienvenida;
     // End of variables declaration//GEN-END:variables
 }
