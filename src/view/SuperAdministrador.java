@@ -97,8 +97,8 @@ public class SuperAdministrador extends javax.swing.JFrame {
         btnActualizar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         labelNombreUsuario = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        textFieldNombre = new javax.swing.JTextField();
+        passwordField = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -256,9 +256,9 @@ public class SuperAdministrador extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelNombreUsuario)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -280,11 +280,11 @@ public class SuperAdministrador extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(labelNombreUsuario)
                         .addGap(2, 2, 2)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
                         .addComponent(jLabel4)
                         .addGap(2, 2, 2)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
                         .addComponent(cbTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
@@ -329,9 +329,9 @@ public class SuperAdministrador extends javax.swing.JFrame {
         Jugador jugador = jugadorController.buscarRegistroTelefono(telefono);
         Rol rol = rolController.buscarRegistro(rolA);
 
-        usuario.setNombre(this.jTextField1.getText());
+        usuario.setNombre(this.textFieldNombre.getText());
         usuario.setPassword(String.valueOf(
-                jPasswordField1.getPassword()));
+                passwordField.getPassword()));
         usuario.setId_jugador(jugador.getId_jugador());
         usuario.setId_rol(rol.getIdRol());
 
@@ -342,9 +342,9 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         idUsuario = Integer.parseInt(jTable1.getValueAt(
                 jTable1.getSelectedRow(), 0).toString());
-        jTextField1.setText(jTable1.getValueAt(jTable1.getSelectedRow(),
+        textFieldNombre.setText(jTable1.getValueAt(jTable1.getSelectedRow(),
                 1).toString());
-        jPasswordField1.setText(jTable1.getValueAt(
+        passwordField.setText(jTable1.getValueAt(
                 jTable1.getSelectedRow(), 2).toString());
     }//GEN-LAST:event_jTable1MouseClicked
 
@@ -362,9 +362,9 @@ public class SuperAdministrador extends javax.swing.JFrame {
         Usuario usuario = new Usuario();
 
         usuario.setId_usuario(idUsuario);
-        usuario.setNombre(jTextField1.getText());
+        usuario.setNombre(textFieldNombre.getText());
         usuario.setPassword(String.valueOf(
-                jPasswordField1.getPassword()));
+                passwordField.getPassword()));
         usuario.setId_jugador(jugador.getId_jugador());
         usuario.setId_rol(rol.getIdRol());
 
@@ -419,12 +419,12 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel labelAdministrador;
     private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelUsuario;
+    private javax.swing.JPasswordField passwordField;
+    private javax.swing.JTextField textFieldNombre;
     // End of variables declaration//GEN-END:variables
 }
