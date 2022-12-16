@@ -19,7 +19,7 @@ public class PantallaJuego extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnJugar = new javax.swing.JButton();
         tituloBienvenida = new javax.swing.JLabel();
         fondoPantalla = new javax.swing.JLabel();
 
@@ -37,23 +37,23 @@ public class PantallaJuego extends javax.swing.JFrame {
         jButton1.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 350, 140));
 
-        jButton2.setIcon(new javax.swing.ImageIcon("resourses/images/JUGAR_1.png"));
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton2.setFocusPainted(false);
-        jButton2.setRequestFocusEnabled(false);
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnJugar.setIcon(new javax.swing.ImageIcon("resourses/images/JUGAR_1.png"));
+        btnJugar.setBorderPainted(false);
+        btnJugar.setContentAreaFilled(false);
+        btnJugar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnJugar.setFocusPainted(false);
+        btnJugar.setRequestFocusEnabled(false);
+        btnJugar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                btnJugarMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnJugarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 300, 120));
+        getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 300, 120));
 
         tituloBienvenida.setIcon(new javax.swing.ImageIcon("resourses/images/hola.gif"));
         getContentPane().add(tituloBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 570, 150));
@@ -65,18 +65,18 @@ public class PantallaJuego extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
         // TODO add your handling code here:
 
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnJugarActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void btnJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJugarMouseClicked
         Juego juego = new Juego();
         juego.setVisible(true);
         ocultar();
 
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_btnJugarMouseClicked
     public void ocultar() {
         this.setVisible(false);
 
@@ -119,9 +119,9 @@ public class PantallaJuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnJugar;
     private javax.swing.JLabel fondoPantalla;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel tituloBienvenida;
     // End of variables declaration//GEN-END:variables
 }
