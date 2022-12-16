@@ -102,7 +102,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
         labelContraseña = new javax.swing.JLabel();
         scrollPanelTabla = new javax.swing.JScrollPane();
         tablaUsuario = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
+        labelTituloUsuarios = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -242,8 +242,8 @@ public class SuperAdministrador extends javax.swing.JFrame {
             tablaUsuario.getColumnModel().getColumn(0).setResizable(false);
         }
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel5.setText("Gestión de Usuarios");
+        labelTituloUsuarios.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        labelTituloUsuarios.setText("Gestión de Usuarios");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -251,7 +251,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(180, 180, 180)
-                .addComponent(jLabel5))
+                .addComponent(labelTituloUsuarios))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,7 +274,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
-                .addComponent(jLabel5)
+                .addComponent(labelTituloUsuarios)
                 .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -415,12 +415,12 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox<String> cbRol;
     private javax.swing.JComboBox<String> cbTelefono;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelAdministrador;
     private javax.swing.JLabel labelContraseña;
     private javax.swing.JLabel labelNombreUsuario;
+    private javax.swing.JLabel labelTituloUsuarios;
     private javax.swing.JLabel labelUsuario;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JScrollPane scrollPanelTabla;
