@@ -86,10 +86,10 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        labelAdministrador = new javax.swing.JLabel();
         bConfiguracion = new javax.swing.JButton();
         bSalir = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        labelUsuario = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         cbRol = new javax.swing.JComboBox<>();
         cbTelefono = new javax.swing.JComboBox<>();
@@ -110,11 +110,10 @@ public class SuperAdministrador extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 204, 204));
         jPanel1.setPreferredSize(new java.awt.Dimension(280, 387));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Administrador");
+        labelAdministrador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelAdministrador.setText("Administrador");
 
         bConfiguracion.setBackground(new java.awt.Color(153, 153, 153));
-        bConfiguracion.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/tetrix/resourses/images/config.png")); // NOI18N
         bConfiguracion.setText("Configuración");
         bConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bConfiguracion.setFocusable(false);
@@ -125,7 +124,6 @@ public class SuperAdministrador extends javax.swing.JFrame {
         });
 
         bSalir.setBackground(new java.awt.Color(153, 153, 153));
-        bSalir.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/tetrix/resourses/images/salir_1.png")); // NOI18N
         bSalir.setText("Salir");
         bSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bSalir.setFocusable(false);
@@ -140,8 +138,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/tetrix/resourses/images/usuario2.png")); // NOI18N
-        jLabel2.setToolTipText("Soy un usuario");
+        labelUsuario.setToolTipText("Soy un usuario");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,19 +151,19 @@ public class SuperAdministrador extends javax.swing.JFrame {
                     .addComponent(bSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(jLabel1))
+                        .addComponent(labelAdministrador))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(jLabel2)))
+                        .addComponent(labelUsuario)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel1)
+                .addComponent(labelAdministrador)
                 .addGap(32, 32, 32)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(30, 30, 30)
                 .addComponent(bConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
@@ -188,7 +185,6 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/tetrix/resourses/images/eliminar.png")); // NOI18N
         jButton1.setText("Eliminar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -196,7 +192,6 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/tetrix/resourses/images/Actualizar (2).png")); // NOI18N
         jButton2.setText("Actualizar");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -204,7 +199,6 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/tetrix/resourses/images/GuardarTodo.png")); // NOI18N
         jButton3.setText("Guardar");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -421,8 +415,6 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -432,5 +424,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel labelAdministrador;
+    private javax.swing.JLabel labelUsuario;
     // End of variables declaration//GEN-END:variables
 }
