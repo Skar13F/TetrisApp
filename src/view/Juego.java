@@ -22,9 +22,9 @@ public class Juego extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnArriba = new javax.swing.JButton();
         btnIzquierda = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnDerecha = new javax.swing.JButton();
+        btnAbajo = new javax.swing.JButton();
+        fondoJuego = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -59,16 +59,16 @@ public class Juego extends javax.swing.JFrame {
         btnIzquierda.setBorderPainted(false);
         getContentPane().add(btnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, -1, -1));
 
-        jButton3.setText("Derecha");
-        jButton3.setBorderPainted(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, -1));
+        btnDerecha.setText("Derecha");
+        btnDerecha.setBorderPainted(false);
+        getContentPane().add(btnDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, -1));
 
-        jButton4.setText("Abajo");
-        jButton4.setBorderPainted(false);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 70, -1));
+        btnAbajo.setText("Abajo");
+        btnAbajo.setBorderPainted(false);
+        getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 70, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo6.png")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        fondoJuego.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo6.png")); // NOI18N
+        getContentPane().add(fondoJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -82,11 +82,11 @@ public class Juego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAbajo;
     private javax.swing.JButton btnArriba;
+    private javax.swing.JButton btnDerecha;
     private javax.swing.JButton btnIzquierda;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel fondoJuego;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel panelJuego;
     // End of variables declaration//GEN-END:variables

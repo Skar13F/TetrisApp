@@ -92,7 +92,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btnDerecha">
       <Properties>
         <Property name="text" type="java.lang.String" value="Derecha"/>
         <Property name="borderPainted" type="boolean" value="false"/>
@@ -103,7 +103,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="btnAbajo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Abajo"/>
         <Property name="borderPainted" type="boolean" value="false"/>
@@ -114,7 +114,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="fondoJuego">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo6.png"/>
