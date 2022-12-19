@@ -345,6 +345,10 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         return this.bCerrar;
     }
 
+       
+    /**
+     * Método que retorna una acción sobre el botón registrar
+     */
     public JButton getBRegistrar() {
         return this.bRegistrar;
     }
