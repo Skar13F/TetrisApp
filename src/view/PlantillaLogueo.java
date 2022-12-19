@@ -353,6 +353,10 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         return this.bRegistrar;
     }
 
+    
+    /**
+     * Método para ocultar el frame
+     */
     public void cerrarFrame() {
         this.setVisible(false);
     }
