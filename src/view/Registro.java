@@ -390,6 +390,11 @@ public class Registro extends JFrame implements ActionListener {
         return jGenerica;
     }
 
+    /**
+     * Este método ayuda a generar números aleatorios que se ocupan
+     * para las posiciones en x de un componente de acuerdo al tamaño del mismo
+     * y al tamaño del panel al que se agragará
+     */
     public int obtenerPosicionX(int tamanio) {
         return (pPrincipal.getWidth() - tamanio) / 2;
     }
