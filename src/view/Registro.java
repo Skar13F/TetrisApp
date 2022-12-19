@@ -230,9 +230,9 @@ public class Registro extends JFrame implements ActionListener {
                     Jugador jugadorA = jugadorController.buscarRegistroTelefono(
                             jugadorAux.getTelefono());
                     /**
-                     * Enseguida verificamos que el jugador al cual se le
-                     * quiere asignar el usuario exista, si no, lo registramos
-                     * y enviamos la vista a la plantilla de logueo nuevamente
+                     * Enseguida verificamos que el jugador al cual se le quiere
+                     * asignar el usuario exista, si no, lo registramos y
+                     * enviamos la vista a la plantilla de logueo nuevamente
                      */
                     if (jugadorA == null) {
                         jugadorController.crearRegistro(jugadorAux);
@@ -297,6 +297,11 @@ public class Registro extends JFrame implements ActionListener {
         this.bRegresar.setContentAreaFilled(
                 false);
 
+        /**
+         * Tenemos eventos para el mouse, cuando ingresa o sale del área del
+         * botón, y cuando hace click sobre este, lo regresa a la pantalla de
+         * logueo
+         */
         bRegresar.addMouseListener(
                 new MouseAdapter() {
             @Override
