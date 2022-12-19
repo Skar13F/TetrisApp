@@ -201,6 +201,11 @@ public class Registro extends JFrame implements ActionListener {
                 bRegistrar.setBorder(null);
             }
 
+            /**
+             * Evento de click sobre el botón, primero declaramos e 
+             * inicializamos un objeto de tipo controller para las llamadas
+             * a funcion del objeto usuario
+             */
             @Override
             public void mouseClicked(MouseEvent e
             ) {
@@ -208,6 +213,7 @@ public class Registro extends JFrame implements ActionListener {
 
                 Usuario user = controller.buscarRegistoNombre(
                         tNombreJugador.getText());
+                
                 if (user == null) {
                     JugadorController jugadorController
                             = new JugadorController();
