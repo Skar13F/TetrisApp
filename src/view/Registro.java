@@ -189,6 +189,11 @@ public class Registro extends JFrame implements ActionListener {
                 bRegistrar.setContentAreaFilled(true);
             }
 
+            /**
+             * cuando el mouse salga del área del botón se activará un nuevo
+             * evento que dejará de mostrar el área del botón y este pasara a
+             * ser invisible
+             */
             @Override
             public void mouseExited(MouseEvent e
             ) {
