@@ -364,10 +364,14 @@ public class Registro extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Método para cerrar el ocultar el frame que se está ejecutando
+     */
     public void cerrarFrame() {
         this.setVisible(false);
     }
 
+    
     public JTextField crearCuadroTexto(String nombre, int tX,
             int tY, int pX, int pY, Color TextC, Color fondoC, Color cursorC,
             Border bordeI) {
