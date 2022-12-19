@@ -213,7 +213,11 @@ public class Registro extends JFrame implements ActionListener {
 
                 Usuario user = controller.buscarRegistoNombre(
                         tNombreJugador.getText());
-                
+                /**
+                 * Primero validamos que el usuario no exista en la base de
+                 * datos para poderlo registrar, de lo contrario enviar un
+                 * aviso al usuario que esos datos ya existen en la BD
+                 */
                 if (user == null) {
                     JugadorController jugadorController
                             = new JugadorController();
