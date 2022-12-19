@@ -1,7 +1,7 @@
 /**
  * Autor: Nancy Obed Martínez Miguel
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 05 de diciembre de 2022
+ * Fecha de actualización: 19 de diciembre de 2022
  * Descripción: En este frame se cargará el juego funcional,
  *              con opciones básicas de interacción con el
  *              usuario mediante botones.
@@ -51,7 +51,7 @@ public class Juego extends javax.swing.JFrame {
         btnArriba.setText("Arriba");
         btnArriba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnArriba.setBorderPainted(false);
-        getContentPane().add(btnArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 70, 20));
+        getContentPane().add(btnArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 90, -1));
 
         btnIzquierda.setText("Izquierda");
         btnIzquierda.setBorderPainted(false);
@@ -63,7 +63,7 @@ public class Juego extends javax.swing.JFrame {
 
         btnAbajo.setText("Abajo");
         btnAbajo.setBorderPainted(false);
-        getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 70, -1));
+        getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 90, -1));
 
         fondoJuego.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo6.png")); // NOI18N
         getContentPane().add(fondoJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
