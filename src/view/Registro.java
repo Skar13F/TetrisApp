@@ -399,6 +399,14 @@ public class Registro extends JFrame implements ActionListener {
         return (pPrincipal.getWidth() - tamanio) / 2;
     }
 
+    /**
+     * Método para hacer validaciones en los cuadros de texto, cuando el
+     * cursor esté en el cuadro de texto, este se habilitará para 
+     * escritura ocultando su previo contenido solo si estaba predefinido
+     * si ya ha sido alterado permanecerá la modificación, de la misma manera
+     * al perder el foco se enviará un texto predefinido si no hubo modificación
+     * en el, de lo contrario permanecerá
+     */
     public void cajaTexto(JTextField jTexto, String contenido) {
         jTexto.addFocusListener(new FocusAdapter() {
             @Override
