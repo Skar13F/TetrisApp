@@ -67,7 +67,7 @@ public class Juego extends javax.swing.JFrame {
         jButton4.setBorderPainted(false);
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 70, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/TetrisApp/resourses/images/fondo6.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("/home/labingsw02/NetBeansProjects/TetrisApp/resourses/images/fondo6.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

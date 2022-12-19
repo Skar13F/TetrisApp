@@ -229,7 +229,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
                 userAux.setPassword(String.valueOf(
                         jContrasenia.getPassword()));
                 userAux.setId_jugador(cbTipoUsuario.getSelectedIndex() + 1);
-                usuarioController.init();
+                //usuarioController.init();
                 Usuario user = usuarioController.buscarRegistoNC(userAux);
 
                 if (user != null) {
@@ -352,8 +352,8 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
     public void aniadirItem(JComboBox jcRol) {
         RolServiceImpl impl = new RolServiceImpl();
         List<Rol> listaRol = impl.obtenerRegistro();
-        for (Rol rol : listaRol) {
-            jcRol.addItem(rol.getRol());
+        for (int i = 0; i < listaRol.size(); i++) {
+            jcRol.addItem(listaRol.get(i).getRol());
         }
     }
 
