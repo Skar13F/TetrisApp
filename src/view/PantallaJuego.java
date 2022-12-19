@@ -1,7 +1,7 @@
 /**
  * Autor: Nancy Obed Martínez Miguel
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 05 de diciembre de 2022
+ * Fecha de actualización: 19 de diciembre de 2022
  * Descripción: En este frame muestra la pantalla de inicio para un
  *              usuario jugador, donde solo se muestran dos botones,
  *              uno de jugar y otro de cerrar.

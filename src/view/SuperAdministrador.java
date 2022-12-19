@@ -1,7 +1,7 @@
 /**
  * Autor: Nancy Obed Martínez Miguel y Oscar Fuentes
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 05 de diciembre de 2022
+ * Fecha de actualización: 19 de diciembre de 2022
  * Descripción: En este frame se mostrará la pantalla de interacción como
  *              usuario administrador,dónde muestra una tabla con los datos de
  *              los diferentes usuarios, al igual que se pueden  insertar
