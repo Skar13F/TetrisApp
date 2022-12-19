@@ -207,6 +207,10 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         this.bIngresar.setBorder(null);
         this.bIngresar.setContentAreaFilled(false);
 
+        /**
+         * eventos sobre el botón ingresar, si el mouse entra o sale del área
+         * este cambiará su fondo
+         */
         bIngresar.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -220,6 +224,13 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
                 bIngresar.setBorder(null);
             }
 
+            /**
+             * Al hacer click en el botón se hará una búsqueda en la BD
+             * para comparar las credenciales que el usuario ingresó, si estas
+             * coninciden se habilitará una nueva ventana dependiendo del 
+             * tipo de usuario que este eligió, ya sea usuario(jugador) o 
+             * usuario(administrador)
+             */
             @Override
             public void mouseClicked(MouseEvent e) {
                 bIngresar.setBorder(bInferiorAzul);
@@ -229,7 +240,6 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
                 userAux.setPassword(String.valueOf(
                         jContrasenia.getPassword()));
                 userAux.setId_jugador(cbTipoUsuario.getSelectedIndex() + 1);
-                //usuarioController.init();
                 Usuario user = usuarioController.buscarRegistoNC(userAux);
 
                 if (user != null) {
@@ -317,6 +327,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Método para salir del frame si el usuario presiona el botón exit
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.getBCerrar()) {
@@ -325,19 +338,32 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Método que retorna una acción sobre el botón cerrar
+     */
     public JButton getBCerrar() {
         return this.bCerrar;
     }
 
+       
+    /**
+     * Método que retorna una acción sobre el botón registrar
+     */
     public JButton getBRegistrar() {
         return this.bRegistrar;
     }
 
+    
+    /**
+     * Método para ocultar el frame
+     */
     public void cerrarFrame() {
         this.setVisible(false);
     }
 
-    //cargar fuente
+    /**
+     * Método para cargar la fuente al proyecto
+     */
     private void generarFuente() {
         try {
             GraphicsEnvironment ge
@@ -349,6 +375,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Método para agrgar los items al jcombobox de roles
+     */
     public void aniadirItem(JComboBox jcRol) {
         RolServiceImpl impl = new RolServiceImpl();
         List<Rol> listaRol = impl.obtenerRegistro();
