@@ -232,6 +232,7 @@ public class Registro extends JFrame implements ActionListener {
                     /**
                      * Enseguida verificamos que el jugador al cual se le
                      * quiere asignar el usuario exista, si no, lo registramos
+                     * y enviamos la vista a la plantilla de logueo nuevamente
                      */
                     if (jugadorA == null) {
                         jugadorController.crearRegistro(jugadorAux);
