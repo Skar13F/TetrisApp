@@ -28,7 +28,7 @@ public class PantallaJuego extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(550, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSalir.setIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
+        btnSalir.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/cerrar_2.png")); // NOI18N
         btnSalir.setBorderPainted(false);
         btnSalir.setContentAreaFilled(false);
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -37,7 +37,7 @@ public class PantallaJuego extends javax.swing.JFrame {
         btnSalir.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 350, 140));
 
-        btnJugar.setIcon(new javax.swing.ImageIcon("resourses/images/JUGAR_1.png"));
+        btnJugar.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/JUGAR.png")); // NOI18N
         btnJugar.setBorderPainted(false);
         btnJugar.setContentAreaFilled(false);
         btnJugar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -55,10 +55,10 @@ public class PantallaJuego extends javax.swing.JFrame {
         });
         getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 300, 120));
 
-        tituloBienvenida.setIcon(new javax.swing.ImageIcon("resourses/images/hola.gif"));
+        tituloBienvenida.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/hola.gif")); // NOI18N
         getContentPane().add(tituloBienvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 570, 150));
 
-        fondoPantalla.setIcon(new javax.swing.ImageIcon("resourses/images/fondo1.png"));
+        fondoPantalla.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo1.png")); // NOI18N
         getContentPane().add(fondoPantalla, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 500));
 
         pack();
