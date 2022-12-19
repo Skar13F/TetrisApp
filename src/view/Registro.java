@@ -427,6 +427,11 @@ public class Registro extends JFrame implements ActionListener {
         });
     }
 
+    /**
+     * Método para enviar mostrar u ocultar un texto predeterminado en el 
+     * cuadro para la contraseña, si el usuario ingresa datos estos permanecerán
+     * de lo contrrario se volverá a un estado predeterminado
+     */
     public void cajaContrasenia(JPasswordField jContrasenia, String contenido) {
         jContrasenia.addFocusListener(new FocusAdapter() {
             @Override
