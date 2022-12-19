@@ -361,7 +361,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         this.setVisible(false);
     }
 
-    //cargar fuente
+    /**
+     * Método para cargar la fuente al proyecto
+     */
     private void generarFuente() {
         try {
             GraphicsEnvironment ge
