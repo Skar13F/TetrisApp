@@ -114,6 +114,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
         labelAdministrador.setText("Administrador");
 
         bConfiguracion.setBackground(new java.awt.Color(153, 153, 153));
+        bConfiguracion.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/config.png")); // NOI18N
         bConfiguracion.setText("Configuración");
         bConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bConfiguracion.setFocusable(false);
@@ -138,6 +139,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
+        labelUsuario.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/usuario2.png")); // NOI18N
         labelUsuario.setToolTipText("Soy un usuario");
 
         javax.swing.GroupLayout panelAdministradorLayout = new javax.swing.GroupLayout(panelAdministrador);
