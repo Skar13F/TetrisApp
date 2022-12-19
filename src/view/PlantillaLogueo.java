@@ -327,6 +327,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Método para salir del frame si el usuario presiona el botón exit
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this.getBCerrar()) {
