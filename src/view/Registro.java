@@ -371,7 +371,10 @@ public class Registro extends JFrame implements ActionListener {
         this.setVisible(false);
     }
 
-    
+    /**
+     * Método para crear un jtext con características que se especifiquen, 
+     * estas se reciben como parámetros y al final la retorna
+     */
     public JTextField crearCuadroTexto(String nombre, int tX,
             int tY, int pX, int pY, Color TextC, Color fondoC, Color cursorC,
             Border bordeI) {
