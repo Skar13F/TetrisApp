@@ -338,6 +338,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
 
     }
 
+    /**
+     * Método que retorna una acción sobre el botón cerrar
+     */
     public JButton getBCerrar() {
         return this.bCerrar;
     }
