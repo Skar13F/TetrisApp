@@ -54,9 +54,9 @@ public class Registro extends JFrame implements ActionListener {
 
     //borde
     private Border bInferiorAzul;
-    
+
     //Tamaño de todos los cuadros de texto
-    private final int tamJtexts=200;
+    private final int tamJtexts = 200;
 
     public Registro() {
         //imagenes
@@ -172,8 +172,16 @@ public class Registro extends JFrame implements ActionListener {
         this.bRegistrar.setContentAreaFilled(
                 false);
 
+        /**
+         * Evento en el botón registrar, cuando el cursor entra, sale y si el
+         * usuario da click sobre el
+         */
         bRegistrar.addMouseListener(
                 new MouseAdapter() {
+            /**
+             * cuando el mouse entre en el área del botón se mostrará el área
+             * del botón de un color diferente
+             */
             @Override
             public void mouseEntered(MouseEvent e
             ) {
