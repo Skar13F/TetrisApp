@@ -202,9 +202,9 @@ public class Registro extends JFrame implements ActionListener {
             }
 
             /**
-             * Evento de click sobre el botón, primero declaramos e 
-             * inicializamos un objeto de tipo controller para las llamadas
-             * a funcion del objeto usuario
+             * Evento de click sobre el botón, primero declaramos e
+             * inicializamos un objeto de tipo controller para las llamadas a
+             * funcion del objeto usuario
              */
             @Override
             public void mouseClicked(MouseEvent e
@@ -215,8 +215,8 @@ public class Registro extends JFrame implements ActionListener {
                         tNombreJugador.getText());
                 /**
                  * Primero validamos que el usuario no exista en la base de
-                 * datos para poderlo registrar, de lo contrario enviar un
-                 * aviso al usuario que esos datos ya existen en la BD
+                 * datos para poderlo registrar, de lo contrario enviar un aviso
+                 * al usuario que esos datos ya existen en la BD
                  */
                 if (user == null) {
                     JugadorController jugadorController
@@ -229,6 +229,10 @@ public class Registro extends JFrame implements ActionListener {
                     jugadorAux.setCorreo(tCorreo.getText());
                     Jugador jugadorA = jugadorController.buscarRegistroTelefono(
                             jugadorAux.getTelefono());
+                    /**
+                     * Enseguida verificamos que el jugador al cual se le
+                     * quiere asignar el usuario exista, si no, lo registramos
+                     */
                     if (jugadorA == null) {
                         jugadorController.crearRegistro(jugadorAux);
                         String telefono = jugadorAux.getTelefono();
