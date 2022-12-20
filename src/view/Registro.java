@@ -28,13 +28,15 @@ import javax.swing.border.Border;
 
 public class Registro extends JFrame implements ActionListener {
 
+    /**
+     * Definición de las variables
+     */
     private JPanel pPrincipal;
     private ImageIcon iFondo;
     private ImageIcon iDimAux;
 
     private JLabel lFondo;
 
-    //solicitar datos
     private JTextField tNombreUsuario;
     private JTextField tEdad;
     private JTextField tTelefono;
@@ -45,17 +47,13 @@ public class Registro extends JFrame implements ActionListener {
 
     private JComboBox cbSexo;
 
-    //botones
     private JButton bRegresar;
     private JButton bRegistrar;
 
-    //Fuente
     private Font fontMedia;
 
-    //borde
     private Border bInferiorAzul;
 
-    //Tamaño de todos los cuadros de texto
     private final int tamJtexts = 200;
 
     public Registro() {
@@ -86,7 +84,10 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.setBackground(Color.BLACK);
         pPrincipal.setLayout(null);
         this.add(pPrincipal);
-        //configuración de cuadros de texto
+        
+        /**
+         * Creación y edición de los cuadros de texto
+         */
         tNombreUsuario = crearCuadroTexto("Nombre",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
                 80, Color.BLUE, Color.WHITE,
@@ -94,9 +95,6 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.add(tNombreUsuario);
         cajaTexto(tNombreUsuario, "Nombre");
 
-        /**
-         * Creación y edición de los cuadros de texto
-         */
         tEdad = crearCuadroTexto("Edad",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
                 (tNombreUsuario.getY() + tamanioY + 20), Color.BLUE,
@@ -104,7 +102,6 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.add(tEdad);
         cajaTexto(tEdad, "Edad");
 
-        //jcombobx cbSexo
         cbSexo = new JComboBox();
         cbSexo.addItem("Hombre");
         cbSexo.addItem("Mujer");
@@ -118,7 +115,6 @@ public class Registro extends JFrame implements ActionListener {
                 SwingConstants.CENTER);
         pPrincipal.add(cbSexo);
 
-        //    private JTextField tTelefono;
         tTelefono = crearCuadroTexto("Teléfono",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
                 cbSexo.getY() + tamanioY + 20, Color.BLUE,
@@ -126,7 +122,6 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.add(tTelefono);
         cajaTexto(tTelefono, "Teléfono");
 
-        //    private JTextField tCorreo;
         tCorreo = crearCuadroTexto("Correo",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
                 tTelefono.getY() + tamanioY + 20, Color.BLUE,
@@ -134,7 +129,6 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.add(tCorreo);
         cajaTexto(tCorreo, "Correo");
 
-        //private JTextField tNombreJugador;
         tNombreJugador = crearCuadroTexto("Nombre Usuario",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
                 tCorreo.getY() + tamanioY + 20, Color.BLUE,
@@ -155,7 +149,11 @@ public class Registro extends JFrame implements ActionListener {
         jContrasenia.setBorder(bInferiorAzul);
         pPrincipal.add(jContrasenia);
         cajaContrasenia(jContrasenia, "////////");
-        //Botones
+        
+        /**
+         * creación y configuración de los botones
+         */
+         
         this.bRegistrar = new JButton("Registrar");
 
         this.bRegistrar.setBounds(
@@ -288,7 +286,6 @@ public class Registro extends JFrame implements ActionListener {
                 350, 10, 80, 30);
 
         this.bRegresar.setForeground(Color.WHITE);
-        //this.bRegresar.setCursor(cMano);
 
         this.bRegresar.addActionListener(
                 this);
