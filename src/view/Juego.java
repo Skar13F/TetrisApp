@@ -26,7 +26,7 @@ public class Juego extends javax.swing.JFrame {
         btnAbajo = new javax.swing.JButton();
         cajaPuntos = new javax.swing.JTextField();
         labelPuntos = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelNivel = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         fondoJuego = new javax.swing.JLabel();
 
@@ -74,10 +74,10 @@ public class Juego extends javax.swing.JFrame {
         labelPuntos.setText("Puntos");
         getContentPane().add(labelPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 0, 51));
-        jLabel2.setText("Nivel");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        labelNivel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        labelNivel.setForeground(new java.awt.Color(204, 0, 51));
+        labelNivel.setText("Nivel");
+        getContentPane().add(labelNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 230, 80, -1));
 
         fondoJuego.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo6.png")); // NOI18N
@@ -102,8 +102,8 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JTextField cajaPuntos;
     private javax.swing.JLabel encabezado;
     private javax.swing.JLabel fondoJuego;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel labelNivel;
     private javax.swing.JLabel labelPuntos;
     private javax.swing.JPanel panelJuego;
     // End of variables declaration//GEN-END:variables
