@@ -59,8 +59,9 @@ public class Registro extends JFrame implements ActionListener {
     private final int tamJtexts = 200;
 
     public Registro() {
-        //imagenes
         final int tamanioY = 30;
+
+        //imagenes
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
 
         //fuente de texto
@@ -85,7 +86,9 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.add(tNombreUsuario);
         cajaTexto(tNombreUsuario, "Nombre");
 
-        //    private JTextField tEdad;
+        /**
+         * Creación y edición de los cuadros de texto
+         */
         tEdad = crearCuadroTexto("Edad",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
                 (tNombreUsuario.getY() + tamanioY + 20), Color.BLUE,

@@ -18,10 +18,10 @@ public class App {
 
             @Override
             public void run() {
-//                PlantillaLogueo logueo = new PlantillaLogueo();
-//                logueo.getClass();
-                Registro r = new Registro();
-                r.getClass();
+                PlantillaLogueo logueo = new PlantillaLogueo();
+                logueo.getClass();
+//                Registro r = new Registro();
+//                r.getClass();
             }
         };
         SwingUtilities.invokeLater(runApplication);
