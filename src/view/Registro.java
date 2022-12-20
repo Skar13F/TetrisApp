@@ -71,7 +71,9 @@ public class Registro extends JFrame implements ActionListener {
         bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2,
                 0, Color.BLUE);
 
-        //configurar el panel
+        /**
+         * Configuración del panel de registro
+         */
         pPrincipal = new JPanel();
         pPrincipal.setSize(600, 500);
         pPrincipal.setLocation(0, 0);
