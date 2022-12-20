@@ -24,6 +24,11 @@ public class Juego extends javax.swing.JFrame {
         btnIzquierda = new javax.swing.JButton();
         btnDerecha = new javax.swing.JButton();
         btnAbajo = new javax.swing.JButton();
+        cajaPuntos = new javax.swing.JTextField();
+        labelPuntos = new javax.swing.JLabel();
+        labelNivel = new javax.swing.JLabel();
+        cajaNivel = new javax.swing.JTextField();
+        btnSalir = new javax.swing.JButton();
         fondoJuego = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,6 +69,21 @@ public class Juego extends javax.swing.JFrame {
         btnAbajo.setText("Abajo");
         btnAbajo.setBorderPainted(false);
         getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 90, -1));
+        getContentPane().add(cajaPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, -1));
+
+        labelPuntos.setForeground(new java.awt.Color(204, 0, 51));
+        labelPuntos.setText("Puntos");
+        getContentPane().add(labelPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+
+        labelNivel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
+        labelNivel.setForeground(new java.awt.Color(204, 0, 51));
+        labelNivel.setText("Nivel");
+        getContentPane().add(labelNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        getContentPane().add(cajaNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 230, 80, -1));
+
+        btnSalir.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/salir_1.png")); // NOI18N
+        btnSalir.setText("Salir");
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, -1, -1));
 
         fondoJuego.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo6.png")); // NOI18N
         getContentPane().add(fondoJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -84,8 +104,13 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JButton btnArriba;
     private javax.swing.JButton btnDerecha;
     private javax.swing.JButton btnIzquierda;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JTextField cajaNivel;
+    private javax.swing.JTextField cajaPuntos;
     private javax.swing.JLabel encabezado;
     private javax.swing.JLabel fondoJuego;
+    private javax.swing.JLabel labelNivel;
+    private javax.swing.JLabel labelPuntos;
     private javax.swing.JPanel panelJuego;
     // End of variables declaration//GEN-END:variables
 }
