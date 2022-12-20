@@ -67,7 +67,9 @@ public class Registro extends JFrame implements ActionListener {
         //fuente de texto
         fontMedia = new Font("LuzSans-Book", Font.PLAIN, 15);
 
-        //borde
+        /**
+         * Creación de borde para los cuadros de texto
+         */
         bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2,
                 0, Color.BLUE);
 
