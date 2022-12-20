@@ -58,9 +58,9 @@ public class Juego extends javax.swing.JFrame {
         btnArriba.setBorderPainted(false);
         getContentPane().add(btnArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 90, -1));
 
-        btnIzquierda.setText("Izquierda");
+        btnIzquierda.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/izquierda.png")); // NOI18N
         btnIzquierda.setBorderPainted(false);
-        getContentPane().add(btnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, -1, -1));
+        getContentPane().add(btnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 90, -1));
 
         btnDerecha.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/derecha.png")); // NOI18N
         btnDerecha.setBorderPainted(false);

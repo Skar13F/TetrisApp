@@ -82,12 +82,14 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnIzquierda">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Izquierda"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/izquierda.png"/>
+        </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="540" y="140" width="-1" height="-1"/>
+          <AbsoluteConstraints x="540" y="140" width="90" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
