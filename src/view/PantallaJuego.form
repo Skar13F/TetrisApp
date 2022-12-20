@@ -45,8 +45,8 @@
         <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
           <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/cerrar.png&quot;)" type="code"/>
         </Property>
-        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/cerrar_2.png&quot;)" type="code"/>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/cerrar.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -67,6 +67,12 @@
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
         <Property name="requestFocusEnabled" type="boolean" value="false"/>
+        <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/JUGAR_1.png"/>
+        </Property>
+        <Property name="rolloverSelectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/JUGAR.png"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnJugarMouseClicked"/>

@@ -34,7 +34,7 @@ public class PantallaJuego extends javax.swing.JFrame {
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnSalir.setFocusPainted(false);
         btnSalir.setPressedIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
-        btnSalir.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
+        btnSalir.setRolloverIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/cerrar.png")); // NOI18N
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 350, 140));
 
         btnJugar.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/JUGAR.png")); // NOI18N
@@ -43,6 +43,8 @@ public class PantallaJuego extends javax.swing.JFrame {
         btnJugar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnJugar.setFocusPainted(false);
         btnJugar.setRequestFocusEnabled(false);
+        btnJugar.setRolloverIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/JUGAR_1.png")); // NOI18N
+        btnJugar.setRolloverSelectedIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/JUGAR.png")); // NOI18N
         btnJugar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnJugarMouseClicked(evt);
