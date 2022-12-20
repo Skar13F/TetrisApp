@@ -64,7 +64,9 @@ public class Registro extends JFrame implements ActionListener {
         //imagenes
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
 
-        //fuente de texto
+        /**
+         * Creación de la fuente de texto
+         */
         fontMedia = new Font("LuzSans-Book", Font.PLAIN, 15);
 
         /**
