@@ -1,7 +1,7 @@
 /**
  * Autor: Nancy Obed Martínez Miguel
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 19 de diciembre de 2022
+ * Fecha de actualización: 20 de diciembre de 2022
  * Descripción: En este frame se cargará el juego funcional,
  *              con opciones básicas de interacción con el
  *              usuario mediante botones.
@@ -53,20 +53,20 @@ public class Juego extends javax.swing.JFrame {
 
         getContentPane().add(panelJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 370, 500));
 
-        btnArriba.setText("Arriba");
+        btnArriba.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/arriba.png")); // NOI18N
         btnArriba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnArriba.setBorderPainted(false);
         getContentPane().add(btnArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 90, -1));
 
-        btnIzquierda.setText("Izquierda");
+        btnIzquierda.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/izquierda.png")); // NOI18N
         btnIzquierda.setBorderPainted(false);
-        getContentPane().add(btnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, -1, -1));
+        getContentPane().add(btnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 90, -1));
 
-        btnDerecha.setText("Derecha");
+        btnDerecha.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/derecha.png")); // NOI18N
         btnDerecha.setBorderPainted(false);
-        getContentPane().add(btnDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, -1, -1));
+        getContentPane().add(btnDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 90, -1));
 
-        btnAbajo.setText("Abajo");
+        btnAbajo.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/abajo.png")); // NOI18N
         btnAbajo.setBorderPainted(false);
         getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 90, -1));
         getContentPane().add(cajaPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, -1));

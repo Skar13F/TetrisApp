@@ -64,7 +64,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnArriba">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Arriba"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/arriba.png"/>
+        </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
             <BevelBorder/>
@@ -80,29 +82,35 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnIzquierda">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Izquierda"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/izquierda.png"/>
+        </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="540" y="140" width="-1" height="-1"/>
+          <AbsoluteConstraints x="540" y="140" width="90" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="btnDerecha">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Derecha"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/derecha.png"/>
+        </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="540" y="200" width="-1" height="-1"/>
+          <AbsoluteConstraints x="540" y="200" width="90" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="btnAbajo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Abajo"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/abajo.png"/>
+        </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
       <Constraints>
