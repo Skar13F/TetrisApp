@@ -77,7 +77,7 @@ public class Juego extends javax.swing.JFrame {
         getContentPane().add(labelPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         labelNivel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        labelNivel.setForeground(new java.awt.Color(204, 0, 51));
+        labelNivel.setForeground(new java.awt.Color(0, 204, 51));
         labelNivel.setText("Nivel");
         getContentPane().add(labelNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
         getContentPane().add(cajaNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 230, 80, -1));
