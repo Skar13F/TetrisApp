@@ -25,7 +25,7 @@ public class Juego extends javax.swing.JFrame {
         btnDerecha = new javax.swing.JButton();
         btnAbajo = new javax.swing.JButton();
         cajaPuntos = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        labelPuntos = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         fondoJuego = new javax.swing.JLabel();
@@ -70,9 +70,9 @@ public class Juego extends javax.swing.JFrame {
         getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 90, -1));
         getContentPane().add(cajaPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, -1));
 
-        jLabel1.setForeground(new java.awt.Color(204, 0, 51));
-        jLabel1.setText("Puntos");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        labelPuntos.setForeground(new java.awt.Color(204, 0, 51));
+        labelPuntos.setText("Puntos");
+        getContentPane().add(labelPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 51));
@@ -102,9 +102,9 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JTextField cajaPuntos;
     private javax.swing.JLabel encabezado;
     private javax.swing.JLabel fondoJuego;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel labelPuntos;
     private javax.swing.JPanel panelJuego;
     // End of variables declaration//GEN-END:variables
 }
