@@ -160,7 +160,6 @@ public class Registro extends JFrame implements ActionListener {
                 350, 10, 80, 30);
 
         this.bRegistrar.setForeground(Color.WHITE);
-        //this.bRegistrar.setCursor(cMano);
 
         this.bRegistrar.addActionListener(
                 this);
