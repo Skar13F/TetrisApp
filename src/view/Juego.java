@@ -24,7 +24,7 @@ public class Juego extends javax.swing.JFrame {
         btnIzquierda = new javax.swing.JButton();
         btnDerecha = new javax.swing.JButton();
         btnAbajo = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        cajaPuntos = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
@@ -68,7 +68,7 @@ public class Juego extends javax.swing.JFrame {
         btnAbajo.setText("Abajo");
         btnAbajo.setBorderPainted(false);
         getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 90, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, -1));
+        getContentPane().add(cajaPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, -1));
 
         jLabel1.setForeground(new java.awt.Color(204, 0, 51));
         jLabel1.setText("Puntos");
@@ -99,11 +99,11 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JButton btnArriba;
     private javax.swing.JButton btnDerecha;
     private javax.swing.JButton btnIzquierda;
+    private javax.swing.JTextField cajaPuntos;
     private javax.swing.JLabel encabezado;
     private javax.swing.JLabel fondoJuego;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel panelJuego;
     // End of variables declaration//GEN-END:variables
