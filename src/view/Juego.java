@@ -28,7 +28,7 @@ public class Juego extends javax.swing.JFrame {
         labelPuntos = new javax.swing.JLabel();
         labelNivel = new javax.swing.JLabel();
         cajaNivel = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         fondoJuego = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,9 +81,9 @@ public class Juego extends javax.swing.JFrame {
         getContentPane().add(labelNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
         getContentPane().add(cajaNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 230, 80, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/salir_1.png")); // NOI18N
-        jButton1.setText("Salir");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, -1, -1));
+        btnSalir.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/salir_1.png")); // NOI18N
+        btnSalir.setText("Salir");
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, -1, -1));
 
         fondoJuego.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo6.png")); // NOI18N
         getContentPane().add(fondoJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -104,11 +104,11 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JButton btnArriba;
     private javax.swing.JButton btnDerecha;
     private javax.swing.JButton btnIzquierda;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JTextField cajaNivel;
     private javax.swing.JTextField cajaPuntos;
     private javax.swing.JLabel encabezado;
     private javax.swing.JLabel fondoJuego;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel labelNivel;
     private javax.swing.JLabel labelPuntos;
     private javax.swing.JPanel panelJuego;
