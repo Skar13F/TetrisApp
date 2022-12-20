@@ -1,7 +1,7 @@
 /**
  * Autor: Nancy Obed Martínez Miguel
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 19 de diciembre de 2022
+ * Fecha de actualización: 20 de diciembre de 2022
  * Descripción: En este frame se cargará el juego funcional,
  *              con opciones básicas de interacción con el
  *              usuario mediante botones.
