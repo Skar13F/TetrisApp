@@ -53,7 +53,7 @@ public class Juego extends javax.swing.JFrame {
 
         getContentPane().add(panelJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 370, 500));
 
-        btnArriba.setText("Arriba");
+        btnArriba.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/arriba.png")); // NOI18N
         btnArriba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnArriba.setBorderPainted(false);
         getContentPane().add(btnArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 90, -1));
