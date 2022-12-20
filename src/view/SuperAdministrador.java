@@ -1,7 +1,7 @@
 /**
  * Autor: Nancy Obed Martínez Miguel y Oscar Fuentes
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 05 de diciembre de 2022
+ * Fecha de actualización: 19 de diciembre de 2022
  * Descripción: En este frame se mostrará la pantalla de interacción como
  *              usuario administrador,dónde muestra una tabla con los datos de
  *              los diferentes usuarios, al igual que se pueden  insertar
@@ -59,22 +59,22 @@ public class SuperAdministrador extends javax.swing.JFrame {
         iFondo2 = new ImageIcon("resourses/images/fondoC3.png");
 
         iAux = new ImageIcon(iFondo1.getImage().getScaledInstance(
-                jPanel1.getWidth(), jPanel1.getHeight(),
+                panelAdministrador.getWidth(), panelAdministrador.getHeight(),
                 Image.SCALE_AREA_AVERAGING));
         fondo1 = new JLabel();
-        fondo1.setBounds(0, 0, jPanel1.getWidth(),
-                jPanel1.getHeight());
+        fondo1.setBounds(0, 0, panelAdministrador.getWidth(),
+                panelAdministrador.getHeight());
         fondo1.setIcon(iAux);
-        jPanel1.add(fondo1);
+        panelAdministrador.add(fondo1);
 
         iAux = new ImageIcon(iFondo2.getImage().getScaledInstance(
-                jPanel2.getWidth(), jPanel2.getHeight(),
+                panelGestion.getWidth(), panelGestion.getHeight(),
                 Image.SCALE_AREA_AVERAGING));
         fondo2 = new JLabel();
-        fondo2.setBounds(0, 0, jPanel2.getWidth(),
-                jPanel2.getHeight());
+        fondo2.setBounds(0, 0, panelGestion.getWidth(),
+                panelGestion.getHeight());
         fondo2.setIcon(iAux);
-        jPanel2.add(fondo2);
+        panelGestion.add(fondo2);
 
         addItemRol(cbRol);
         addItemJugador(cbTelefono);
@@ -85,12 +85,12 @@ public class SuperAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panelAdministrador = new javax.swing.JPanel();
         labelAdministrador = new javax.swing.JLabel();
         bConfiguracion = new javax.swing.JButton();
         bSalir = new javax.swing.JButton();
         labelUsuario = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        panelGestion = new javax.swing.JPanel();
         cbRol = new javax.swing.JComboBox<>();
         cbTelefono = new javax.swing.JComboBox<>();
         btnEliminar = new javax.swing.JButton();
@@ -107,13 +107,14 @@ public class SuperAdministrador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
-        jPanel1.setPreferredSize(new java.awt.Dimension(280, 387));
+        panelAdministrador.setBackground(new java.awt.Color(0, 204, 204));
+        panelAdministrador.setPreferredSize(new java.awt.Dimension(280, 387));
 
         labelAdministrador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         labelAdministrador.setText("Administrador");
 
         bConfiguracion.setBackground(new java.awt.Color(153, 153, 153));
+        bConfiguracion.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/config.png")); // NOI18N
         bConfiguracion.setText("Configuración");
         bConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bConfiguracion.setFocusable(false);
@@ -124,6 +125,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
         });
 
         bSalir.setBackground(new java.awt.Color(153, 153, 153));
+        bSalir.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/salir_1.png")); // NOI18N
         bSalir.setText("Salir");
         bSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         bSalir.setFocusable(false);
@@ -138,28 +140,29 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
+        labelUsuario.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/usuario2.png")); // NOI18N
         labelUsuario.setToolTipText("Soy un usuario");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelAdministradorLayout = new javax.swing.GroupLayout(panelAdministrador);
+        panelAdministrador.setLayout(panelAdministradorLayout);
+        panelAdministradorLayout.setHorizontalGroup(
+            panelAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAdministradorLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bConfiguracion, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(bSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(panelAdministradorLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(labelAdministrador))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(panelAdministradorLayout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(labelUsuario)))
                 .addContainerGap(41, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        panelAdministradorLayout.setVerticalGroup(
+            panelAdministradorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAdministradorLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(labelAdministrador)
                 .addGap(32, 32, 32)
@@ -171,10 +174,10 @@ public class SuperAdministrador extends javax.swing.JFrame {
                 .addGap(65, 65, 65))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(panelAdministrador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel2.setBackground(java.awt.Color.pink);
-        jPanel2.setPreferredSize(new java.awt.Dimension(500, 380));
+        panelGestion.setBackground(java.awt.Color.pink);
+        panelGestion.setPreferredSize(new java.awt.Dimension(500, 380));
 
         cbRol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "- - ROL - -" }));
 
@@ -185,6 +188,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
+        btnEliminar.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/eliminar.png")); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -192,6 +196,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
+        btnActualizar.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/Actualizar (2).png")); // NOI18N
         btnActualizar.setText("Actualizar");
         btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -199,6 +204,7 @@ public class SuperAdministrador extends javax.swing.JFrame {
             }
         });
 
+        btnGuardar.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/GuardarTodo.png")); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -245,39 +251,39 @@ public class SuperAdministrador extends javax.swing.JFrame {
         labelTituloUsuarios.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         labelTituloUsuarios.setText("Gestión de Usuarios");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout panelGestionLayout = new javax.swing.GroupLayout(panelGestion);
+        panelGestion.setLayout(panelGestionLayout);
+        panelGestionLayout.setHorizontalGroup(
+            panelGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGestionLayout.createSequentialGroup()
                 .addGap(180, 180, 180)
                 .addComponent(labelTituloUsuarios))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(panelGestionLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelNombreUsuario)
                     .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelContraseña)
                     .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(panelGestionLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(panelGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(10, 10, 10)
                 .addComponent(scrollPanelTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        panelGestionLayout.setVerticalGroup(
+            panelGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGestionLayout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(labelTituloUsuarios)
                 .addGap(38, 38, 38)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(panelGestionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGestionLayout.createSequentialGroup()
                         .addComponent(labelNombreUsuario)
                         .addGap(2, 2, 2)
                         .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -290,15 +296,15 @@ public class SuperAdministrador extends javax.swing.JFrame {
                         .addGap(16, 16, 16)
                         .addComponent(cbRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
-                        .addComponent(btnGuardar)
-                        .addGap(9, 9, 9)
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnActualizar)
                         .addGap(10, 10, 10)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(scrollPanelTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, -3, 620, 390));
+        getContentPane().add(panelGestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, -3, 620, 390));
 
         pack();
         setLocationRelativeTo(null);
@@ -415,13 +421,13 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JComboBox<String> cbRol;
     private javax.swing.JComboBox<String> cbTelefono;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelAdministrador;
     private javax.swing.JLabel labelContraseña;
     private javax.swing.JLabel labelNombreUsuario;
     private javax.swing.JLabel labelTituloUsuarios;
     private javax.swing.JLabel labelUsuario;
+    private javax.swing.JPanel panelAdministrador;
+    private javax.swing.JPanel panelGestion;
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JScrollPane scrollPanelTabla;
     private javax.swing.JTable tablaUsuario;
