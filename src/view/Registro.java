@@ -61,7 +61,9 @@ public class Registro extends JFrame implements ActionListener {
     public Registro() {
         final int tamanioY = 30;
 
-        //imagenes
+        /**
+         * Carga de imagen para el fondo
+         */
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
 
         /**
