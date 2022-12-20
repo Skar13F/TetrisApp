@@ -55,8 +55,8 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="encabezado">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/Titulo.png"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/Titulo.png&quot;)" type="code"/>
             </Property>
           </Properties>
         </Component>
@@ -64,8 +64,8 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnArriba">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/arriba.png"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/arriba.png&quot;)" type="code"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
@@ -82,8 +82,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnIzquierda">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/izquierda.png"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/izquierda.png&quot;)" type="code"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
@@ -95,8 +95,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnDerecha">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/derecha.png"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/derecha.png&quot;)" type="code"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
@@ -108,8 +108,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAbajo">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/abajo.png"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/abajo.png&quot;)" type="code"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
       </Properties>
@@ -120,6 +120,10 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="cajaPuntos">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="focusable" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="20" y="140" width="80" height="-1"/>
@@ -159,6 +163,10 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="cajaNivel">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+        <Property name="focusable" type="boolean" value="false"/>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="24" y="230" width="80" height="-1"/>
@@ -167,8 +175,8 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSalir">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/salir_1.png"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/salir_1.png&quot;)" type="code"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
@@ -183,8 +191,8 @@
     </Component>
     <Component class="javax.swing.JLabel" name="fondoJuego">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo6.png"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.ImageIcon(&quot;resourses/images/fondo6.png&quot;)" type="code"/>
         </Property>
       </Properties>
       <Constraints>

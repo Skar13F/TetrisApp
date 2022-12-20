@@ -36,7 +36,7 @@ public class Juego extends javax.swing.JFrame {
 
         panelJuego.setBackground(new java.awt.Color(0, 0, 0));
 
-        encabezado.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/Titulo.png")); // NOI18N
+        encabezado.setIcon(new javax.swing.ImageIcon("resourses/images/Titulo.png"));
 
         javax.swing.GroupLayout panelJuegoLayout = new javax.swing.GroupLayout(panelJuego);
         panelJuego.setLayout(panelJuegoLayout);
@@ -53,22 +53,25 @@ public class Juego extends javax.swing.JFrame {
 
         getContentPane().add(panelJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 370, 500));
 
-        btnArriba.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/arriba.png")); // NOI18N
+        btnArriba.setIcon(new javax.swing.ImageIcon("resourses/images/arriba.png"));
         btnArriba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnArriba.setBorderPainted(false);
         getContentPane().add(btnArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 90, -1));
 
-        btnIzquierda.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/izquierda.png")); // NOI18N
+        btnIzquierda.setIcon(new javax.swing.ImageIcon("resourses/images/izquierda.png"));
         btnIzquierda.setBorderPainted(false);
         getContentPane().add(btnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 90, -1));
 
-        btnDerecha.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/derecha.png")); // NOI18N
+        btnDerecha.setIcon(new javax.swing.ImageIcon("resourses/images/derecha.png"));
         btnDerecha.setBorderPainted(false);
         getContentPane().add(btnDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 90, -1));
 
-        btnAbajo.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/abajo.png")); // NOI18N
+        btnAbajo.setIcon(new javax.swing.ImageIcon("resourses/images/abajo.png"));
         btnAbajo.setBorderPainted(false);
         getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 90, -1));
+
+        cajaPuntos.setEnabled(false);
+        cajaPuntos.setFocusable(false);
         getContentPane().add(cajaPuntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 80, -1));
 
         labelPuntos.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
@@ -80,9 +83,12 @@ public class Juego extends javax.swing.JFrame {
         labelNivel.setForeground(new java.awt.Color(0, 204, 51));
         labelNivel.setText("Nivel");
         getContentPane().add(labelNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+
+        cajaNivel.setEnabled(false);
+        cajaNivel.setFocusable(false);
         getContentPane().add(cajaNivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 230, 80, -1));
 
-        btnSalir.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/salir_1.png")); // NOI18N
+        btnSalir.setIcon(new javax.swing.ImageIcon("resourses/images/salir_1.png"));
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +97,7 @@ public class Juego extends javax.swing.JFrame {
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 400, -1, -1));
 
-        fondoJuego.setIcon(new javax.swing.ImageIcon("/home/labingsw03/NetBeansProjects/TetrisApp/resourses/images/fondo6.png")); // NOI18N
+        fondoJuego.setIcon(new javax.swing.ImageIcon("resourses/images/fondo6.png"));
         getContentPane().add(fondoJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
