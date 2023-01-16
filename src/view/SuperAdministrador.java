@@ -9,7 +9,7 @@
  */
 package view;
 
-import com.jtattoo.plaf.aero.AeroLookAndFeel;
+//import com.jtattoo.plaf.aero.AeroLookAndFeel;
 import controller.JugadorController;
 import controller.RolController;
 import controller.UsuarioController;
@@ -402,10 +402,10 @@ public class SuperAdministrador extends javax.swing.JFrame {
 
     public static void main(String args[]) {
 
-        try {
-            UIManager.setLookAndFeel(new AeroLookAndFeel());
-        } catch (UnsupportedLookAndFeelException e) {
-        }
+//        try {
+//            UIManager.setLookAndFeel(new AeroLookAndFeel());
+//        } catch (UnsupportedLookAndFeelException e) {
+//        }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SuperAdministrador().setVisible(true);
