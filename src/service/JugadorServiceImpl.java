@@ -1,3 +1,10 @@
+/**
+ * Autor: Nancy Obed Martinez Miguel
+ * Fecha de creación: 28 de noviembre de 2022
+ * Fecha de actualización: 16 de enero del 2023
+ * Descripción: clase jugador para gestionar las transacciones a la base de
+ *              datos, específicamente en la tabla jugador.
+ */
 package service;
 
 import entity.Jugador;
