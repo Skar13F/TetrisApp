@@ -3,7 +3,7 @@
  * Fecha de creación: 28 de noviembre de 2022
  * Fecha de actualización: 06 de diciembre de 2022
  * Descripción: esta clase abstracat modela el controlador de los objetos
- *              extiende a la interfaz de la capa entity base
+ *              extiende a la interfaz de la capa entity base.
  */
 package controller.base;
 
