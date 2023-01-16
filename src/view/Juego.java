@@ -56,19 +56,19 @@ public class Juego extends javax.swing.JFrame {
         btnArriba.setIcon(new javax.swing.ImageIcon("resourses/images/arriba.png"));
         btnArriba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnArriba.setBorderPainted(false);
-        getContentPane().add(btnArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 90, -1));
+        getContentPane().add(btnArriba, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, 90, 20));
 
         btnIzquierda.setIcon(new javax.swing.ImageIcon("resourses/images/izquierda.png"));
         btnIzquierda.setBorderPainted(false);
-        getContentPane().add(btnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 90, -1));
+        getContentPane().add(btnIzquierda, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 90, 20));
 
         btnDerecha.setIcon(new javax.swing.ImageIcon("resourses/images/derecha.png"));
         btnDerecha.setBorderPainted(false);
-        getContentPane().add(btnDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 90, -1));
+        getContentPane().add(btnDerecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 90, 20));
 
         btnAbajo.setIcon(new javax.swing.ImageIcon("resourses/images/abajo.png"));
         btnAbajo.setBorderPainted(false);
-        getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 90, -1));
+        getContentPane().add(btnAbajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 90, 20));
 
         cajaPuntos.setEnabled(false);
         cajaPuntos.setFocusable(false);

@@ -379,7 +379,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
      * Método para agrgar los items al jcombobox de roles
      */
     public void aniadirItem(JComboBox jcRol) {
-        RolServiceImpl impl = new RolServiceImpl();
+       RolServiceImpl impl = new RolServiceImpl();
         List<Rol> listaRol = impl.obtenerRegistro();
         for (int i = 0; i < listaRol.size(); i++) {
             jcRol.addItem(listaRol.get(i).getRol());
