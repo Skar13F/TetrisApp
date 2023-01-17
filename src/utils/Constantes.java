@@ -14,13 +14,13 @@ public class Constantes {
     /**
      * Ubicación del tablero de juego en la ventana principal
      */
-    public static final int TABLERO_X = 25;
+    public static final int TABLERO_X = 0;
     public static final int TABLERO_Y = 100;
     /**
      * Tamaño del tablero de juego
      */
-    public static final int ANCHO_DE_PANTALLA = 450;
-    public static final int ALTO_DE_PANTALLA = 600;
+    public static final int ANCHO_DE_PANTALLA = 250;
+    public static final int ALTO_DE_PANTALLA = 300;
     /*
      * Cantidad de filas y columnas que  tendrá el tablero
      */

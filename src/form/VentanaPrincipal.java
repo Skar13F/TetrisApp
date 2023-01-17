@@ -5,6 +5,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import utils.Constantes;
 
 /*
@@ -14,7 +15,7 @@ import utils.Constantes;
 public class VentanaPrincipal extends JFrame implements Runnable, KeyListener {
 
 	private static final long serialVersionUID = 1L;
-	private AministradorDeJuego juego;
+	private AdministradorDeJuego juego;
 	private boolean decorate = true;
 
 	
@@ -40,20 +41,20 @@ public class VentanaPrincipal extends JFrame implements Runnable, KeyListener {
 
     public VentanaPrincipal() {
     	// #1: crea una instancia del juego
-    	this.juego = new AministradorDeJuego();
+    	this.juego = new AdministradorDeJuego();
 
     	// #2: Define la ventana
-        this.setUndecorated(decorate);
+        //this.setUndecorated(decorate);
         this.setVisible(true);
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setResizable(true);
+        //this.setResizable(true);
 
-        this.pack();
+        //this.pack();
         
         //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         this.setSize(Constantes.ANCHO_DE_VISTA,Constantes.ALTO_DE_VISTA);
-        this.getContentPane().add(juego);
-
+        //this.getContentPane().add(juego);
+        this.add(juego);
         // #3: agraga escuchas 
         this.addKeyListener(this);
         

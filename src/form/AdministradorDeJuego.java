@@ -6,13 +6,13 @@ import javax.swing.JPanel;
 
 import components.TableroTetris;
 
-public class AministradorDeJuego extends JPanel {
+public class AdministradorDeJuego extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
 	TableroTetris board = new TableroTetris();
 	
-	public AministradorDeJuego() {
+	public AdministradorDeJuego() {
 	}
 
 	@Override
