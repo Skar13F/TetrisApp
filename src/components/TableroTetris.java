@@ -1,3 +1,11 @@
+
+/**
+ * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
+ * Fecha de creación: 25 de noviembre de 2022
+ * Fecha de actualización:17 de enero del 2023
+ * Descripcion : En esta clase se implementa el código para el tablero del
+ *               tetris.
+ */
 package components;
 
 import utils.Constantes;

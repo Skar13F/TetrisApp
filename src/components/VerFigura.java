@@ -1,3 +1,10 @@
+/**
+ * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
+ * Fecha de creación: 25 de noviembre de 2022
+ * Fecha de actualización:17 de enero del 2023
+ * Descripcion : En esta clase se implementa el código para el tablero del
+ *               tetris.
+ */
 package components;
 
 import java.awt.Graphics;
@@ -9,12 +16,20 @@ import utils.Constantes;
 
 public class VerFigura implements Drawable {
 
+    /**
+     * Declaracion de las variables.
+     */
     private int posicionX;
     private int posicionY;
     private Figura figura;
 
+    /**
+     * Constructor vacio de la clase VerFigura.
+     */
     public VerFigura() {
-
+        /**
+         * Constructor con parámetros de la clase VerFigura.
+         */
     }
 
     public VerFigura(int posicionX, int posicionY) {
@@ -32,6 +47,9 @@ public class VerFigura implements Drawable {
         }
     }
 
+    /**
+     * Implementación de los métodos get y set.
+     */
     public int getPosicionX() {
         return posicionX;
     }
