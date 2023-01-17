@@ -27,10 +27,12 @@ public class VerFigura implements Drawable {
      * Constructor vacio de la clase VerFigura.
      */
     public VerFigura() {
-        /**
-         * Constructor con parámetros de la clase VerFigura.
-         */
+
     }
+
+    /**
+     * Constructor con parámetros de la clase VerFigura.
+     */
 
     public VerFigura(int posicionX, int posicionY) {
         this.posicionX = posicionX;
