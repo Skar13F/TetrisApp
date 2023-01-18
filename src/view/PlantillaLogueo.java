@@ -1,3 +1,12 @@
+/**
+ * Autor: Oscar Fuentes Alvarado
+ * Fecha de creación: 28 de noviembre de 2022
+ * Fecha de actualización: 16 de enero del 2023
+ * Descripción: En esta clase de codifica desde cero lo que es un frame para 
+ *              mostrar a la usuario una pantalla de logeo, en dónde depende del
+ *              del usuario, si entra como administrador o jugador.
+ *            
+ */
 package view;
 
 import controller.UsuarioController;

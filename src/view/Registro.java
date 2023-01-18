@@ -1,3 +1,13 @@
+
+/**
+ * Autor: Oscar Fuentes Alvarado
+ * Fecha de creación: 28 de noviembre de 2022
+ * Fecha de actualización: 16 de enero del 2023
+ * Descripción: En esta clase de codifica desde cero lo que es un frame para 
+ *              mostrar un formulario, donde se registran las personas nuevas
+ *              en el juego.
+ *            
+ */
 package view;
 
 import controller.JugadorController;

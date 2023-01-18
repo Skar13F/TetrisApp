@@ -1,3 +1,11 @@
+/**
+ * Autor: Oscar Fuentes Alvarado
+ * Fecha de creación: 28 de noviembre de 2022
+ * Fecha de actualización:16 de enero del 2023
+ * Descripción: clase Rol para gestionar las transacciones a la base de
+ *              datos, específicamente en la tabla rol..
+ */
+
 package service;
 
 import entity.Rol;

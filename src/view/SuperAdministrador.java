@@ -1,5 +1,5 @@
 /**
- * Autor: Nancy Obed Martínez Miguel y Oscar Fuentes
+ * Autor: Nancy Obed Martínez Miguel y Oscar Fuentes Alvarado
  * Fecha de creación: 28 de noviembre de 2022
  * Fecha de actualización: 19 de diciembre de 2022
  * Descripción: En este frame se mostrará la pantalla de interacción como
