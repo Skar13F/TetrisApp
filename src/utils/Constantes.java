@@ -14,10 +14,10 @@ import java.awt.Toolkit;
 public class Constantes {
 
     /**
-     * Tamaño de la pantalla principal
+     * Tamaño de la pantalla principal que contiene al tablerp
      */
-    public static final int ANCHO_DE_VISTA = 550;
-    public static final int ALTO_DE_VISTA = 700;
+    public static final int ANCHO_DE_VISTA = 400;
+    public static final int ALTO_DE_VISTA = 620;
     /**
      * Ubicación del tablero de juego en la ventana principal
      */
@@ -26,8 +26,8 @@ public class Constantes {
     /**
      * Tamaño del tablero de juego
      */
-    public static final int ANCHO_DE_PANTALLA = 250;
-    public static final int ALTO_DE_PANTALLA = 300;
+    public static final int ANCHO_DE_PANTALLA = 300;
+    public static final int ALTO_DE_PANTALLA = 500;
     /*
      * Cantidad de filas y columnas que  tendrá el tablero
      */
@@ -37,8 +37,8 @@ public class Constantes {
     /**
      * Calculamos el alto y ancho de cada cuadrito que conformará una figura
      */
-    public static final int ANCHO_DE_CADA_CUADRITO = ANCHO_DE_PANTALLA / COLUMNAS;
-    public static final int ALTO_DE_CADA_CUADRITO = ALTO_DE_PANTALLA / FILAS;
+    public static final int ANCHO_DE_CADA_CUADRITO = ANCHO_DE_VISTA / COLUMNAS;
+    public static final int ALTO_DE_CADA_CUADRITO = ALTO_DE_VISTA / FILAS;
 
     /**
      * Cálculo de ancho y alto de la vista donde aparecera la figura actual

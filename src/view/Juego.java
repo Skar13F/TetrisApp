@@ -43,24 +43,25 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     public Juego() {
         initComponents();
         // #1: crea una instancia del juego
-    	this.juego = new AdministradorDeJuego();
-
-    	// #2: Define la ventana
+        this.juego = new AdministradorDeJuego();
+        //this.addKeyListener(this);
+        
+        // #2: Define la ventana
         //this.setUndecorated(decorate);
         this.setVisible(true);
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //this.setResizable(true);
 
         //this.pack();
-        
         //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-        this.setSize(Constantes.ANCHO_DE_VISTA,Constantes.ALTO_DE_VISTA);
+        this.setSize(600, 540);
         //this.getContentPane().add(juego);
         this.add(juego);
         this.juego.setVisible(true);
-        this.juego.setBounds(150, 80, Constantes.ANCHO_DE_PANTALLA, Constantes.ALTO_DE_PANTALLA);
+        this.juego.setBounds(150, 0, Constantes.ANCHO_DE_PANTALLA, Constantes.ALTO_DE_PANTALLA);
         // #3: agraga escuchas 
         this.addKeyListener(this);
+        this.setFocusable(true);
         
         new Thread(this).start();
 
@@ -106,21 +107,25 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_A) {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode()
+                == KeyEvent.VK_A) {
             typeLeft = true;
         }
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == KeyEvent.VK_D) {
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode()
+                == KeyEvent.VK_D) {
             typeRight = true;
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_A) {
+        if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode()
+                == KeyEvent.VK_A) {
             typeLeft = false;
 
         }
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == KeyEvent.VK_D) {
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode()
+                == KeyEvent.VK_D) {
             typeRight = false;
         }
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
@@ -150,6 +155,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         fondoJuego = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(0, 0));
         getContentPane().setLayout(null);
 
         btnArriba.setIcon(new javax.swing.ImageIcon("resourses/images/arriba.png"));

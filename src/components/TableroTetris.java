@@ -306,16 +306,16 @@ public class TableroTetris implements Drawable {
 
     @Override
     public void paintElement(Graphics g) {
-        g.setColor(Color.white);
-        g.fillRect(0, 0, Constantes.SCREEN_WIDTH,
-                Constantes.SCREEN_WIDTH);
+        g.setColor(Color.BLACK);
+        g.fillRect(300, 0, Constantes.SCREEN_WIDTH,
+                Constantes.SCREEN_HEIGHT);
         this.vistaActual.paintElement(g);
         this.vistaSiguiente.paintElement(g);
 
         g.setColor(Color.black);
         g.fill3DRect(this.baseX, this.baseY,
-                Constantes.ANCHO_DE_PANTALLA,
-                Constantes.ALTO_DE_PANTALLA, false);
+                Constantes.ANCHO_DE_VISTA,
+                Constantes.ALTO_DE_VISTA, false);
         for (int i = 0; i < Constantes.COLUMNAS; i++) {
             for (int j = 0; j < Constantes.FILAS; j++) {
 
