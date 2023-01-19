@@ -82,7 +82,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         iSvg1 = new ImageIcon("resourses/images/fondoL.png");
 
         //definición de colores
-        colorPrincipal = new Color(60, 78, 120);
+        colorPrincipal = new Color(255, 255, 255);
         colorGrisOscuro = new Color(80, 80, 80);
 
         bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2,
@@ -90,13 +90,12 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         bTotal = BorderFactory.createMatteBorder(1, 1, 1, 1,
                 Color.WHITE);
 
-        fontMedia = new Font("LuzSans-Book", Font.PLAIN, 15);
+        fontMedia = new Font("LuzSans-Book", Font.BOLD, 15);
 
         panelIzquierdo = new JPanel();
         panelIzquierdo.setSize(550, 450);
         panelIzquierdo.setLocation(0, 0);
         panelIzquierdo.setBackground(Color.BLACK);
-        //panelIzquierdo.setBackground(Color.WHITE);
         panelIzquierdo.setLayout(null);
         this.add(panelIzquierdo);
 
@@ -115,11 +114,13 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         tNombreUsuario.setSize(260, 40);
         tNombreUsuario.setLocation((panelDerecho.getWidth()
                 - tNombreUsuario.getWidth()) / 2, 60);
+        tNombreUsuario.setOpaque(false);
         tNombreUsuario.setHorizontalAlignment(SwingConstants.CENTER);
         tNombreUsuario.setForeground(colorPrincipal);
         tNombreUsuario.setBackground(Color.WHITE);
         tNombreUsuario.setCaretColor(colorGrisOscuro);
         tNombreUsuario.setFont(fontMedia);
+        
         tNombreUsuario.setBorder(bInferiorAzul);
         panelDerecho.add(tNombreUsuario);
 
@@ -128,6 +129,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         jContrasenia.setSize(260, 40);
         jContrasenia.setLocation(tNombreUsuario.getX(), tNombreUsuario.getY()
                 + tNombreUsuario.getHeight() + 10);
+        jContrasenia.setOpaque(false);
         jContrasenia.setHorizontalAlignment(SwingConstants.CENTER);
         jContrasenia.setForeground(colorPrincipal);
         jContrasenia.setBackground(Color.WHITE);
@@ -180,7 +182,8 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         cbTipoUsuario.setLocation((panelDerecho.getWidth()
                 - cbTipoUsuario.getWidth()) / 2, jContrasenia.getY()
                 + jContrasenia.getHeight() + 10);
-        cbTipoUsuario.setBackground(Color.WHITE);
+        
+        cbTipoUsuario.setBackground(Color.BLACK);
         cbTipoUsuario.setForeground(colorPrincipal);
         ((JLabel) cbTipoUsuario.getRenderer()).setHorizontalAlignment(
                 SwingConstants.CENTER);
