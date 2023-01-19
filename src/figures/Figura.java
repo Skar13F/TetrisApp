@@ -4,7 +4,6 @@
  * Fecha de actualización:17 de enero del 2023
  * Descripcion :
  */
-
 package figures;
 
 import java.awt.Color;
@@ -87,6 +86,8 @@ public abstract class Figura implements Drawable {
         this.cuadros = cuadros;
     }
 
+    /*
+    Métodos get y set*/
     public Color getColor() {
         return color;
     }
