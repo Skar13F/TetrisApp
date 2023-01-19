@@ -9,6 +9,7 @@
 package view;
 
 import form.AdministradorDeJuego;
+//import java.awt.Toolkit;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -47,16 +48,16 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         //this.addKeyListener(this);
         
         // #2: Define la ventana
-        //this.setUndecorated(decorate);
+//        this.setUndecorated(decorate);
         this.setVisible(true);
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //this.setResizable(true);
+        this.setResizable(false);
 
-        //this.pack();
+        this.pack();
         //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         this.setSize(600, 540);
-        //this.getContentPane().add(juego);
-        this.add(juego);
+        this.getContentPane().add(juego);
+        //this.add(juego);
         this.juego.setVisible(true);
         this.juego.setBounds(150, 0, Constantes.ANCHO_DE_PANTALLA, Constantes.ALTO_DE_PANTALLA);
         // #3: agraga escuchas 
@@ -64,6 +65,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         this.setFocusable(true);
         
         new Thread(this).start();
+       
 
     }
 
@@ -98,7 +100,9 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
                 this.deltaFps = 0;
             }
+            
         }
+        
     }
 
     @Override
@@ -162,22 +166,22 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         btnArriba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnArriba.setBorderPainted(false);
         getContentPane().add(btnArriba);
-        btnArriba.setBounds(540, 260, 90, 20);
+        btnArriba.setBounds(480, 260, 90, 20);
 
         btnIzquierda.setIcon(new javax.swing.ImageIcon("resourses/images/izquierda.png"));
         btnIzquierda.setBorderPainted(false);
         getContentPane().add(btnIzquierda);
-        btnIzquierda.setBounds(540, 140, 90, 20);
+        btnIzquierda.setBounds(480, 140, 90, 20);
 
         btnDerecha.setIcon(new javax.swing.ImageIcon("resourses/images/derecha.png"));
         btnDerecha.setBorderPainted(false);
         getContentPane().add(btnDerecha);
-        btnDerecha.setBounds(540, 200, 90, 20);
+        btnDerecha.setBounds(480, 200, 90, 20);
 
         btnAbajo.setIcon(new javax.swing.ImageIcon("resourses/images/abajo.png"));
         btnAbajo.setBorderPainted(false);
         getContentPane().add(btnAbajo);
-        btnAbajo.setBounds(540, 320, 90, 20);
+        btnAbajo.setBounds(480, 320, 90, 20);
 
         cajaPuntos.setEnabled(false);
         cajaPuntos.setFocusable(false);
@@ -209,7 +213,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
             }
         });
         getContentPane().add(btnSalir);
-        btnSalir.setBounds(540, 400, 72, 24);
+        btnSalir.setBounds(480, 400, 72, 24);
 
         fondoJuego.setIcon(new javax.swing.ImageIcon("resourses/images/fondo6.png"));
         getContentPane().add(fondoJuego);

@@ -1,10 +1,3 @@
-/**
- * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
- * Fecha de creación: 10 de enero del 2023
- * Fecha de actualización:17 de enero del 2023
- * Descripcion : En la siguiente clase se declaran todas la variables que van a 
- *               ser constantes en todo el programa
- */
 package utils;
 
 import java.awt.Color;
@@ -14,20 +7,20 @@ import java.awt.Toolkit;
 public class Constantes {
 
     /**
-     * Tamaño de la pantalla principal que contiene al tablerp
+     * Tamaño de la pantalla principal
      */
     public static final int ANCHO_DE_VISTA = 500;
-    public static final int ALTO_DE_VISTA = 620;
+    public static final int ALTO_DE_VISTA = 700;
     /**
      * Ubicación del tablero de juego en la ventana principal
      */
-    public static final int TABLERO_X = 0;
+    public static final int TABLERO_X = 25;
     public static final int TABLERO_Y = 100;
     /**
      * Tamaño del tablero de juego
      */
-    public static final int ANCHO_DE_PANTALLA = 300;
-    public static final int ALTO_DE_PANTALLA = 400;
+    public static final int ANCHO_DE_PANTALLA = 450;
+    public static final int ALTO_DE_PANTALLA = 600;
     /*
      * Cantidad de filas y columnas que  tendrá el tablero
      */

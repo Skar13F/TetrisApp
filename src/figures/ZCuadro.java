@@ -11,6 +11,10 @@ import java.util.LinkedList;
 
 import enummanager.EnumFigure;
 import enummanager.Posicion;
+import static enummanager.Posicion.ABAJO;
+import static enummanager.Posicion.ARRIBA;
+import static enummanager.Posicion.DERECHA;
+import static enummanager.Posicion.IZQUIERDA;
 import utils.Constantes;
 
 public class ZCuadro extends Figura {
