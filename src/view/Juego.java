@@ -193,7 +193,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
         fondoJuego.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         fondoJuego.setForeground(new java.awt.Color(255, 255, 255));
-        fondoJuego.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/TetrisApp/resourses/images/FondoJuego2.jpg")); // NOI18N
+        fondoJuego.setIcon(new javax.swing.ImageIcon("resourses/images/FondoJuego2.jpg"));
         fondoJuego.setText("Reiniciar");
         getContentPane().add(fondoJuego);
         fondoJuego.setBounds(0, 0, 690, 740);
