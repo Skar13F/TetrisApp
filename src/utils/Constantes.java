@@ -25,7 +25,7 @@ public class Constantes {
      * Cantidad de filas y columnas que  tendrá el tablero
      */
     public static final int COLUMNAS = 10;
-    public static final int FILAS = 20;
+    public static final int FILAS = 80;
 
     /**
      * Calculamos el alto y ancho de cada cuadrito que conformará una figura
