@@ -1,12 +1,11 @@
-
 /**
  * Autor: Oscar Fuentes Alvarado
  * Fecha de creación: 28 de noviembre de 2022
  * Fecha de actualización: 16 de enero del 2023
- * Descripción: En esta clase de codifica desde cero lo que es un frame para 
+ * Descripción: En esta clase de codifica desde cero lo que es un frame para
  *              mostrar un formulario, donde se registran las personas nuevas
  *              en el juego.
- *            
+ *
  */
 package view;
 
@@ -94,19 +93,21 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.setBackground(Color.BLACK);
         pPrincipal.setLayout(null);
         this.add(pPrincipal);
-        
+
         /**
          * Creación y edición de los cuadros de texto
          */
         tNombreUsuario = crearCuadroTexto("Nombre",
-                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                tamJtexts, tamanioY, obtenerPosicionX(
+                        tamJtexts),
                 80, Color.BLUE, Color.WHITE,
                 Color.gray, bInferiorAzul);
         pPrincipal.add(tNombreUsuario);
         cajaTexto(tNombreUsuario, "Nombre");
 
         tEdad = crearCuadroTexto("Edad",
-                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                tamJtexts, tamanioY, obtenerPosicionX(
+                        tamJtexts),
                 (tNombreUsuario.getY() + tamanioY + 20), Color.BLUE,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tEdad);
@@ -126,21 +127,24 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.add(cbSexo);
 
         tTelefono = crearCuadroTexto("Teléfono",
-                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                tamJtexts, tamanioY, obtenerPosicionX(
+                        tamJtexts),
                 cbSexo.getY() + tamanioY + 20, Color.BLUE,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tTelefono);
         cajaTexto(tTelefono, "Teléfono");
 
         tCorreo = crearCuadroTexto("Correo",
-                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                tamJtexts, tamanioY, obtenerPosicionX(
+                        tamJtexts),
                 tTelefono.getY() + tamanioY + 20, Color.BLUE,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tCorreo);
         cajaTexto(tCorreo, "Correo");
 
         tNombreJugador = crearCuadroTexto("Nombre Usuario",
-                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                tamJtexts, tamanioY, obtenerPosicionX(
+                        tamJtexts),
                 tCorreo.getY() + tamanioY + 20, Color.BLUE,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tNombreJugador);
@@ -159,11 +163,10 @@ public class Registro extends JFrame implements ActionListener {
         jContrasenia.setBorder(bInferiorAzul);
         pPrincipal.add(jContrasenia);
         cajaContrasenia(jContrasenia, "////////");
-        
+
         /**
          * creación y configuración de los botones
          */
-         
         this.bRegistrar = new JButton("Registrar");
 
         this.bRegistrar.setBounds(
@@ -345,6 +348,9 @@ public class Registro extends JFrame implements ActionListener {
         }
         );
 
+        /**
+         * Carga de imagen al fondo
+         */
         iDimAux = new ImageIcon(iFondo.getImage().getScaledInstance(
                 pPrincipal.getWidth(), pPrincipal.getHeight(),
                 Image.SCALE_AREA_AVERAGING));
@@ -357,7 +363,9 @@ public class Registro extends JFrame implements ActionListener {
 
         pPrincipal.add(lFondo);
 
-        //configurar el jframe
+        /**
+         * Configuración del jframe
+         */
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         this.setSize(
@@ -389,8 +397,8 @@ public class Registro extends JFrame implements ActionListener {
     }
 
     /**
-     * Método para crear un jtext con características que se especifiquen, 
-     * estas se reciben como parámetros y al final la retorna
+     * Método para crear un jtext con características que se especifiquen, estas
+     * se reciben como parámetros y al final la retorna
      */
     public JTextField crearCuadroTexto(String nombre, int tX,
             int tY, int pX, int pY, Color TextC, Color fondoC, Color cursorC,
@@ -408,21 +416,21 @@ public class Registro extends JFrame implements ActionListener {
     }
 
     /**
-     * Este método ayuda a generar números aleatorios que se ocupan
-     * para las posiciones en x de un componente de acuerdo al tamaño del mismo
-     * y al tamaño del panel al que se agragará
+     * Este método ayuda a generar números aleatorios que se ocupan para las
+     * posiciones en x de un componente de acuerdo al tamaño del mismo y al
+     * tamaño del panel al que se agragará
      */
     public int obtenerPosicionX(int tamanio) {
         return (pPrincipal.getWidth() - tamanio) / 2;
     }
 
     /**
-     * Método para hacer validaciones en los cuadros de texto, cuando el
-     * cursor esté en el cuadro de texto, este se habilitará para 
-     * escritura ocultando su previo contenido solo si estaba predefinido
-     * si ya ha sido alterado permanecerá la modificación, de la misma manera
-     * al perder el foco se enviará un texto predefinido si no hubo modificación
-     * en el, de lo contrario permanecerá
+     * Método para hacer validaciones en los cuadros de texto, cuando el cursor
+     * esté en el cuadro de texto, este se habilitará para escritura ocultando
+     * su previo contenido solo si estaba predefinido si ya ha sido alterado
+     * permanecerá la modificación, de la misma manera al perder el foco se
+     * enviará un texto predefinido si no hubo modificación en el, de lo
+     * contrario permanecerá
      */
     public void cajaTexto(JTextField jTexto, String contenido) {
         jTexto.addFocusListener(new FocusAdapter() {
@@ -445,9 +453,9 @@ public class Registro extends JFrame implements ActionListener {
     }
 
     /**
-     * Método para enviar mostrar u ocultar un texto predeterminado en el 
-     * cuadro para la contraseña, si el usuario ingresa datos estos permanecerán
-     * de lo contrrario se volverá a un estado predeterminado
+     * Método para enviar mostrar u ocultar un texto predeterminado en el cuadro
+     * para la contraseña, si el usuario ingresa datos estos permanecerán de lo
+     * contrrario se volverá a un estado predeterminado
      */
     public void cajaContrasenia(JPasswordField jContrasenia, String contenido) {
         jContrasenia.addFocusListener(new FocusAdapter() {
