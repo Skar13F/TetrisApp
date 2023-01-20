@@ -1,3 +1,11 @@
+/**
+ * Autor: Oscar Fuentes Alvarado
+ * Fecha de creación: 04 de enero de 2023
+ * Fecha de actualización: 20 de enero del 2023
+ * Descripcion : esta clase contendrá las constantes para usar en el juego,
+ * ya sea tamaño de figuras, cantidad de filas y columnas de la matriz,
+ * así como colores por default de las figuras que apareceran en las vistas.
+ */
 package utils;
 
 import java.awt.Color;
@@ -30,28 +38,41 @@ public class Constantes {
     /**
      * Calculamos el alto y ancho de cada cuadrito que conformará una figura
      */
-    public static final int ANCHO_DE_CADA_CUADRITO = ANCHO_DE_PANTALLA / COLUMNAS;
+    public static final int ANCHO_DE_CADA_CUADRITO = ANCHO_DE_PANTALLA
+            / COLUMNAS;
     public static final int ALTO_DE_CADA_CUADRITO = ALTO_DE_PANTALLA / FILAS;
 
     /**
-     * Cálculo de ancho y alto de la vista donde aparecera la figura actual
-     * y la siguiente en mostrarse
+     * Cálculo de ancho y alto de la vista donde aparecera la figura actual y la
+     * siguiente en mostrarse
      */
-    public static final int ANCHO_VISTA_FIGURA = (int) (Constantes.ANCHO_DE_PANTALLA * 0.3);
-    public static final int ALTO_VISTA_FIGURA = (int) (Constantes.ANCHO_DE_PANTALLA * 0.1);
-    
-    public static final int ANCHO_DE_CUADRO_DE_VISTA = (int) (ANCHO_VISTA_FIGURA * 0.2);
-    public static final int ALTO_DE_CUADRO_DE_VISTA = (int) (ALTO_VISTA_FIGURA * 0.5);
+    public static final int ANCHO_VISTA_FIGURA
+            = (int) (Constantes.ANCHO_DE_PANTALLA * 0.3);
+    public static final int ALTO_VISTA_FIGURA
+            = (int) (Constantes.ANCHO_DE_PANTALLA * 0.1);
 
-    public static final int SCREEN_WIDTH = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
-    public static final int SCREEN_HEIGHT = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+    public static final int ANCHO_DE_CUADRO_DE_VISTA
+            = (int) (ANCHO_VISTA_FIGURA * 0.2);
+    public static final int ALTO_DE_CUADRO_DE_VISTA
+            = (int) (ALTO_VISTA_FIGURA * 0.5);
 
-    public static final int TAMANIO_DE_FUENTE = (int) (Constantes.ALTO_VISTA_FIGURA * 0.5);
-    public static Font FUENTE = new Font("TimesRoman", Font.PLAIN, TAMANIO_DE_FUENTE);
+    /**
+     * Obtenemos la medida de la pantalla(o monitor) en la que se mostrará el
+     * juego, para después ubicar la pantalla de juego en el centro de esta
+     */
+    public static final int SCREEN_WIDTH
+            = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+    public static final int SCREEN_HEIGHT
+            = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+
+    public static final int TAMANIO_DE_FUENTE
+            = (int) (Constantes.ALTO_VISTA_FIGURA * 0.5);
+    public static Font FUENTE = new Font("TimesRoman", Font.PLAIN,
+            TAMANIO_DE_FUENTE);
 
     /**
      * Definimos el color que tendrá cada cuadro dependiendo de la figura que
-     * que formará, ejemplo para la figura de la T los cuadros que la 
+     * que formará, ejemplo para la figura de la T los cuadros que la
      * conformarán será de color magenta
      */
     public static Color I_CUADRO = Color.CYAN;
