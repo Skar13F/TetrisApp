@@ -46,7 +46,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         // #1: crea una instancia del juego
         this.juego = new AdministradorDeJuego();
         //this.addKeyListener(this);
-        
+
         // #2: Define la ventana
 //        this.setUndecorated(decorate);
         this.setVisible(true);
@@ -56,7 +56,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         this.pack();
         //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         //this.setSize(685, 740);
-        this.setBounds(400, 0, 685, 740);
+        this.setBounds((Constantes.SCREEN_WIDTH - 685) / 2, (Constantes.SCREEN_HEIGHT - 700) / 2, 685, 740);
         this.getContentPane().add(juego);
         //this.add(juego);
         this.juego.setVisible(true);
@@ -65,9 +65,8 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         // #3: agraga escuchas 
         this.addKeyListener(this);
         this.setFocusable(true);
-        
+
         new Thread(this).start();
-       
 
     }
 
@@ -102,9 +101,9 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
                 this.deltaFps = 0;
             }
-            
+
         }
-        
+
     }
 
     @Override
