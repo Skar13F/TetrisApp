@@ -2,7 +2,7 @@
  * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
  * Fecha de creación: 10 de enero del 2023
  * Fecha de actualización:17 de enero del 2023
- * Descripcion :
+ * Descripcion : la clase que se le da propiedades a un cauadrado que se utiliza
  */
 package figures;
 

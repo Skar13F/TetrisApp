@@ -2,7 +2,7 @@
  * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
  * Fecha de creación: 10 de enero del 2023
  * Fecha de actualización:17 de enero del 2023
- * Descripcion :
+ * Descripcion : Se implementa una interfaz para manejar las figuras
  */
 package figures;
 
