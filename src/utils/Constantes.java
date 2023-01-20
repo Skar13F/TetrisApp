@@ -9,8 +9,8 @@ public class Constantes {
     /**
      * Tamaño de la pantalla principal
      */
-    public static final int ANCHO_DE_VISTA = 450;
-    public static final int ALTO_DE_VISTA = 630;
+    public static final int ANCHO_DE_VISTA = 420;
+    public static final int ALTO_DE_VISTA = 660;
     /**
      * Ubicación del tablero de juego en la ventana principal
      */

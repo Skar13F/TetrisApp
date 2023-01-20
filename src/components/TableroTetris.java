@@ -35,11 +35,10 @@ public class TableroTetris implements Drawable {
     private boolean isRotating = false;
     private boolean stop = false;
     private int puntos = 0;
-
+    
     public TableroTetris() {
         this.baseX = Constantes.TABLERO_X;
         this.baseY = Constantes.TABLERO_Y;
-
         /**
          * Se crea la ubicación donde aparecerá la figuara en juego actual, y
          * la siguiente figura en salir al atablero
@@ -51,6 +50,8 @@ public class TableroTetris implements Drawable {
                 (baseY - Constantes.ALTO_VISTA_FIGURA) - 20);
         
         this.addNewFigure();
+        
+        
     }
 
     /**
