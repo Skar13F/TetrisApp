@@ -9,6 +9,13 @@ package figures;
 import java.util.Random;
 
 import enummanager.EnumFigure;
+import static enummanager.EnumFigure.I_SQUARE;
+import static enummanager.EnumFigure.J_SQUARE;
+import static enummanager.EnumFigure.L_SQUARE;
+import static enummanager.EnumFigure.O_CUADRO;
+import static enummanager.EnumFigure.S_SQUARE;
+import static enummanager.EnumFigure.T_SQUARE;
+import static enummanager.EnumFigure.Z_SQUARE;
 import utils.Constantes;
 
 public class GeneradorDeCuadrados {

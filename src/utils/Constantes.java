@@ -1,10 +1,3 @@
-/**
- * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
- * Fecha de creación: 10 de enero del 2023
- * Fecha de actualización:17 de enero del 2023
- * Descripcion : En la siguiente clase se declaran todas la variables que van a 
- *               ser constantes en todo el programa
- */
 package utils;
 
 import java.awt.Color;
@@ -16,8 +9,8 @@ public class Constantes {
     /**
      * Tamaño de la pantalla principal
      */
-    public static final int ANCHO_DE_VISTA = 550;
-    public static final int ALTO_DE_VISTA = 700;
+    public static final int ANCHO_DE_VISTA = 420;
+    public static final int ALTO_DE_VISTA = 660;
     /**
      * Ubicación del tablero de juego en la ventana principal
      */
@@ -26,13 +19,13 @@ public class Constantes {
     /**
      * Tamaño del tablero de juego
      */
-    public static final int ANCHO_DE_PANTALLA = 450;
-    public static final int ALTO_DE_PANTALLA = 600;
+    public static final int ANCHO_DE_PANTALLA = 370;
+    public static final int ALTO_DE_PANTALLA = 540;
     /*
      * Cantidad de filas y columnas que  tendrá el tablero
      */
     public static final int COLUMNAS = 10;
-    public static final int FILAS = 20;
+    public static final int FILAS = 18;
 
     /**
      * Calculamos el alto y ancho de cada cuadrito que conformará una figura

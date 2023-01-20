@@ -44,7 +44,9 @@ public class VerFigura implements Drawable {
         if (this.figura != null && !this.figura.getCuadros().isEmpty()) {
             for (Cuadro square : this.figura.getCuadros()) {
                 g.setColor(square.getColor());
-                g.fill3DRect(square.getX(), square.getY(), Constantes.ANCHO_DE_CUADRO_DE_VISTA, Constantes.ALTO_DE_CUADRO_DE_VISTA, true);
+                g.fill3DRect(square.getX(), square.getY(), 
+                        Constantes.ANCHO_DE_CUADRO_DE_VISTA, 
+                        Constantes.ALTO_DE_CUADRO_DE_VISTA, true);
             }
         }
     }
