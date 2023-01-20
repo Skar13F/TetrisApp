@@ -157,13 +157,13 @@
     </Component>
     <Component class="javax.swing.JLabel" name="fondoJuego">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/oscar/NetBeansProjects/TetrisApp/resourses/images/fondoJuego.jpg"/>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="new javax.swing.ImageIcon(&quot;&quot;&#xa;+ &quot;resourses/images/fondoJuego.jpg&quot;)" type="code"/>
         </Property>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="0" width="700" height="640"/>
+          <AbsoluteConstraints x="0" y="0" width="640" height="640"/>
         </Constraint>
       </Constraints>
     </Component>
