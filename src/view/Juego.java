@@ -55,7 +55,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
         this.pack();
         //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-        this.setSize(600, 540);
+        this.setSize(800, 800);
         this.getContentPane().add(juego);
         //this.add(juego);
         this.juego.setVisible(true);
@@ -215,12 +215,11 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         getContentPane().add(btnSalir);
         btnSalir.setBounds(480, 400, 72, 24);
 
-        fondoJuego.setIcon(new javax.swing.ImageIcon("resourses/images/fondo6.png"));
+        fondoJuego.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/TetrisApp/resourses/images/fondoJuego.jpg")); // NOI18N
         getContentPane().add(fondoJuego);
-        fondoJuego.setBounds(0, 0, 640, 510);
+        fondoJuego.setBounds(0, 0, 700, 640);
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
