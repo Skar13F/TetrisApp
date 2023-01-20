@@ -1,7 +1,7 @@
 /**
  * Autor: Nancy Obed Martínez Miguel
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 20 de diciembre de 2022
+ * Fecha de actualización:  20 de enero de 2023
  * Descripción: En este frame muestra la pantalla de inicio para un
  *              usuario jugador, donde solo se muestran dos botones,
  *              uno de jugar y otro de cerrar.
@@ -10,6 +10,9 @@ package view;
 
 public class PantallaJuego extends javax.swing.JFrame {
 
+    /**
+     * Constructor para inicializar los componentes del frame
+     */
     public PantallaJuego() {
         initComponents();
     }
@@ -35,6 +38,11 @@ public class PantallaJuego extends javax.swing.JFrame {
         btnSalir.setPressedIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
         btnSalir.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
         btnSalir.setSelectedIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
+        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSalirMouseClicked(evt);
+            }
+        });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 350, 140));
 
         btnJugar.setIcon(new javax.swing.ImageIcon("resourses/images/JUGAR.png"));
@@ -79,6 +87,16 @@ public class PantallaJuego extends javax.swing.JFrame {
         ocultar();
 
     }//GEN-LAST:event_btnJugarMouseClicked
+
+    private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
+        PlantillaLogueo logueo = new PlantillaLogueo();
+                logueo.getClass();
+        ocultar();
+    }//GEN-LAST:event_btnSalirMouseClicked
+    
+    /**
+     * Método para ocultar este frame
+     */
     public void ocultar() {
         this.setVisible(false);
 
