@@ -1,11 +1,11 @@
 /**
  * Autor: Oscar Fuentes Alvarado
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 16 de enero del 2023
- * Descripción: En esta clase de codifica desde cero lo que es un frame para 
+ * Fecha de actualización: 20 de enero del 2023
+ * Descripción: En esta clase de codifica desde cero lo que es un frame para
  *              mostrar a la usuario una pantalla de logeo, en dónde depende del
  *              del usuario, si entra como administrador o jugador.
- *            
+ *
  */
 package view;
 
@@ -41,6 +41,9 @@ import service.RolServiceImpl;
 
 public class PlantillaLogueo extends JFrame implements ActionListener {
 
+    /**
+     * Declaración de las variables a utilizar en el frame
+     */
     private JPanel panelDerecho;
     private JPanel panelIzquierdo;
     private JButton bCerrar;
@@ -66,22 +69,33 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
 
     private UsuarioController usuarioController;
 
+    /**
+     * Inicialización de las variables
+     */
     public PlantillaLogueo() {
         usuarioController = new UsuarioController();
         usuarioController.init();
 
-        //cursores
+        /**
+         * Cursor sobre el botón cerrar
+         */
         this.cMano = new Cursor(Cursor.HAND_CURSOR);
 
-        //Cargar fuente
+        /**
+         * Cargamos la fuente
+         */
         generarFuente();
 
-        //Agregar imágenes
+        /**
+         * Cargamos las imagenes
+         */
         iCerrar = new ImageIcon("resourses/images/cerrar2.png");
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
         iSvg1 = new ImageIcon("resourses/images/fondoL.png");
 
-        //definición de colores
+        /**
+         * Definición de los colores
+         */
         colorPrincipal = new Color(255, 255, 255);
         colorGrisOscuro = new Color(80, 80, 80);
 
@@ -92,6 +106,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
 
         fontMedia = new Font("LuzSans-Book", Font.BOLD, 15);
 
+        /**
+         * Estilizamos los páneles
+         */
         panelIzquierdo = new JPanel();
         panelIzquierdo.setSize(550, 450);
         panelIzquierdo.setLocation(0, 0);
@@ -109,7 +126,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         panelDerecho.setLayout(null);
         panelIzquierdo.add(panelDerecho);
 
-        //Comoponentes del panel derecho
+        /**
+         * Componentes del panel derecho
+         */
         tNombreUsuario = new JTextField("Nombre Usuario");
         tNombreUsuario.setSize(260, 40);
         tNombreUsuario.setLocation((panelDerecho.getWidth()
@@ -120,10 +139,13 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         tNombreUsuario.setBackground(Color.WHITE);
         tNombreUsuario.setCaretColor(colorGrisOscuro);
         tNombreUsuario.setFont(fontMedia);
-        
+
         tNombreUsuario.setBorder(bInferiorAzul);
         panelDerecho.add(tNombreUsuario);
 
+        /**
+         * Estilo al cuadro para la contraseña
+         */
         jContrasenia = new JPasswordField();
         jContrasenia.setText("////////");
         jContrasenia.setSize(260, 40);
@@ -176,20 +198,25 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
 
         });
 
+        /**
+         * Añadimos formato al jcombobox para mostrar los roles de usuario
+         */
         cbTipoUsuario = new JComboBox();
         aniadirItem(cbTipoUsuario);
         cbTipoUsuario.setSize(220, 30);
         cbTipoUsuario.setLocation((panelDerecho.getWidth()
                 - cbTipoUsuario.getWidth()) / 2, jContrasenia.getY()
                 + jContrasenia.getHeight() + 10);
-        
+
         cbTipoUsuario.setBackground(Color.BLACK);
         cbTipoUsuario.setForeground(colorPrincipal);
         ((JLabel) cbTipoUsuario.getRenderer()).setHorizontalAlignment(
                 SwingConstants.CENTER);
         panelDerecho.add(cbTipoUsuario);
 
-        //Botones
+        /**
+         * Estilizamos los botones
+         */
         this.bCerrar = new JButton("X");
         this.bCerrar.setBounds(350, 10, 45, 30);
         this.bCerrar.setBackground(Color.BLUE);
@@ -220,7 +247,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         this.bIngresar.setContentAreaFilled(false);
 
         /**
-         * eventos sobre el botón ingresar, si el mouse entra o sale del área
+         * Eventos sobre el botón ingresar, si el mouse entra o sale del área
          * este cambiará su fondo
          */
         bIngresar.addMouseListener(new MouseAdapter() {
@@ -237,10 +264,10 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
             }
 
             /**
-             * Al hacer click en el botón se hará una búsqueda en la BD
-             * para comparar las credenciales que el usuario ingresó, si estas
-             * coninciden se habilitará una nueva ventana dependiendo del 
-             * tipo de usuario que este eligió, ya sea usuario(jugador) o 
+             * Al hacer click en el botón se hará una búsqueda en la BD para
+             * comparar las credenciales que el usuario ingresó, si estas
+             * coninciden se habilitará una nueva ventana dependiendo del tipo
+             * de usuario que este eligió, ya sea usuario(jugador) o
              * usuario(administrador)
              */
             @Override
@@ -252,7 +279,8 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
                 userAux.setPassword(String.valueOf(
                         jContrasenia.getPassword()));
                 userAux.setId_jugador(cbTipoUsuario.getSelectedIndex() + 1);
-                Usuario user = usuarioController.buscarRegistoNC(userAux);
+                Usuario user = usuarioController.buscarRegistoNC(
+                        userAux);
 
                 if (user != null) {
                     cerrarFrame();
@@ -308,7 +336,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         }
         );
 
-        // colocar el fondo
+        /**
+         * Colocamos el fondo del frame
+         */
         iDimAux = new ImageIcon(iSvg1.getImage().getScaledInstance(
                 panelDerecho.getWidth(), panelDerecho.getHeight(),
                 Image.SCALE_AREA_AVERAGING));
@@ -357,7 +387,6 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         return this.bCerrar;
     }
 
-       
     /**
      * Método que retorna una acción sobre el botón registrar
      */
@@ -365,7 +394,6 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         return this.bRegistrar;
     }
 
-    
     /**
      * Método para ocultar el frame
      */
@@ -391,7 +419,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
      * Método para agrgar los items al jcombobox de roles
      */
     public void aniadirItem(JComboBox jcRol) {
-       RolServiceImpl impl = new RolServiceImpl();
+        RolServiceImpl impl = new RolServiceImpl();
         List<Rol> listaRol = impl.obtenerRegistro();
         for (int i = 0; i < listaRol.size(); i++) {
             jcRol.addItem(listaRol.get(i).getRol());
