@@ -1,3 +1,10 @@
+/**
+ * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
+ * Fecha de creación: 04 de enero del 2023
+ * Fecha de actualización:20 de enero del 2023
+ * Descripcion : Esta ventana maneja clics, eventos del mouse, 
+ *               tiempos y otras configuraciones de ventanas
+ */
 package form;
 
 import java.awt.Toolkit;
