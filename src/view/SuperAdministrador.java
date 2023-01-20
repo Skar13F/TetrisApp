@@ -1,7 +1,7 @@
 /**
  * Autor: Nancy Obed Martínez Miguel y Oscar Fuentes Alvarado
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 19 de diciembre de 2022
+ * Fecha de actualización: 20 de enero de 2023
  * Descripción: En este frame se mostrará la pantalla de interacción como
  *              usuario administrador,dónde muestra una tabla con los datos de
  *              los diferentes usuarios, al igual que se pueden  insertar
@@ -9,7 +9,6 @@
  */
 package view;
 
-//import com.jtattoo.plaf.aero.AeroLookAndFeel;
 import controller.JugadorController;
 import controller.RolController;
 import controller.UsuarioController;
@@ -29,6 +28,9 @@ import service.RolServiceImpl;
 
 public class SuperAdministrador extends javax.swing.JFrame {
 
+    /**
+     * Declaración de las variables
+     */
     private DefaultTableModel modelo;
     private int idUsuario;
     private UsuarioController userController;
@@ -42,6 +44,9 @@ public class SuperAdministrador extends javax.swing.JFrame {
     private ImageIcon iFondo2;
     private ImageIcon iAux;
 
+    /**
+     * Inicializamos los componentes
+     */
     public SuperAdministrador() {
         initComponents();
 
@@ -55,6 +60,9 @@ public class SuperAdministrador extends javax.swing.JFrame {
         rolController.init();
         userController.mostrarRegistros(modelo);
 
+        /**
+         * Carga de imagenes y lo añadimos al fondo
+         */
         iFondo1 = new ImageIcon("resourses/images/fondoC1.png");
         iFondo2 = new ImageIcon("resourses/images/fondoC3.png");
 
@@ -326,6 +334,9 @@ public class SuperAdministrador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    /**
+     * Método para registrar un usuario
+     */
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
         Usuario usuario = new Usuario();
 
@@ -345,6 +356,9 @@ public class SuperAdministrador extends javax.swing.JFrame {
         userController.mostrarRegistros(modelo);
     }//GEN-LAST:event_btnGuardarMouseClicked
 
+    /**
+     * Carga de información de los usuarios a la tabla
+     */
     private void tablaUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaUsuarioMouseClicked
         idUsuario = Integer.parseInt(tablaUsuario.getValueAt(
                 tablaUsuario.getSelectedRow(), 0).toString());
@@ -354,11 +368,17 @@ public class SuperAdministrador extends javax.swing.JFrame {
                 tablaUsuario.getSelectedRow(), 2).toString());
     }//GEN-LAST:event_tablaUsuarioMouseClicked
 
+    /**
+     * Botón para eliminar un usuario
+     */
     private void btnEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEliminarMouseClicked
         userController.eliminarRegistro(idUsuario);
         userController.mostrarRegistros(modelo);
     }//GEN-LAST:event_btnEliminarMouseClicked
 
+    /**
+     * Botón para actualizar la información de un registro
+     */
     private void btnActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarMouseClicked
         String telefono = cbTelefono.getSelectedItem().toString();
         String rolA = cbRol.getSelectedItem().toString();
@@ -378,12 +398,18 @@ public class SuperAdministrador extends javax.swing.JFrame {
         userController.mostrarRegistros(modelo);
     }//GEN-LAST:event_btnActualizarMouseClicked
 
+    /**
+     * Botón para salir de la interfaz
+     */
     private void bSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bSalirMouseClicked
         this.setVisible(false);
         PlantillaLogueo logueo = new PlantillaLogueo();
         logueo.setVisible(true);
     }//GEN-LAST:event_bSalirMouseClicked
 
+    /**
+     * Método para añadir contenido al combobox rol
+     */
     public void addItemRol(JComboBox jcB) {
         RolServiceImpl impl = new RolServiceImpl();
         List<Rol> listaRol = impl.obtenerRegistro();
@@ -392,6 +418,9 @@ public class SuperAdministrador extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Método para añadir contenido al combobox Jugador
+     */
     public void addItemJugador(JComboBox jcB) {
         JugadorServiceImpl impl = new JugadorServiceImpl();
         List<Jugador> listaJugador = impl.obtenerRegistro();
@@ -399,19 +428,19 @@ public class SuperAdministrador extends javax.swing.JFrame {
             jcB.addItem(rol.getTelefono());
         }
     }
-
-    public static void main(String args[]) {
-
-//        try {
-//            UIManager.setLookAndFeel(new AeroLookAndFeel());
-//        } catch (UnsupportedLookAndFeelException e) {
-//        }
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SuperAdministrador().setVisible(true);
-            }
-        });
-    }
+//
+//    public static void main(String args[]) {
+//
+////        try {
+////            UIManager.setLookAndFeel(new AeroLookAndFeel());
+////        } catch (UnsupportedLookAndFeelException e) {
+////        }
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new SuperAdministrador().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bConfiguracion;
