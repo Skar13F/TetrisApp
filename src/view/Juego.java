@@ -1,7 +1,7 @@
 /**
- * Autor: Nancy Obed Martínez Miguel
+ * Autor: Nancy Obed Martínez y Oscar Fuentes Alvarado
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 20 de diciembre de 2022
+ * Fecha de actualización:  20 de enero de 2023
  * Descripción: En este frame se cargará el juego funcional,
  *              con opciones básicas de interacción con el
  *              usuario mediante botones.
@@ -17,22 +17,26 @@ import javax.swing.JFrame;
 import utils.Constantes;
 
 public class Juego extends JFrame implements Runnable, KeyListener {
-
-    private static final long serialVersionUID = 1L;
+    /**
+     * Creamos una instancia de la clase administrador donde se cargará el juego
+     */
     private AdministradorDeJuego juego;
 
     /**
      * Tiempo de respuesta visual, intervalos en los que la imagen irá
-     * caombiando de posición
+     * cambiando de posición
      */
     private final double FramesPorSegundo = 60D;
     private final double ActualizacionesPorSegundo = 60D;
 
-    // nanoseconds
+    /**
+     * El tiempo que se manejará es de nanosegundos, 
+     */
     private final double tiempoFps = 1000000000 / FramesPorSegundo;
     private final double tiempoAps = 1000000000 / ActualizacionesPorSegundo;
 
-    private double deltaFps = 0, deltaUps = 0;
+    private double deltaFps = 0;
+    private double deltaUps = 0;
 
     private long tiempoInicial = System.nanoTime();
 
@@ -75,14 +79,16 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     public void run() {
         while (true) {
 
-            long currentTime = System.nanoTime();
+            long tiempoActual = System.nanoTime();
 
-            this.deltaFps += (currentTime - this.tiempoInicial) / this.tiempoFps;
-            this.deltaUps += (currentTime - this.tiempoInicial) / this.tiempoAps;
+            this.deltaFps += (tiempoActual - this.tiempoInicial) / this.tiempoFps;
+            this.deltaUps += (tiempoActual - this.tiempoInicial) / this.tiempoAps;
 
-            this.tiempoInicial = currentTime;
+            this.tiempoInicial = tiempoActual;
 
-            // Updates per second
+            /**
+             * Actualizaciones por segundo
+             */
             if (this.deltaUps >= 1) {
                 if (typeLeft) {
                     juego.moveLeft();
@@ -96,7 +102,9 @@ public class Juego extends JFrame implements Runnable, KeyListener {
                 this.deltaUps = 0;
             }
 
-            // Frames per second
+            /**
+             * Frames por segundo
+             */
             if (this.deltaFps >= 1) {
                 this.juego.repaintGame();
 
@@ -107,10 +115,18 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
     }
 
+    /**
+     * Método abstracto, no se utiliza
+     */
     @Override
     public void keyTyped(KeyEvent e) {
     }
 
+    /**
+     * Método que valida el teclado presionado para mover la figura en juego,
+     * esta puede ser A o flecha izquierda (para mover la figura a la izquierda)
+     * y D o flecha derecha (para mover la figura a la derecha)
+     */
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode()
@@ -123,6 +139,10 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         }
     }
 
+    /**
+     * Método para setear a falso despues de haber presionado una tecla para 
+     * mover la imagen y que no se vaya la figura en una misma dirección
+     */
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode()
