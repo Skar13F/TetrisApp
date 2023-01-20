@@ -2,7 +2,7 @@
  * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
  * Fecha de creación: 10 de enero del 2023
  * Fecha de actualización:17 de enero del 2023
- * Descripcion :
+ * Descripcion :Las clases que manejan a las distintas figuras que se utilizan
  */
 package figures;
 
@@ -32,7 +32,12 @@ public class ZCuadro extends Figura {
 
         this.setUbicacionCuadro(0, 0);
     }
-
+/**
+     * Método para rotar la figura, esta figura como su forma es destinta en
+     * cada rotación se debe contemplar todos los casos que ocurre al rotarla,
+     * para ello, se valida todas las opciones y se cambia la posición en
+     * sentido de las manecillas del reloj
+     */
     @Override
     public LinkedList<Cuadro> rotarElemento(Cuadro[][] board) {
         LinkedList<Cuadro> listaCuadros = new LinkedList<>();
@@ -124,6 +129,11 @@ public class ZCuadro extends Figura {
         this.addCuadro(indexI + 1, indexJ + 1);
         this.addCuadro(indexI + 2, indexJ + 1);
     }
+    /**
+     * Método para generar la nueva posición de una figura respecto a la actual,
+     * los cambios se harán en sentido de las manecillas del reloj, empezando a
+     * validar por arriba y abajo
+     */
 
     @Override
     public void setNextPosicion() {
