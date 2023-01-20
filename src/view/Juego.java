@@ -237,6 +237,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         PantallaJuego pantallajuego = new PantallaJuego();
         pantallajuego.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAbajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAbajoMouseClicked

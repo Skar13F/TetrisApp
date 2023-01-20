@@ -30,14 +30,14 @@ public class PantallaJuego extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(550, 450));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSalir.setIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
+        btnSalir.setIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
         btnSalir.setBorderPainted(false);
         btnSalir.setContentAreaFilled(false);
         btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnSalir.setFocusPainted(false);
-        btnSalir.setPressedIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
-        btnSalir.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
-        btnSalir.setSelectedIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
+        btnSalir.setPressedIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
+        btnSalir.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/cerrar_2.png"));
+        btnSalir.setSelectedIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
         btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalirMouseClicked(evt);
@@ -45,14 +45,14 @@ public class PantallaJuego extends javax.swing.JFrame {
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 350, 140));
 
-        btnJugar.setIcon(new javax.swing.ImageIcon("resourses/images/JUGAR.png"));
+        btnJugar.setIcon(new javax.swing.ImageIcon("resourses/images/JUGAR_1.png"));
         btnJugar.setBorderPainted(false);
         btnJugar.setContentAreaFilled(false);
         btnJugar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnJugar.setFocusPainted(false);
         btnJugar.setRequestFocusEnabled(false);
-        btnJugar.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/JUGAR_1.png"));
-        btnJugar.setSelectedIcon(new javax.swing.ImageIcon("resourses/images/JUGAR.png"));
+        btnJugar.setRolloverIcon(new javax.swing.ImageIcon("resourses/images/JUGAR.png"));
+        btnJugar.setSelectedIcon(new javax.swing.ImageIcon("resourses/images/JUGAR_1.png"));
         btnJugar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnJugarMouseClicked(evt);
