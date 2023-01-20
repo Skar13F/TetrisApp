@@ -9,10 +9,10 @@
 package view;
 
 import form.AdministradorDeJuego;
-//import java.awt.Toolkit;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import utils.Constantes;
 
@@ -20,7 +20,6 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
     private static final long serialVersionUID = 1L;
     private AdministradorDeJuego juego;
-    private boolean decorate = true;
 
     /**
      * Tiempo de respuesta visual, intervalos en los que la imagen irá
@@ -39,23 +38,25 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
     private boolean typeRight = false;
     private boolean typeLeft = false;
-    //private Constantes constantes= new Constantes();
+    
+    private ImageIcon pause;
+    private ImageIcon play;
 
     public Juego() {
         initComponents();
         // #1: crea una instancia del juego
         this.juego = new AdministradorDeJuego();
-        //this.addKeyListener(this);
 
+        play=new ImageIcon("resourses/images/play.png");
+        pause=new ImageIcon("resourses/images/pause.png");
+        
+        
         // #2: Define la ventana
-//        this.setUndecorated(decorate);
         this.setVisible(true);
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
 
         this.pack();
-        //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-        //this.setSize(685, 740);
         this.setBounds((Constantes.SCREEN_WIDTH - 685) / 2, (Constantes.SCREEN_HEIGHT - 700) / 2, 685, 740);
         this.getContentPane().add(juego);
         //this.add(juego);
@@ -159,11 +160,16 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         setSize(new java.awt.Dimension(0, 0));
         getContentPane().setLayout(null);
 
-        btnAbajo.setIcon(new javax.swing.ImageIcon("resourses/images/abajo.png"));
-        btnAbajo.setText("Pausa");
+        btnAbajo.setIcon(new javax.swing.ImageIcon("resourses/images/pause.png"));
         btnAbajo.setBorderPainted(false);
+        btnAbajo.setContentAreaFilled(false);
+        btnAbajo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAbajoMouseClicked(evt);
+            }
+        });
         getContentPane().add(btnAbajo);
-        btnAbajo.setBounds(570, 230, 90, 20);
+        btnAbajo.setBounds(580, 220, 60, 60);
 
         labelNivel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         labelNivel.setForeground(new java.awt.Color(0, 204, 51));
@@ -187,9 +193,16 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         btnSalir.setBounds(580, 300, 72, 24);
 
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        jButton1.setText("Reiniciar");
+        jButton1.setIcon(new javax.swing.ImageIcon("resourses/images/reset.png"));
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         getContentPane().add(jButton1);
-        jButton1.setBounds(20, 290, 90, 24);
+        jButton1.setBounds(30, 280, 60, 60);
 
         fondoJuego.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         fondoJuego.setForeground(new java.awt.Color(255, 255, 255));
@@ -205,6 +218,23 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         PantallaJuego pantallajuego = new PantallaJuego();
         pantallajuego.setVisible(true);
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnAbajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAbajoMouseClicked
+        if(this.btnAbajo.getIcon()==this.play){
+            this.juego.pauseOrResumeGame();
+            this.btnAbajo.setIcon(pause);
+        }else{
+            this.juego.pauseOrResumeGame();
+            this.btnAbajo.setIcon(play);
+        }
+        
+        
+    }//GEN-LAST:event_btnAbajoMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        this.juego.resetGame();
+        this.btnAbajo.setIcon(pause);
+    }//GEN-LAST:event_jButton1MouseClicked
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
