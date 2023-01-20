@@ -107,7 +107,11 @@ public class JCuadro extends Figura {
 
                 cuadroActual = this.getCuadros().get(3);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() + 1, cuadroActual.getIndiceJ(), Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() + 1,
+                                cuadroActual.getIndiceJ(),
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
                 break;
             case ABAJO:
@@ -129,7 +133,11 @@ public class JCuadro extends Figura {
                 );
                 cuadroActual = this.getCuadros().get(2);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() - 2, cuadroActual.getIndiceJ() + 2, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() - 2,
+                                cuadroActual.getIndiceJ() + 2,
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
                 cuadroActual = this.getCuadros().get(3);
                 listaCuadros.add(
@@ -151,7 +159,11 @@ public class JCuadro extends Figura {
                 );
                 cuadroActual = this.getCuadros().get(1);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() - 1, cuadroActual.getIndiceJ(), Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() - 1,
+                                cuadroActual.getIndiceJ(),
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
                 cuadroActual = this.getCuadros().get(2);
                 listaCuadros.add(
