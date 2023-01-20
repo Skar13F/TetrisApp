@@ -15,8 +15,8 @@ import utils.Constantes;
 public class OCuadro extends Figura {
 
     /**
-     * Constructor para una figura regular que se pondrá en juego
-     * se pone la posición en la cual aparecer
+     * Constructor para una figura regular que se pondrá en juego se pone la
+     * posición en la cual aparecer
      */
     public OCuadro() {
         super(Constantes.O_CUADRO, EnumFigure.O_CUADRO);
@@ -25,10 +25,12 @@ public class OCuadro extends Figura {
 
     /**
      * Constructor de cada cuadro de la figura, dentro del tablero
-     * 
+     *
      */
-    public OCuadro(Color color, int baseX, int baseY, int tamanioCuadroX, int tamanioCuadroY) {
-        super(color, baseX, baseY, tamanioCuadroX, tamanioCuadroY, EnumFigure.O_CUADRO);
+    public OCuadro(Color color, int baseX, int baseY, int tamanioCuadroX,
+            int tamanioCuadroY) {
+        super(color, baseX, baseY, tamanioCuadroX, tamanioCuadroY,
+                EnumFigure.O_CUADRO);
         this.setUbicacionCuadro(0, 0);
     }
 
