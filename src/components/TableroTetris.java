@@ -292,41 +292,41 @@ public class TableroTetris implements Drawable {
 
     @Override
     public void paintElement(Graphics g) {
-        g.setColor(Color.white);
-        g.fillRect(0, 0, Constantes.SCREEN_WIDTH, 
-                Constantes.SCREEN_WIDTH);
-        this.vistaActual.paintElement(g);
-        this.vistaSiguiente.paintElement(g);
-
-        g.setColor(Color.black);
-        g.fill3DRect(this.baseX, this.baseY, 
-                Constantes.ANCHO_DE_PANTALLA, 
-                Constantes.ALTO_DE_PANTALLA, false);
-        for (int i = 0; i < Constantes.COLUMNAS; i++) {
-            for (int j = 0; j < Constantes.FILAS; j++) {
-
-                if (this.tablero[i][j] != null) {
-                    Cuadro square = this.tablero[i][j];
-                    g.setColor(square.getColor());
-                    g.fill3DRect(square.getX(), 
-                            square.getY(), 
-                            Constantes.ANCHO_DE_CADA_CUADRITO, 
-                            Constantes.ALTO_DE_CADA_CUADRITO, 
-                            true);
-                }
-            }
-        }
-
-        this.figuraActual.paintElement(g);
-        g.setColor(Color.BLACK);
-
-        g.setFont(Constantes.FUENTE);
-        g.drawString("Puntos: " + this.puntos,
-                this.vistaSiguiente.getPosicionX()
-                + Constantes.ANCHO_VISTA_FIGURA,
-                this.vistaSiguiente.getPosicionY()
-                + Constantes.TAMANIO_DE_FUENTE);
-        g.setColor(Color.white);
+//        g.setColor(Color.white);
+//        g.fillRect(0, 0, Constantes.SCREEN_WIDTH, 
+//                Constantes.SCREEN_WIDTH);
+//        this.vistaActual.paintElement(g);
+//        this.vistaSiguiente.paintElement(g);
+//
+//        g.setColor(Color.black);
+//        g.fill3DRect(this.baseX, this.baseY, 
+//                Constantes.ANCHO_DE_PANTALLA, 
+//                Constantes.ALTO_DE_PANTALLA, false);
+//        for (int i = 0; i < Constantes.COLUMNAS; i++) {
+//            for (int j = 0; j < Constantes.FILAS; j++) {
+//
+//                if (this.tablero[i][j] != null) {
+//                    Cuadro square = this.tablero[i][j];
+//                    g.setColor(square.getColor());
+//                    g.fill3DRect(square.getX(), 
+//                            square.getY(), 
+//                            Constantes.ANCHO_DE_CADA_CUADRITO, 
+//                            Constantes.ALTO_DE_CADA_CUADRITO, 
+//                            true);
+//                }
+//            }
+//        }
+//
+//        this.figuraActual.paintElement(g);
+//        g.setColor(Color.BLACK);
+//
+//        g.setFont(Constantes.FUENTE);
+//        g.drawString("Puntos: " + this.puntos,
+//                this.vistaSiguiente.getPosicionX()
+//                + Constantes.ANCHO_VISTA_FIGURA,
+//                this.vistaSiguiente.getPosicionY()
+//                + Constantes.TAMANIO_DE_FUENTE);
+//        g.setColor(Color.white);
     }
 
     public void pauseOrResume() {
