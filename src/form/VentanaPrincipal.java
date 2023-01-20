@@ -49,6 +49,7 @@ public class VentanaPrincipal extends JFrame implements Runnable, KeyListener {
 
         this.pack();
 
+        juego.setSize(400, 500);
         //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         this.setSize(Constantes.ANCHO_DE_VISTA, Constantes.ALTO_DE_VISTA);
         this.getContentPane().add(juego);

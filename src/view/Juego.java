@@ -55,11 +55,12 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
         this.pack();
         //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-        this.setSize(640, 640);
+        this.setSize(740, 740);
         this.getContentPane().add(juego);
         //this.add(juego);
         this.juego.setVisible(true);
-        this.juego.setBounds(100, 0, Constantes.ANCHO_DE_PANTALLA, Constantes.ALTO_DE_PANTALLA);
+        this.juego.setBounds(100, 0, Constantes.ANCHO_DE_PANTALLA,
+                Constantes.ALTO_DE_PANTALLA);
         // #3: agraga escuchas 
         this.addKeyListener(this);
         this.setFocusable(true);
@@ -215,12 +216,11 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         getContentPane().add(btnSalir);
         btnSalir.setBounds(480, 400, 72, 24);
 
-        fondoJuego.setIcon(new javax.swing.ImageIcon(""
-            + "resourses/images/fondoJuego.jpg"));
-    getContentPane().add(fondoJuego);
-    fondoJuego.setBounds(0, 0, 640, 640);
+        fondoJuego.setIcon(new javax.swing.ImageIcon("/home/oscar/NetBeansProjects/TetrisApp/resourses/images/FondoJuego2.jpg")); // NOI18N
+        getContentPane().add(fondoJuego);
+        fondoJuego.setBounds(0, 0, 740, 740);
 
-    pack();
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
