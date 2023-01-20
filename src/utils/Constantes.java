@@ -9,8 +9,8 @@ public class Constantes {
     /**
      * Tamaño de la pantalla principal
      */
-    public static final int ANCHO_DE_VISTA = 400;
-    public static final int ALTO_DE_VISTA = 600;
+    public static final int ANCHO_DE_VISTA = 500;
+    public static final int ALTO_DE_VISTA = 700;
     /**
      * Ubicación del tablero de juego en la ventana principal
      */
@@ -19,13 +19,13 @@ public class Constantes {
     /**
      * Tamaño del tablero de juego
      */
-    public static final int ANCHO_DE_PANTALLA = 500;
-    public static final int ALTO_DE_PANTALLA = 700;
+    public static final int ANCHO_DE_PANTALLA = 400;
+    public static final int ALTO_DE_PANTALLA = 400;
     /*
      * Cantidad de filas y columnas que  tendrá el tablero
      */
     public static final int COLUMNAS = 10;
-    public static final int FILAS = 22;
+    public static final int FILAS = 20;
 
     /**
      * Calculamos el alto y ancho de cada cuadrito que conformará una figura
