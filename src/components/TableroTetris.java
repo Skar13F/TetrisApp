@@ -1,7 +1,7 @@
 /**
  * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
- * Fecha de creación: 25 de noviembre de 2022
- * Fecha de actualización:17 de enero del 2023
+ * Fecha de creación: 04 de enero de 2022
+ * Fecha de actualización: 20 de enero del 2023
  * Descripcion : En esta clase se implementa el código para el tablero del
  *               tetris.
  */
@@ -17,11 +17,13 @@ import enummanager.EnumFigure;
 import figures.Figura;
 import figures.Cuadro;
 import figures.GeneradorDeCuadrados;
+import javax.swing.JOptionPane;
 import segregation.Drawable;
 
 public class TableroTetris implements Drawable {
 
-    private Cuadro[][] tablero = new Cuadro[Constantes.COLUMNAS][Constantes.FILAS];
+    private Cuadro[][] tablero
+            = new Cuadro[Constantes.COLUMNAS][Constantes.FILAS];
     /**
      * Vista actual y vista siguiente
      */
@@ -32,7 +34,7 @@ public class TableroTetris implements Drawable {
      */
     private Figura figuraActual;
     private Figura figuraSiguiente;
-    
+
     private int baseX, baseY;
     /**
      * Velocidad del juego
@@ -42,36 +44,35 @@ public class TableroTetris implements Drawable {
     private boolean isRotating = false;
     private boolean stop = false;
     private int puntos = 0;
-    
+
     public TableroTetris() {
         this.baseX = Constantes.TABLERO_X;
         this.baseY = Constantes.TABLERO_Y;
 
         /**
-         * Se crea la ubicación donde aparecerá la figuara en juego actual, y
-         * la siguiente figura en salir al atablero
-         * la figura siguiente aparecerá a la izquierda del tablero y la 
-         * actual a la derecha de este
+         * Se crea la ubicación donde aparecerá la figuara en juego actual, y la
+         * siguiente figura en salir al atablero la figura siguiente aparecerá a
+         * la izquierda del tablero y la actual a la derecha de este
          */
-        this.vistaSiguiente = new VerFigura(baseX+30, (baseY - Constantes.ALTO_VISTA_FIGURA) - 20);
-        this.vistaActual = new VerFigura(baseX + Constantes.ANCHO_DE_PANTALLA - Constantes.ANCHO_VISTA_FIGURA,
+        this.vistaSiguiente = new VerFigura(baseX + 30, (baseY
+                - Constantes.ALTO_VISTA_FIGURA) - 20);
+        this.vistaActual = new VerFigura(baseX + Constantes.ANCHO_DE_PANTALLA
+                - Constantes.ANCHO_VISTA_FIGURA,
                 (baseY - Constantes.ALTO_VISTA_FIGURA) - 20);
-        
+
         this.addNewFigure();
-        
-        
     }
 
     /**
-     * Mediante este método agregamos las figuras en las vistas actual y 
+     * Mediante este método agregamos las figuras en las vistas actual y
      * siguiente
      */
     public void addNewFigure() {
         /**
-         * Al iniciar el juego estarán vacías, por ende generaremos figuras 
-         * para ambas vistas, despues, mediante esta validación, cambiamos
-         * la figura siguiente a salir, a la actual y generamos una nueva 
-         * figura para colocar en la vista siguiente
+         * Al iniciar el juego estarán vacías, por ende generaremos figuras para
+         * ambas vistas, despues, mediante esta validación, cambiamos la figura
+         * siguiente a salir, a la actual y generamos una nueva figura para
+         * colocar en la vista siguiente
          */
         if (this.figuraSiguiente != null) {
             this.figuraActual = this.figuraSiguiente;
@@ -81,7 +82,6 @@ public class TableroTetris implements Drawable {
             this.figuraSiguiente = GeneradorDeCuadrados.getRegularFigure();
         }
 
-        
         this.vistaActual.setFigura(GeneradorDeCuadrados.getFiguraVista(
                 figuraActual.getFigureType(),
                 vistaActual.getPosicionX(),
@@ -100,16 +100,26 @@ public class TableroTetris implements Drawable {
         this.validateCurrentLocation();
     }
 
+    /**
+     * Valida la localización actual para ver si continua o se termina el juego,
+     * si las figuras han tocado la parte superior del juego este termina
+     */
     private void validateCurrentLocation() {
         for (Cuadro square : this.figuraActual.getCuadros()) {
-            if (this.tablero[square.getIndiceI()][square.getIndiceJ()] != null) {
-                System.out.println("GAME OVER!!");
+            if (this.tablero[square.getIndiceI()][square.getIndiceJ()]
+                    != null) {
+                JOptionPane.showMessageDialog(null,
+                        "GAME OVER!!");
                 this.isGameOver = true;
                 break;
             }
         }
     }
 
+    /**
+     * Mediante este método si el juego está en línea, la figura siuiente la
+     * pone en el tablero
+     */
     private void moveImageDown() {
         if (this.figuraActual == null || this.isGameOver) {
             return;
@@ -120,7 +130,9 @@ public class TableroTetris implements Drawable {
             if (square.getIndiceJ() >= Constantes.FILAS - 1) {
                 merge = true;
                 break;
-            } else if (this.tablero[square.getIndiceI()][square.getIndiceJ() + 1] != null) {
+            } else if (this.tablero[square.getIndiceI()][square.getIndiceJ()
+                    + 1]
+                    != null) {
                 merge = true;
                 break;
             }
@@ -128,7 +140,8 @@ public class TableroTetris implements Drawable {
 
         if (!merge) {
             for (Cuadro square : this.figuraActual.getCuadros()) {
-                square.setUbicacion(square.getIndiceI(), square.getIndiceJ() + 1, this.baseX, this.baseY);
+                square.setUbicacion(square.getIndiceI(), square.getIndiceJ()
+                        + 1, this.baseX, this.baseY);
             }
         } else {
             for (Cuadro square : this.figuraActual.getCuadros()) {
@@ -139,6 +152,10 @@ public class TableroTetris implements Drawable {
         }
     }
 
+    /**
+     * Busca las lineas que se hayan completado, si esto pasó llama al método
+     * que elimina la fila hace un incremento en los puntos
+     */
     private void searchLines() {
         int countLines = 0;
         for (int j = Constantes.FILAS - 1; j > 0; j--) {
@@ -152,13 +169,15 @@ public class TableroTetris implements Drawable {
             if (countLines == Constantes.COLUMNAS) {
                 this.deleteLine(j);
                 this.puntos += Constantes.COLUMNAS;
-                // Since a line was deleted, then start in the same line
                 j++;
             }
             countLines = 0;
         }
     }
 
+    /**
+     * Método que elimina la fila que se ha completado
+     */
     private void deleteLine(int j) {
         for (int i = 0; i < Constantes.COLUMNAS; i++) {
             this.tablero[i][j] = null;
@@ -169,7 +188,8 @@ public class TableroTetris implements Drawable {
                 if (this.tablero[i][j - 1] != null) {
                     this.tablero[i][j] = this.tablero[i][j - 1];
                     this.tablero[i][j - 1] = null;
-                    this.tablero[i][j].setUbicacion(i, j, this.baseX, this.baseY);
+                    this.tablero[i][j].setUbicacion(i, j, this.baseX,
+                            this.baseY);
                 }
             }
         }
@@ -183,14 +203,15 @@ public class TableroTetris implements Drawable {
         for (Cuadro square : this.figuraActual.getCuadros()) {
             if (square.getIndiceI() + 1 >= Constantes.COLUMNAS) {
                 return;
-            } else if (this.tablero[square.getIndiceI() + 1][square.getIndiceJ()] != null) {
+            } else if (this.tablero[square.getIndiceI()
+                    + 1][square.getIndiceJ()] != null) {
                 return;
             }
         }
 
         for (Cuadro square : this.figuraActual.getCuadros()) {
-            square.setUbicacion(square.getIndiceI() + 1, 
-                    square.getIndiceJ(), 
+            square.setUbicacion(square.getIndiceI() + 1,
+                    square.getIndiceJ(),
                     this.baseX, this.baseY);
         }
     }
@@ -203,13 +224,15 @@ public class TableroTetris implements Drawable {
         for (Cuadro square : this.figuraActual.getCuadros()) {
             if (square.getIndiceI() - 1 < 0) {
                 return;
-            } else if (this.tablero[square.getIndiceI() - 1][square.getIndiceJ()] != null) {
+            } else if (this.tablero[square.getIndiceI()
+                    - 1][square.getIndiceJ()] != null) {
                 return;
             }
         }
 
         for (Cuadro square : this.figuraActual.getCuadros()) {
-            square.setUbicacion(square.getIndiceI() - 1, square.getIndiceJ(), this.baseX, this.baseY);
+            square.setUbicacion(square.getIndiceI() - 1,
+                    square.getIndiceJ(), this.baseX, this.baseY);
         }
     }
 
@@ -224,16 +247,21 @@ public class TableroTetris implements Drawable {
 
     public void rotateFigure() {
 
+        /**
+         * no rota la figura si ya la rotó una vez
+         */
         if (this.figuraActual.getFigureType() == EnumFigure.O_CUADRO) {
-            // Do not rotate in case is already rotating
             return;
         }
 
         this.isRotating = true;
 
-        LinkedList<Cuadro> squares = figuraActual.rotarElemento(this.tablero);
+        LinkedList<Cuadro> squares = figuraActual.rotarElemento(
+                this.tablero);
 
-        // Validate if the squares are outside the area
+        /**
+         * Valida si los cuadros están fuera del área
+         */
         int top = 0, right = 0, left = 0, down = 0, current = 0;
         for (Cuadro square : squares) {
             if (square.getIndiceI() < 0) {
@@ -254,7 +282,10 @@ public class TableroTetris implements Drawable {
             }
         }
 
-        // Increment or decrement depending of the distance outside for every side of the table
+        /**
+         * Incrementa o decrementa dependiendo de la distancia por cada lado de
+         * la tabla
+         */
         for (Cuadro square : squares) {
             if (top > 0) {
                 square.setIndiceJ(square.getIndiceJ() + top);
@@ -271,20 +302,32 @@ public class TableroTetris implements Drawable {
             square.setUbicacion(this.baseX, this.baseY);
         }
 
-        // If any of the squares is located inside a place that is not null, can�t be rotated
+        /**
+         * Si alguno de los cuadros está ubicado dentro de un lugar que no es
+         * null, no se puede rotar
+         */
         for (Cuadro square : squares) {
-            if (this.tablero[square.getIndiceI()][square.getIndiceJ()] != null) {
+            if (this.tablero[square.getIndiceI()][square.getIndiceJ()]
+                    != null) {
                 this.isRotating = false;
                 return;
             }
         }
 
         this.figuraActual.setCuadros(squares);
-        this.figuraActual.setNextPosicion(); // Only enable rotation when everything is ok
+        /**
+         * Solamente está disponible la rotación cuando cada cuadro está bien
+         * ubicado
+         */
+        this.figuraActual.setNextPosicion();
 
         this.isRotating = false;
     }
 
+    /**
+     * Si el juego está en curso y la figura no se ha rotado, la desplaza al
+     * tablero de juego
+     */
     public void tick() {
         if (!isGameOver) {
 
@@ -299,17 +342,21 @@ public class TableroTetris implements Drawable {
         }
     }
 
+    /**
+     * Este método nos permite dibujar la matriz del tablero, además de las
+     * figuras actual y siguiente
+     */
     @Override
     public void paintElement(Graphics g) {
         g.setColor(Color.white);
-        g.fillRect(0, 0, Constantes.SCREEN_WIDTH, 
+        g.fillRect(0, 0, Constantes.SCREEN_WIDTH,
                 Constantes.SCREEN_WIDTH);
         this.vistaActual.paintElement(g);
         this.vistaSiguiente.paintElement(g);
 
         g.setColor(Color.black);
-        g.fill3DRect(this.baseX, this.baseY, 
-                Constantes.ANCHO_DE_PANTALLA, 
+        g.fill3DRect(this.baseX, this.baseY,
+                Constantes.ANCHO_DE_PANTALLA,
                 Constantes.ALTO_DE_PANTALLA, false);
         for (int i = 0; i < Constantes.COLUMNAS; i++) {
             for (int j = 0; j < Constantes.FILAS; j++) {
@@ -317,10 +364,10 @@ public class TableroTetris implements Drawable {
                 if (this.tablero[i][j] != null) {
                     Cuadro square = this.tablero[i][j];
                     g.setColor(square.getColor());
-                    g.fill3DRect(square.getX(), 
-                            square.getY(), 
-                            Constantes.ANCHO_DE_CADA_CUADRITO, 
-                            Constantes.ALTO_DE_CADA_CUADRITO, 
+                    g.fill3DRect(square.getX(),
+                            square.getY(),
+                            Constantes.ANCHO_DE_CADA_CUADRITO,
+                            Constantes.ALTO_DE_CADA_CUADRITO,
                             true);
                 }
             }
@@ -338,18 +385,31 @@ public class TableroTetris implements Drawable {
         g.setColor(Color.white);
     }
 
+    /**
+     * Método que cambia de estado el juego, si está en pausa la pone en curso y
+     * viceversa
+     */
     public void pauseOrResume() {
         this.stop = !this.stop;
     }
 
+    /**
+     * Método para saber si el juego está pausado
+     */
     public boolean isStop() {
         return this.stop;
     }
 
+    /**
+     * Método para saber si el juego ha terminado
+     */
     public boolean isGameOver() {
         return isGameOver;
     }
 
+    /**
+     * Método para poner el estado de juego a finalizado
+     */
     public void setGameOver(boolean isGameOver) {
         this.isGameOver = isGameOver;
     }
