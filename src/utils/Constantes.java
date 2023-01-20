@@ -20,12 +20,12 @@ public class Constantes {
      * Tamaño del tablero de juego
      */
     public static final int ANCHO_DE_PANTALLA = 400;
-    public static final int ALTO_DE_PANTALLA = 400;
+    public static final int ALTO_DE_PANTALLA = 500;
     /*
      * Cantidad de filas y columnas que  tendrá el tablero
      */
     public static final int COLUMNAS = 10;
-    public static final int FILAS = 80;
+    public static final int FILAS = 18;
 
     /**
      * Calculamos el alto y ancho de cada cuadrito que conformará una figura
