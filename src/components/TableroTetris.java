@@ -46,7 +46,7 @@ public class TableroTetris implements Drawable {
          * la figura siguiente aparecerá a la izquierda del tablero y la 
          * actual a la derecha de este
          */
-        this.vistaSiguiente = new VerFigura(baseX, (baseY - Constantes.ALTO_VISTA_FIGURA) - 20);
+        this.vistaSiguiente = new VerFigura(baseX+30, (baseY - Constantes.ALTO_VISTA_FIGURA) - 20);
         this.vistaActual = new VerFigura(baseX + Constantes.ANCHO_DE_PANTALLA - Constantes.ANCHO_VISTA_FIGURA,
                 (baseY - Constantes.ALTO_VISTA_FIGURA) - 20);
         

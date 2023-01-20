@@ -59,7 +59,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         this.getContentPane().add(juego);
         //this.add(juego);
         this.juego.setVisible(true);
-        this.juego.setBounds(100, 0, Constantes.ANCHO_DE_VISTA,
+        this.juego.setBounds(125, 20, Constantes.ANCHO_DE_VISTA,
                 Constantes.ALTO_DE_VISTA);
         // #3: agraga escuchas 
         this.addKeyListener(this);
