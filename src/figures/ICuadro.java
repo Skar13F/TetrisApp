@@ -20,8 +20,8 @@ import utils.Constantes;
 public class ICuadro extends Figura {
 
     /**
-     * Método para definir el color y tipo de figura que se mostrará,
-     * además de la ubicación de aparición en el tablero
+     * Método para definir el color y tipo de figura que se mostrará, además de
+     * la ubicación de aparición en el tablero
      */
     public ICuadro() {
         super(Constantes.I_CUADRO, EnumFigure.I_SQUARE);
@@ -30,11 +30,13 @@ public class ICuadro extends Figura {
     }
 
     /**
-     * Método para construir la figura dentro del tablero, con un tamaño
-     * y ubicación específicos
+     * Método para construir la figura dentro del tablero, con un tamaño y
+     * ubicación específicos
      */
-    public ICuadro(Color color, int baseX, int baseY, int squareSizeX, int squareSizeY) {
-        super(color, baseX, baseY, squareSizeX, squareSizeY, EnumFigure.I_SQUARE);
+    public ICuadro(Color color, int baseX, int baseY, int squareSizeX,
+            int squareSizeY) {
+        super(color, baseX, baseY, squareSizeX, squareSizeY,
+                EnumFigure.I_SQUARE);
 
         this.setUbicacionCuadro(0, 0);
     }
@@ -48,47 +50,71 @@ public class ICuadro extends Figura {
         Cuadro cuadroActual;
 
         /**
-         * Mediante este switch, si la figura está en posición arriba, la 
-         * rotamos a la derecha, y si está en la posición abajo, la rotamos a 
-         * la izquierda
+         * Mediante este switch, si la figura está en posición arriba, la
+         * rotamos a la derecha, y si está en la posición abajo, la rotamos a la
+         * izquierda
          */
         switch (this.getPosicion()) {
             case ARRIBA:
             case DERECHA:
                 cuadroActual = this.getCuadros().get(0);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() + 1, cuadroActual.getIndiceJ() - 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() + 1,
+                                cuadroActual.getIndiceJ() - 1,
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
 
                 listaCuadros.add(this.getCuadros().get(1).clonar());
 
                 cuadroActual = this.getCuadros().get(2).clonar();
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() - 1, cuadroActual.getIndiceJ() + 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() - 1,
+                                cuadroActual.getIndiceJ() + 1,
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
 
                 cuadroActual = this.getCuadros().get(3).clonar();
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() - 2, cuadroActual.getIndiceJ() + 2, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() - 2,
+                                cuadroActual.getIndiceJ() + 2,
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
                 break;
             case ABAJO:
             case IZQUIERDA:
                 cuadroActual = this.getCuadros().get(0).clonar();
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() - 1, cuadroActual.getIndiceJ() + 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() - 1,
+                                cuadroActual.getIndiceJ() + 1,
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
 
                 listaCuadros.add(this.getCuadros().get(1).clonar());
 
                 cuadroActual = this.getCuadros().get(2).clonar();
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() + 1, cuadroActual.getIndiceJ() - 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() + 1,
+                                cuadroActual.getIndiceJ() - 1,
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
 
                 cuadroActual = this.getCuadros().get(3).clonar();
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() + 2, cuadroActual.getIndiceJ() - 2, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() + 2,
+                                cuadroActual.getIndiceJ() - 2,
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
                 break;
         }
@@ -110,8 +136,8 @@ public class ICuadro extends Figura {
     }
 
     /**
-     * Método para colocar la nueva posición de la figura al momento de 
-     * rotarla, si está arriba la cambia en posición abajo y viceversa
+     * Método para colocar la nueva posición de la figura al momento de rotarla,
+     * si está arriba la cambia en posición abajo y viceversa
      */
     @Override
     public void setNextPosicion() {

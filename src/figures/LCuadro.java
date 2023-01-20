@@ -25,8 +25,11 @@ public class LCuadro extends Figura {
         this.setUbicacionCuadro(Constantes.COLUMNAS / 3, 0);
     }
 
-    public LCuadro(Color color, int baseX, int baseY, int squareSizeX, int squareSizeY) {
-        super(color, baseX, baseY, squareSizeX, squareSizeY, EnumFigure.L_SQUARE);
+    public LCuadro(Color color, int baseX, int baseY, int squareSizeX, 
+            int squareSizeY) 
+    {
+        super(color, baseX, baseY, squareSizeX, squareSizeY, 
+                EnumFigure.L_SQUARE);
 
         this.setUbicacionCuadro(0, 0);
     }
@@ -46,26 +49,46 @@ public class LCuadro extends Figura {
             case ARRIBA:
                 cuadroActual = this.getCuadros().get(0);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() - 1, cuadroActual.getIndiceJ(), Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() - 1,
+                                cuadroActual.getIndiceJ(), 
+                                Constantes.TABLERO_X,
+                                Constantes.TABLERO_Y)
                 );
                 cuadroActual = this.getCuadros().get(1);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() + 1, cuadroActual.getIndiceJ(), Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() + 1,
+                                cuadroActual.getIndiceJ(), 
+                                Constantes.TABLERO_X, 
+                                Constantes.TABLERO_Y)
                 );
 
                 cuadroActual = this.getCuadros().get(2);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI(), cuadroActual.getIndiceJ() + 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI(), 
+                                cuadroActual.getIndiceJ() + 1,
+                                Constantes.TABLERO_X, 
+                                Constantes.TABLERO_Y)
                 );
                 cuadroActual = this.getCuadros().get(3);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI(), cuadroActual.getIndiceJ() + 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI(),
+                                cuadroActual.getIndiceJ() + 1, 
+                                Constantes.TABLERO_X, 
+                                Constantes.TABLERO_Y)
                 );
                 break;
             case DERECHA:
                 cuadroActual = this.getCuadros().get(0);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() - 1, cuadroActual.getIndiceJ() + 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() - 1, 
+                                cuadroActual.getIndiceJ() + 1,
+                                Constantes.TABLERO_X, 
+                                Constantes.TABLERO_Y)
                 );
                 listaCuadros.add(
                         this.getCuadros().get(1).clonar()
@@ -73,12 +96,20 @@ public class LCuadro extends Figura {
 
                 cuadroActual = this.getCuadros().get(2);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() + 1, cuadroActual.getIndiceJ() - 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() + 1,
+                                cuadroActual.getIndiceJ() - 1,
+                                Constantes.TABLERO_X, 
+                                Constantes.TABLERO_Y)
                 );
 
                 cuadroActual = this.getCuadros().get(3);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() - 2, cuadroActual.getIndiceJ(), Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() - 2, 
+                                cuadroActual.getIndiceJ(), 
+                                Constantes.TABLERO_X, 
+                                Constantes.TABLERO_Y)
                 );
                 break;
             case ABAJO:
@@ -103,19 +134,31 @@ public class LCuadro extends Figura {
             case IZQUIERDA:
                 cuadroActual = this.getCuadros().get(0);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() + 2, cuadroActual.getIndiceJ(), Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() + 2, 
+                                cuadroActual.getIndiceJ(), 
+                                Constantes.TABLERO_X, 
+                                Constantes.TABLERO_Y)
                 );
 
                 cuadroActual = this.getCuadros().get(1);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() - 1, cuadroActual.getIndiceJ() + 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() - 1,
+                                cuadroActual.getIndiceJ() + 1, 
+                                Constantes.TABLERO_X, 
+                                Constantes.TABLERO_Y)
                 );
                 listaCuadros.add(
                         this.getCuadros().get(2).clonar()
                 );
                 cuadroActual = this.getCuadros().get(3);
                 listaCuadros.add(
-                        cuadroActual.clonar().setUbicacion(cuadroActual.getIndiceI() + 1, cuadroActual.getIndiceJ() - 1, Constantes.TABLERO_X, Constantes.TABLERO_Y)
+                        cuadroActual.clonar().setUbicacion(
+                                cuadroActual.getIndiceI() + 1, 
+                                cuadroActual.getIndiceJ() - 1, 
+                                Constantes.TABLERO_X, 
+                                Constantes.TABLERO_Y)
                 );
                 break;
         }
