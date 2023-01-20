@@ -1,6 +1,6 @@
 /**
  * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
- * Fecha de creación: 04 de enero de 2022
+ * Fecha de creación: 04 de enero de 2023
  * Fecha de actualización: 20 de enero del 2023
  * Descripcion : En esta clase se implementa el código para el tablero del
  *               tetris.
