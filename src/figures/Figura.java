@@ -52,7 +52,9 @@ public abstract class Figura implements Drawable {
      * Constructor para la figura dentro de una ubicación y con un tamaño
      * específico
      */
-    public Figura(Color color, int baseX, int baseY, int ancho, int alto, EnumFigure figureType) {
+    public Figura(Color color, int baseX, int baseY, int ancho, int alto,
+            EnumFigure figureType) {
+
         this.posicion = Posicion.ARRIBA;
         this.color = color;
         this.baseX = baseX;
@@ -66,12 +68,15 @@ public abstract class Figura implements Drawable {
     public void paintElement(Graphics g) {
         g.setColor(this.color);
         for (Cuadro cuadro : this.getCuadros()) {
-            g.fill3DRect(cuadro.getX(), cuadro.getY(), ancho, alto, true);
+            g.fill3DRect(cuadro.getX(), cuadro.getY(), ancho,
+                    alto, true);
         }
     }
 
     public void addCuadro(int i, int j) {
-        this.cuadros.add(new Cuadro(this.getColor(), this.getAncho(), this.getAlto()).setUbicacion(i, j, baseX, baseY));
+        this.cuadros.add(new Cuadro(this.getColor(),
+                this.getAncho(),
+                this.getAlto()).setUbicacion(i, j, baseX, baseY));
     }
 
     public void addCuadro(Cuadro cuadro) {

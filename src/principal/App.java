@@ -20,8 +20,7 @@ public class App {
             public void run() {
                 PlantillaLogueo logueo = new PlantillaLogueo();
                 logueo.getClass();
-//                Registro r = new Registro();
-//                r.getClass();
+
             }
         };
         SwingUtilities.invokeLater(runApplication);
