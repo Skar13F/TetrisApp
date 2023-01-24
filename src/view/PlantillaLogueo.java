@@ -167,13 +167,16 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
                         && tNombreUsuario.getText().equals("Nombre Usuario"
                                 + "")) {
                     tNombreUsuario.setText("");
+                    habilitarBotonIngresar();
                 }
+
             }
 
             @Override
             public void focusLost(FocusEvent e) {
                 if (tNombreUsuario.getText().equals("")) {
                     tNombreUsuario.setText("Nombre Usuario");
+                    habilitarBotonIngresar();
                 }
             }
 
@@ -253,8 +256,10 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         bIngresar.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                bIngresar.setBackground(Color.LIGHT_GRAY);
-                bIngresar.setContentAreaFilled(true);
+                if (habilitarBotonIngresar()) {
+                    bIngresar.setBackground(Color.LIGHT_GRAY);
+                    bIngresar.setContentAreaFilled(true);
+                }
             }
 
             @Override
@@ -272,29 +277,32 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
              */
             @Override
             public void mouseClicked(MouseEvent e) {
-                bIngresar.setBorder(bInferiorAzul);
+                if (habilitarBotonIngresar()) {
+                    bIngresar.setBorder(bInferiorAzul);
 
-                Usuario userAux = new Usuario();
-                userAux.setNombre(tNombreUsuario.getText());
-                userAux.setPassword(String.valueOf(
-                        jContrasenia.getPassword()));
-                userAux.setId_jugador(cbTipoUsuario.getSelectedIndex() + 1);
-                Usuario user = usuarioController.buscarRegistoNC(
-                        userAux);
+                    Usuario userAux = new Usuario();
+                    userAux.setNombre(tNombreUsuario.getText());
+                    userAux.setPassword(String.valueOf(
+                            jContrasenia.getPassword()));
+                    userAux.setId_jugador(cbTipoUsuario.getSelectedIndex() + 1);
+                    Usuario user = usuarioController.buscarRegistoNC(
+                            userAux);
 
-                if (user != null) {
-                    cerrarFrame();
-                    if ((cbTipoUsuario.getSelectedIndex() + 1) == 1) {
-                        PantallaJuego pantallaJuego = new PantallaJuego();
-                        pantallaJuego.setVisible(true);
-                    } else if ((cbTipoUsuario.getSelectedIndex() + 1) == 2) {;
-                        SuperAdministrador superAdministrador
-                                = new SuperAdministrador();
-                        superAdministrador.setVisible(true);
+                    if (user != null) {
+                        cerrarFrame();
+                        if ((cbTipoUsuario.getSelectedIndex() + 1) == 1) {
+                            PantallaJuego pantallaJuego = new PantallaJuego();
+                            pantallaJuego.setVisible(true);
+                        } else if ((cbTipoUsuario.getSelectedIndex() + 1) == 2) {;
+                            SuperAdministrador superAdministrador
+                                    = new SuperAdministrador();
+                            superAdministrador.setVisible(true);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, ""
+                                + "Registro no encontrado");
                     }
-                } else {
-                    JOptionPane.showMessageDialog(null, ""
-                            + "Registro no encontrado");
+
                 }
 
             }
@@ -423,6 +431,25 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         List<Rol> listaRol = impl.obtenerRegistro();
         for (int i = 0; i < listaRol.size(); i++) {
             jcRol.addItem(listaRol.get(i).getRol());
+        }
+    }
+
+    public boolean habilitarBotonIngresar() {
+        if (this.tNombreUsuario.getText().equals("")
+                || this.tNombreUsuario.getText().equals("Nombre Usuario")
+                || String.valueOf(
+                        jContrasenia.getPassword()).equals("////"
+                        + "////")
+                || String.valueOf(
+                        jContrasenia.getPassword()).equals("")) {
+            this.bIngresar.setEnabled(false);
+            this.bIngresar.setBorder(null);
+            return false;
+        } else {
+            this.bIngresar.setEnabled(true);
+            this.bIngresar.setBorder(bTotal);
+            this.bIngresar.setForeground(Color.WHITE);
+            return true;
         }
     }
 
