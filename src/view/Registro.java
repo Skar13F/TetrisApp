@@ -77,13 +77,13 @@ public class Registro extends JFrame implements ActionListener {
         /**
          * Creación de la fuente de texto
          */
-        fontMedia = new Font("LuzSans-Book", Font.PLAIN, 15);
+        fontMedia = new Font("LuzSans-Book", Font.BOLD, 15);
 
         /**
          * Creación de borde para los cuadros de texto
          */
         bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2,
-                0, Color.BLUE);
+                0, Color.white);
 
         /**
          * Configuración del panel de registro
@@ -100,16 +100,18 @@ public class Registro extends JFrame implements ActionListener {
          */
         tNombreUsuario = crearCuadroTexto("Nombre",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
-                80, Color.BLUE, Color.WHITE,
+                80, Color.white, Color.black,
                 Color.gray, bInferiorAzul);
         pPrincipal.add(tNombreUsuario);
+        tNombreUsuario.setOpaque(false);
         cajaTexto(tNombreUsuario, "Nombre");
 
         tEdad = crearCuadroTexto("Edad",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
-                (tNombreUsuario.getY() + tamanioY + 20), Color.BLUE,
+                (tNombreUsuario.getY() + tamanioY + 20), Color.white,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tEdad);
+        tEdad.setOpaque(false);
         cajaTexto(tEdad, "Edad");
 
         cbSexo = new JComboBox();
@@ -127,23 +129,26 @@ public class Registro extends JFrame implements ActionListener {
 
         tTelefono = crearCuadroTexto("Teléfono",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
-                cbSexo.getY() + tamanioY + 20, Color.BLUE,
+                cbSexo.getY() + tamanioY + 20, Color.white,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tTelefono);
+        tTelefono.setOpaque(false);
         cajaTexto(tTelefono, "Teléfono");
 
         tCorreo = crearCuadroTexto("Correo",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
-                tTelefono.getY() + tamanioY + 20, Color.BLUE,
+                tTelefono.getY() + tamanioY + 20, Color.white,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tCorreo);
+        tCorreo.setOpaque(false);
         cajaTexto(tCorreo, "Correo");
 
         tNombreJugador = crearCuadroTexto("Nombre Usuario",
                 tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
-                tCorreo.getY() + tamanioY + 20, Color.BLUE,
+                tCorreo.getY() + tamanioY + 20, Color.white,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tNombreJugador);
+        tNombreJugador.setOpaque(false);
         cajaTexto(tNombreJugador, "Nombre Usuario");
 
         jContrasenia = new JPasswordField();
@@ -157,6 +162,7 @@ public class Registro extends JFrame implements ActionListener {
         jContrasenia.setCaretColor(Color.GRAY);
         jContrasenia.setFont(fontMedia);
         jContrasenia.setBorder(bInferiorAzul);
+        jContrasenia.setOpaque(false);
         pPrincipal.add(jContrasenia);
         cajaContrasenia(jContrasenia, "////////");
         
