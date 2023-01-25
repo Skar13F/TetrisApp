@@ -84,9 +84,9 @@ public class Registro extends JFrame implements ActionListener {
          * Carga de imagen para el fondo
          */
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
-        iNombre=new ImageIcon("resourses/images/programador.png");
+        iNombre=new ImageIcon("resourses/images/nombre3.png");
         iCorreo=new ImageIcon("resourses/images/correo.png");
-        iEdad=new ImageIcon("resourses/images/edad.png");
+        iEdad=new ImageIcon("resourses/images/edad1.png");
         iTelefono=new ImageIcon("resourses/images/telefono.png");
         iContrasena=new ImageIcon("resourses/images/candado.png");
         iUsuario=new ImageIcon("resourses/images/usuario2.png");
