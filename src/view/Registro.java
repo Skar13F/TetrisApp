@@ -44,15 +44,26 @@ public class Registro extends JFrame implements ActionListener {
     private JPanel pPrincipal;
     private ImageIcon iFondo;
     private ImageIcon iDimAux;
-
+    private ImageIcon iNombre;
+    private ImageIcon iEdad;
+    private ImageIcon iTelefono;
+    private ImageIcon iCorreo;
+    private ImageIcon iContrasena;
+    private ImageIcon iUsuario;
+    private JLabel lUsuario;
+    private JLabel lContraseña;
+    private JLabel lCorreo;
+    private JLabel lTelefono;
+    private JLabel lEdad;
     private JLabel lFondo;
+    private JLabel lNombre;
 
     private JTextField tNombreUsuario;
     private JTextField tEdad;
     private JTextField tTelefono;
     private JTextField tCorreo;
-
     private JTextField tNombreJugador;
+    
     private JPasswordField jContrasenia;
 
     private JComboBox cbSexo;
@@ -73,6 +84,13 @@ public class Registro extends JFrame implements ActionListener {
          * Carga de imagen para el fondo
          */
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
+        iNombre=new ImageIcon("resourses/images/programador.png");
+        iCorreo=new ImageIcon("resourses/images/correo.png");
+        iEdad=new ImageIcon("resourses/images/edad.png");
+        iTelefono=new ImageIcon("resourses/images/telefono.png");
+        iContrasena=new ImageIcon("resourses/images/candado.png");
+        iUsuario=new ImageIcon("resourses/images/usuario2.png");
+        
 
         /**
          * Creación de la fuente de texto
@@ -360,8 +378,84 @@ public class Registro extends JFrame implements ActionListener {
                 0, 0, pPrincipal.getWidth(),
                 pPrincipal.getHeight());
         lFondo.setIcon(iDimAux);
-
         pPrincipal.add(lFondo);
+        
+         iDimAux = new ImageIcon(
+                iNombre.getImage()
+                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+        );
+
+        lNombre = new JLabel();
+        lNombre.setBounds(0, 0, 30, 28);
+        lNombre.setLocation(0, 0);
+        lNombre.setIcon(iDimAux);
+        lNombre.setVisible(true);
+        tNombreUsuario.add(lNombre);
+        
+        iDimAux = new ImageIcon(
+                iEdad.getImage()
+                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+        );
+
+        lEdad = new JLabel();
+        lEdad.setBounds(0, 0, 30, 30);
+        lEdad.setLocation(0, 0);
+        lEdad.setIcon(iDimAux);
+        lEdad.setVisible(true);
+        tEdad.add(lEdad);
+        
+        iDimAux = new ImageIcon(
+                iTelefono.getImage()
+                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+        );
+
+        lTelefono = new JLabel();
+        lTelefono.setBounds(0, 0, 30, 30);
+        lTelefono.setLocation(0, 0);
+        lTelefono.setIcon(iDimAux);
+        lTelefono.setVisible(true);
+        tTelefono.add(lTelefono);
+        
+        iDimAux = new ImageIcon(
+                iCorreo.getImage()
+                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+        );
+
+        lCorreo = new JLabel();
+        lCorreo.setBounds(0, 0, 30, 28);
+        lCorreo.setLocation(0, 0);
+        lCorreo.setIcon(iDimAux);
+        lCorreo.setVisible(true);
+        tCorreo.add(lCorreo);
+        
+        iDimAux = new ImageIcon(
+                iUsuario.getImage()
+                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+        );
+
+        lUsuario = new JLabel();
+        lUsuario.setBounds(0, 0, 30, 30);
+        lUsuario.setLocation(0, 0);
+        lUsuario.setIcon(iDimAux);
+        lUsuario.setVisible(true);
+        tNombreJugador.add(lUsuario);
+        
+        iDimAux = new ImageIcon(
+                iContrasena.getImage()
+                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+        );
+
+        lContraseña = new JLabel();
+        lContraseña.setBounds(0, 0, 30, 28);
+        lContraseña.setLocation(0, 0);
+        lContraseña.setIcon(iDimAux);
+        lContraseña.setVisible(true);
+        jContrasenia.add(lContraseña);
+        
+        
+        
+        
+        
 
         //configurar el jframe
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
