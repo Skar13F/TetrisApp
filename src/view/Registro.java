@@ -410,7 +410,7 @@ public class Registro extends JFrame implements ActionListener {
         );
 
         lTelefono = new JLabel();
-        lTelefono.setBounds(0, 0, 30, 30);
+        lTelefono.setBounds(0, 0, 30, 28);
         lTelefono.setLocation(0, 0);
         lTelefono.setIcon(iDimAux);
         lTelefono.setVisible(true);
