@@ -1,12 +1,11 @@
-
 /**
- * Autor: Oscar Fuentes Alvarado
+ * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 16 de enero del 2023
- * Descripción: En esta clase de codifica desde cero lo que es un frame para 
+ * Fecha de actualización: 26 de enero del 2023
+ * Descripción: En esta clase de codifica desde cero lo que es un frame para
  *              mostrar un formulario, donde se registran las personas nuevas
- *              en el juego.
- *            
+ *              en el juego
+ *
  */
 package view;
 
@@ -63,7 +62,7 @@ public class Registro extends JFrame implements ActionListener {
     private JTextField tTelefono;
     private JTextField tCorreo;
     private JTextField tNombreJugador;
-    
+
     private JPasswordField jContrasenia;
 
     private JComboBox cbSexo;
@@ -84,13 +83,12 @@ public class Registro extends JFrame implements ActionListener {
          * Carga de imagen para el fondo
          */
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
-        iNombre=new ImageIcon("resourses/images/nombre3.png");
-        iCorreo=new ImageIcon("resourses/images/correo.png");
-        iEdad=new ImageIcon("resourses/images/edad1.png");
-        iTelefono=new ImageIcon("resourses/images/telefono.png");
-        iContrasena=new ImageIcon("resourses/images/candado.png");
-        iUsuario=new ImageIcon("resourses/images/usuario2.png");
-        
+        iNombre = new ImageIcon("resourses/images/nombre3.png");
+        iCorreo = new ImageIcon("resourses/images/correo.png");
+        iEdad = new ImageIcon("resourses/images/edad1.png");
+        iTelefono = new ImageIcon("resourses/images/telefono.png");
+        iContrasena = new ImageIcon("resourses/images/candado.png");
+        iUsuario = new ImageIcon("resourses/images/usuario2.png");
 
         /**
          * Creación de la fuente de texto
@@ -112,7 +110,7 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.setBackground(Color.BLACK);
         pPrincipal.setLayout(null);
         this.add(pPrincipal);
-        
+
         /**
          * Creación y edición de los cuadros de texto
          */
@@ -183,11 +181,10 @@ public class Registro extends JFrame implements ActionListener {
         jContrasenia.setOpaque(false);
         pPrincipal.add(jContrasenia);
         cajaContrasenia(jContrasenia, "////////");
-        
+
         /**
          * creación y configuración de los botones
          */
-         
         this.bRegistrar = new JButton("Registrar");
 
         this.bRegistrar.setBounds(
@@ -307,36 +304,25 @@ public class Registro extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "El "
                             + "usuario ya existe/n intenta de nuevo");
                 }
-                //bRegistrar.setBorder(bInferiorAzul);
+
             }
 
         }
         );
-
-        this.bRegresar = new JButton("Regresar");//botón ingresar
-
+        /**
+         * Se agrega y se da formato al botón Regresar
+         */
+        this.bRegresar = new JButton("Regresar");
         this.bRegresar.setBounds(
                 350, 10, 80, 30);
-
         this.bRegresar.setForeground(Color.WHITE);
-
-        this.bRegresar.addActionListener(
-                this);
-
+        this.bRegresar.addActionListener(this);
         this.bRegresar.setLocation(pPrincipal.getX() + 10,
                 pPrincipal.getHeight() - 50);
-
-        this.pPrincipal.add(
-                this.bRegresar);
-
-        this.bRegresar.setFocusable(
-                false);
-
-        this.bRegresar.setBorder(
-                null);
-
-        this.bRegresar.setContentAreaFilled(
-                false);
+        this.pPrincipal.add(this.bRegresar);
+        this.bRegresar.setFocusable(false);
+        this.bRegresar.setBorder(null);
+        this.bRegresar.setContentAreaFilled(false);
 
         /**
          * Tenemos eventos para el mouse, cuando ingresa o sale del área del
@@ -368,7 +354,9 @@ public class Registro extends JFrame implements ActionListener {
 
         }
         );
-
+        /**
+         * En este bloque de código se pone una imagen para el fondo
+         */
         iDimAux = new ImageIcon(iFondo.getImage().getScaledInstance(
                 pPrincipal.getWidth(), pPrincipal.getHeight(),
                 Image.SCALE_AREA_AVERAGING));
@@ -379,10 +367,13 @@ public class Registro extends JFrame implements ActionListener {
                 pPrincipal.getHeight());
         lFondo.setIcon(iDimAux);
         pPrincipal.add(lFondo);
-        
-         iDimAux = new ImageIcon(
+        /**
+         * Se agrega una imagen para ícono de la caja nombre del formulario
+         */
+        iDimAux = new ImageIcon(
                 iNombre.getImage()
-                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
         );
 
         lNombre = new JLabel();
@@ -391,22 +382,29 @@ public class Registro extends JFrame implements ActionListener {
         lNombre.setIcon(iDimAux);
         lNombre.setVisible(true);
         tNombreUsuario.add(lNombre);
-        
+        /**
+         * Se agrega una imagen para ícono de la caja edad del formulario
+         */
+
         iDimAux = new ImageIcon(
                 iEdad.getImage()
-                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
         );
 
         lEdad = new JLabel();
-        lEdad.setBounds(0, 0, 30, 30);
+        lEdad.setBounds(0, 0, 30, 28);
         lEdad.setLocation(0, 0);
         lEdad.setIcon(iDimAux);
         lEdad.setVisible(true);
         tEdad.add(lEdad);
-        
+        /**
+         * Se agrega una imagen para ícono de la caja télefono del formulario
+         */
         iDimAux = new ImageIcon(
                 iTelefono.getImage()
-                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
         );
 
         lTelefono = new JLabel();
@@ -415,10 +413,13 @@ public class Registro extends JFrame implements ActionListener {
         lTelefono.setIcon(iDimAux);
         lTelefono.setVisible(true);
         tTelefono.add(lTelefono);
-        
+        /**
+         * Se agrega una imagen para ícono de la caja correo del formulario
+         */
         iDimAux = new ImageIcon(
                 iCorreo.getImage()
-                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
         );
 
         lCorreo = new JLabel();
@@ -427,10 +428,14 @@ public class Registro extends JFrame implements ActionListener {
         lCorreo.setIcon(iDimAux);
         lCorreo.setVisible(true);
         tCorreo.add(lCorreo);
-        
+        /**
+         * Se agrega una imagen para ícono de la caja nombre usuario del
+         * formulario
+         */
         iDimAux = new ImageIcon(
                 iUsuario.getImage()
-                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
         );
 
         lUsuario = new JLabel();
@@ -439,10 +444,13 @@ public class Registro extends JFrame implements ActionListener {
         lUsuario.setIcon(iDimAux);
         lUsuario.setVisible(true);
         tNombreJugador.add(lUsuario);
-        
+        /**
+         * Se agrega una imagen para ícono de la caja contraseña del formulario
+         */
         iDimAux = new ImageIcon(
                 iContrasena.getImage()
-                        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
         );
 
         lContraseña = new JLabel();
@@ -451,11 +459,6 @@ public class Registro extends JFrame implements ActionListener {
         lContraseña.setIcon(iDimAux);
         lContraseña.setVisible(true);
         jContrasenia.add(lContraseña);
-        
-        
-        
-        
-        
 
         //configurar el jframe
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -489,8 +492,8 @@ public class Registro extends JFrame implements ActionListener {
     }
 
     /**
-     * Método para crear un jtext con características que se especifiquen, 
-     * estas se reciben como parámetros y al final la retorna
+     * Método para crear un jtext con características que se especifiquen, estas
+     * se reciben como parámetros y al final la retorna
      */
     public JTextField crearCuadroTexto(String nombre, int tX,
             int tY, int pX, int pY, Color TextC, Color fondoC, Color cursorC,
@@ -508,21 +511,21 @@ public class Registro extends JFrame implements ActionListener {
     }
 
     /**
-     * Este método ayuda a generar números aleatorios que se ocupan
-     * para las posiciones en x de un componente de acuerdo al tamaño del mismo
-     * y al tamaño del panel al que se agragará
+     * Este método ayuda a generar números aleatorios que se ocupan para las
+     * posiciones en x de un componente de acuerdo al tamaño del mismo y al
+     * tamaño del panel al que se agragará
      */
     public int obtenerPosicionX(int tamanio) {
         return (pPrincipal.getWidth() - tamanio) / 2;
     }
 
     /**
-     * Método para hacer validaciones en los cuadros de texto, cuando el
-     * cursor esté en el cuadro de texto, este se habilitará para 
-     * escritura ocultando su previo contenido solo si estaba predefinido
-     * si ya ha sido alterado permanecerá la modificación, de la misma manera
-     * al perder el foco se enviará un texto predefinido si no hubo modificación
-     * en el, de lo contrario permanecerá
+     * Método para hacer validaciones en los cuadros de texto, cuando el cursor
+     * esté en el cuadro de texto, este se habilitará para escritura ocultando
+     * su previo contenido solo si estaba predefinido si ya ha sido alterado
+     * permanecerá la modificación, de la misma manera al perder el foco se
+     * enviará un texto predefinido si no hubo modificación en el, de lo
+     * contrario permanecerá
      */
     public void cajaTexto(JTextField jTexto, String contenido) {
         jTexto.addFocusListener(new FocusAdapter() {
@@ -545,9 +548,9 @@ public class Registro extends JFrame implements ActionListener {
     }
 
     /**
-     * Método para enviar mostrar u ocultar un texto predeterminado en el 
-     * cuadro para la contraseña, si el usuario ingresa datos estos permanecerán
-     * de lo contrrario se volverá a un estado predeterminado
+     * Método para enviar mostrar u ocultar un texto predeterminado en el cuadro
+     * para la contraseña, si el usuario ingresa datos estos permanecerán de lo
+     * contrrario se volverá a un estado predeterminado
      */
     public void cajaContrasenia(JPasswordField jContrasenia, String contenido) {
         jContrasenia.addFocusListener(new FocusAdapter() {
