@@ -1,7 +1,7 @@
 /**
- * Autor: Oscar Fuentes Alvarado
+ * Autor: Oscar Fuentes Alvarado y Nancy Obed Martínez Miguel
  * Fecha de creación: 28 de noviembre de 2022
- * Fecha de actualización: 16 de enero del 2023
+ * Fecha de actualización: 26 de enero del 2023
  * Descripción: En esta clase de codifica desde cero lo que es un frame para
  *              mostrar un formulario, donde se registran las personas nuevas
  *              en el juego.
@@ -43,15 +43,26 @@ public class Registro extends JFrame implements ActionListener {
     private JPanel pPrincipal;
     private ImageIcon iFondo;
     private ImageIcon iDimAux;
-
+    private ImageIcon iNombre;
+    private ImageIcon iEdad;
+    private ImageIcon iTelefono;
+    private ImageIcon iCorreo;
+    private ImageIcon iContrasena;
+    private ImageIcon iUsuario;
+    private JLabel lUsuario;
+    private JLabel lContraseña;
+    private JLabel lCorreo;
+    private JLabel lTelefono;
+    private JLabel lEdad;
     private JLabel lFondo;
+    private JLabel lNombre;
 
     private JTextField tNombreUsuario;
     private JTextField tEdad;
     private JTextField tTelefono;
     private JTextField tCorreo;
-
     private JTextField tNombreJugador;
+
     private JPasswordField jContrasenia;
 
     private JComboBox cbSexo;
@@ -72,17 +83,23 @@ public class Registro extends JFrame implements ActionListener {
          * Carga de imagen para el fondo
          */
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
+        iNombre = new ImageIcon("resourses/images/nombre3.png");
+        iCorreo = new ImageIcon("resourses/images/correo.png");
+        iEdad = new ImageIcon("resourses/images/edad1.png");
+        iTelefono = new ImageIcon("resourses/images/telefono.png");
+        iContrasena = new ImageIcon("resourses/images/candado.png");
+        iUsuario = new ImageIcon("resourses/images/usuario2.png");
 
         /**
          * Creación de la fuente de texto
          */
-        fontMedia = new Font("LuzSans-Book", Font.PLAIN, 15);
+        fontMedia = new Font("LuzSans-Book", Font.BOLD, 15);
 
         /**
          * Creación de borde para los cuadros de texto
          */
         bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2,
-                0, Color.BLUE);
+                0, Color.white);
 
         /**
          * Configuración del panel de registro
@@ -98,19 +115,19 @@ public class Registro extends JFrame implements ActionListener {
          * Creación y edición de los cuadros de texto
          */
         tNombreUsuario = crearCuadroTexto("Nombre",
-                tamJtexts, tamanioY, obtenerPosicionX(
-                        tamJtexts),
-                80, Color.BLUE, Color.WHITE,
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                80, Color.white, Color.black,
                 Color.gray, bInferiorAzul);
         pPrincipal.add(tNombreUsuario);
+        tNombreUsuario.setOpaque(false);
         cajaTexto(tNombreUsuario, "Nombre");
 
         tEdad = crearCuadroTexto("Edad",
-                tamJtexts, tamanioY, obtenerPosicionX(
-                        tamJtexts),
-                (tNombreUsuario.getY() + tamanioY + 20), Color.BLUE,
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                (tNombreUsuario.getY() + tamanioY + 20), Color.white,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tEdad);
+        tEdad.setOpaque(false);
         cajaTexto(tEdad, "Edad");
 
         cbSexo = new JComboBox();
@@ -127,27 +144,27 @@ public class Registro extends JFrame implements ActionListener {
         pPrincipal.add(cbSexo);
 
         tTelefono = crearCuadroTexto("Teléfono",
-                tamJtexts, tamanioY, obtenerPosicionX(
-                        tamJtexts),
-                cbSexo.getY() + tamanioY + 20, Color.BLUE,
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                cbSexo.getY() + tamanioY + 20, Color.white,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tTelefono);
+        tTelefono.setOpaque(false);
         cajaTexto(tTelefono, "Teléfono");
 
         tCorreo = crearCuadroTexto("Correo",
-                tamJtexts, tamanioY, obtenerPosicionX(
-                        tamJtexts),
-                tTelefono.getY() + tamanioY + 20, Color.BLUE,
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                tTelefono.getY() + tamanioY + 20, Color.white,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tCorreo);
+        tCorreo.setOpaque(false);
         cajaTexto(tCorreo, "Correo");
 
         tNombreJugador = crearCuadroTexto("Nombre Usuario",
-                tamJtexts, tamanioY, obtenerPosicionX(
-                        tamJtexts),
-                tCorreo.getY() + tamanioY + 20, Color.BLUE,
+                tamJtexts, tamanioY, obtenerPosicionX(tamJtexts),
+                tCorreo.getY() + tamanioY + 20, Color.white,
                 Color.WHITE, Color.gray, bInferiorAzul);
         pPrincipal.add(tNombreJugador);
+        tNombreJugador.setOpaque(false);
         cajaTexto(tNombreJugador, "Nombre Usuario");
 
         jContrasenia = new JPasswordField();
@@ -161,6 +178,7 @@ public class Registro extends JFrame implements ActionListener {
         jContrasenia.setCaretColor(Color.GRAY);
         jContrasenia.setFont(fontMedia);
         jContrasenia.setBorder(bInferiorAzul);
+        jContrasenia.setOpaque(false);
         pPrincipal.add(jContrasenia);
         cajaContrasenia(jContrasenia, "////////");
 
@@ -286,36 +304,25 @@ public class Registro extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(null, "El "
                             + "usuario ya existe/n intenta de nuevo");
                 }
-                //bRegistrar.setBorder(bInferiorAzul);
+
             }
 
         }
         );
-
-        this.bRegresar = new JButton("Regresar");//botón ingresar
-
+        /**
+         * Se agrega y se da formato al botón Regresar
+         */
+        this.bRegresar = new JButton("Regresar");
         this.bRegresar.setBounds(
                 350, 10, 80, 30);
-
         this.bRegresar.setForeground(Color.WHITE);
-
-        this.bRegresar.addActionListener(
-                this);
-
+        this.bRegresar.addActionListener(this);
         this.bRegresar.setLocation(pPrincipal.getX() + 10,
                 pPrincipal.getHeight() - 50);
-
-        this.pPrincipal.add(
-                this.bRegresar);
-
-        this.bRegresar.setFocusable(
-                false);
-
-        this.bRegresar.setBorder(
-                null);
-
-        this.bRegresar.setContentAreaFilled(
-                false);
+        this.pPrincipal.add(this.bRegresar);
+        this.bRegresar.setFocusable(false);
+        this.bRegresar.setBorder(null);
+        this.bRegresar.setContentAreaFilled(false);
 
         /**
          * Tenemos eventos para el mouse, cuando ingresa o sale del área del
@@ -347,9 +354,8 @@ public class Registro extends JFrame implements ActionListener {
 
         }
         );
-
         /**
-         * Carga de imagen al fondo
+         * En este bloque de código se pone una imagen para el fondo
          */
         iDimAux = new ImageIcon(iFondo.getImage().getScaledInstance(
                 pPrincipal.getWidth(), pPrincipal.getHeight(),
@@ -360,8 +366,99 @@ public class Registro extends JFrame implements ActionListener {
                 0, 0, pPrincipal.getWidth(),
                 pPrincipal.getHeight());
         lFondo.setIcon(iDimAux);
-
         pPrincipal.add(lFondo);
+        /**
+         * Se agrega una imagen para ícono de la caja nombre del formulario
+         */
+        iDimAux = new ImageIcon(
+                iNombre.getImage()
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
+        );
+
+        lNombre = new JLabel();
+        lNombre.setBounds(0, 0, 30, 28);
+        lNombre.setLocation(0, 0);
+        lNombre.setIcon(iDimAux);
+        lNombre.setVisible(true);
+        tNombreUsuario.add(lNombre);
+        /**
+         * Se agrega una imagen para ícono de la caja edad del formulario
+         */
+
+        iDimAux = new ImageIcon(
+                iEdad.getImage()
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
+        );
+
+        lEdad = new JLabel();
+        lEdad.setBounds(0, 0, 30, 28);
+        lEdad.setLocation(0, 0);
+        lEdad.setIcon(iDimAux);
+        lEdad.setVisible(true);
+        tEdad.add(lEdad);
+        /**
+         * Se agrega una imagen para ícono de la caja télefono del formulario
+         */
+        iDimAux = new ImageIcon(
+                iTelefono.getImage()
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
+        );
+
+        lTelefono = new JLabel();
+        lTelefono.setBounds(0, 0, 30, 28);
+        lTelefono.setLocation(0, 0);
+        lTelefono.setIcon(iDimAux);
+        lTelefono.setVisible(true);
+        tTelefono.add(lTelefono);
+        /**
+         * Se agrega una imagen para ícono de la caja correo del formulario
+         */
+        iDimAux = new ImageIcon(
+                iCorreo.getImage()
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
+        );
+
+        lCorreo = new JLabel();
+        lCorreo.setBounds(0, 0, 30, 28);
+        lCorreo.setLocation(0, 0);
+        lCorreo.setIcon(iDimAux);
+        lCorreo.setVisible(true);
+        tCorreo.add(lCorreo);
+        /**
+         * Se agrega una imagen para ícono de la caja nombre usuario del
+         * formulario
+         */
+        iDimAux = new ImageIcon(
+                iUsuario.getImage()
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
+        );
+
+        lUsuario = new JLabel();
+        lUsuario.setBounds(0, 0, 30, 30);
+        lUsuario.setLocation(0, 0);
+        lUsuario.setIcon(iDimAux);
+        lUsuario.setVisible(true);
+        tNombreJugador.add(lUsuario);
+        /**
+         * Se agrega una imagen para ícono de la caja contraseña del formulario
+         */
+        iDimAux = new ImageIcon(
+                iContrasena.getImage()
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
+        );
+
+        lContraseña = new JLabel();
+        lContraseña.setBounds(0, 0, 30, 28);
+        lContraseña.setLocation(0, 0);
+        lContraseña.setIcon(iDimAux);
+        lContraseña.setVisible(true);
+        jContrasenia.add(lContraseña);
 
         /**
          * Configuración del jframe
