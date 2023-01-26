@@ -472,7 +472,11 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
             jcRol.addItem(listaRol.get(i).getRol());
         }
     }
-
+    
+    /**
+     * Método para habilitar o deshabilitar el botón de ingreso, de acuerdo
+     * a los campos que el usuario debe rellenar antes de iniciar el sistema
+     */
     public boolean habilitarBotonIngresar() {
         if (this.tNombreUsuario.getText().equals("")
                 || this.tNombreUsuario.getText().equals("Nombre "
@@ -493,6 +497,9 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
         }
     }
 
+    /**
+     * Métodos para captar los eventos del teclado en el sistema
+     */
     @Override
     public void keyTyped(KeyEvent e) {
     }
