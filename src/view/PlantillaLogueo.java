@@ -21,6 +21,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
@@ -39,7 +42,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import service.RolServiceImpl;
 
-public class PlantillaLogueo extends JFrame implements ActionListener {
+public class PlantillaLogueo extends JFrame implements ActionListener, KeyListener {
 
     /**
      * Declaración de las variables a utilizar en el frame
@@ -104,7 +107,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         bTotal = BorderFactory.createMatteBorder(1, 1, 1, 1,
                 Color.WHITE);
 
-        fontMedia = new Font("LuzSans-Book", Font.BOLD, 15);
+        fontMedia = new Font("LuzSans-Book", Font.BOLD, 18);
 
         /**
          * Estilizamos los páneles
@@ -374,6 +377,39 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
         this.setLayout(null);
         this.setUndecorated(true);
         this.setVisible(true);
+        this.addKeyListener(this);
+        this.setFocusable(true);
+
+        /**
+         * Método para validar el tamaño y tipo de texto dentro de un jtext
+         */
+        this.tNombreUsuario.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (tNombreUsuario.getText().length() >= 15) {
+                    e.consume();
+                } else {
+                    char letra = e.getKeyChar();
+                    if (!Character.isDigit(letra) && !Character.isAlphabetic(letra)) {
+                        e.consume();
+                    }
+                }
+            }
+
+        });
+
+        /**
+         * Método para validar el tamaño y tipo de texto dentro de un jPassword
+         */
+        this.jContrasenia.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (jContrasenia.getPassword().length >= 15) {
+                    e.consume();
+                }
+            }
+
+        });
 
     }
 
@@ -451,6 +487,20 @@ public class PlantillaLogueo extends JFrame implements ActionListener {
             this.bIngresar.setForeground(Color.WHITE);
             return true;
         }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 
 }
