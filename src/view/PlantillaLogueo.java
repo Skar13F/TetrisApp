@@ -42,7 +42,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import service.RolServiceImpl;
 
-public class PlantillaLogueo extends JFrame implements ActionListener, KeyListener {
+public class PlantillaLogueo extends JFrame implements ActionListener,
+        KeyListener {
 
     /**
      * Declaración de las variables a utilizar en el frame
@@ -296,7 +297,8 @@ public class PlantillaLogueo extends JFrame implements ActionListener, KeyListen
                         if ((cbTipoUsuario.getSelectedIndex() + 1) == 1) {
                             PantallaJuego pantallaJuego = new PantallaJuego();
                             pantallaJuego.setVisible(true);
-                        } else if ((cbTipoUsuario.getSelectedIndex() + 1) == 2) {;
+                        } else if ((cbTipoUsuario.getSelectedIndex() + 1)
+                                == 2) {;
                             SuperAdministrador superAdministrador
                                     = new SuperAdministrador();
                             superAdministrador.setVisible(true);
@@ -390,7 +392,8 @@ public class PlantillaLogueo extends JFrame implements ActionListener, KeyListen
                     e.consume();
                 } else {
                     char letra = e.getKeyChar();
-                    if (!Character.isDigit(letra) && !Character.isAlphabetic(letra)) {
+                    if (!Character.isDigit(letra)
+                            && !Character.isAlphabetic(letra)) {
                         e.consume();
                     }
                 }
@@ -472,7 +475,8 @@ public class PlantillaLogueo extends JFrame implements ActionListener, KeyListen
 
     public boolean habilitarBotonIngresar() {
         if (this.tNombreUsuario.getText().equals("")
-                || this.tNombreUsuario.getText().equals("Nombre Usuario")
+                || this.tNombreUsuario.getText().equals("Nombre "
+                        + "Usuario")
                 || String.valueOf(
                         jContrasenia.getPassword()).equals("////"
                         + "////")
