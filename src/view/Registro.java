@@ -20,6 +20,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
@@ -35,7 +38,8 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 
-public class Registro extends JFrame implements ActionListener {
+public class Registro extends JFrame implements ActionListener,
+        KeyListener {
 
     /**
      * Definición de las variables
@@ -464,21 +468,132 @@ public class Registro extends JFrame implements ActionListener {
          * Configuración del jframe
          */
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setSize(600, 500);
+        this.setLocationRelativeTo(this);
+        this.setLayout(null);
+        this.setUndecorated(true);
+        this.setVisible(true);
 
-        this.setSize(
-                600, 500);
+        /**
+         * Agregamos escucha del teclado
+         */
+        this.addKeyListener(this);
+        this.setFocusable(true);
 
-        this.setLocationRelativeTo(
-                this);
+        /**
+         * Método para validar el tamaño y tipo de texto dentro del cuadro de
+         * texto nombre
+         */
+        this.tNombreUsuario.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (tNombreUsuario.getText().length() >= 20) {
+                    e.consume();
+                } else {
+                    char letra = e.getKeyChar();
+                    if (!Character.isAlphabetic(letra)) {
+                        e.consume();
+                    }
+                }
+            }
 
-        this.setLayout(
-                null);
+        });
 
-        this.setUndecorated(
-                true);
+        /**
+         * Método para validar el tamaño y tipo de texto dentro del cuadro de
+         * texto edad
+         */
+        this.tEdad.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                char letra = e.getKeyChar();
+                char cero = '0';
+                if (tEdad.getText().length() >= 2) {
+                    e.consume();
 
-        this.setVisible(
-                true);
+                } else if (Character.compare(letra, cero) == 0
+                        && tEdad.getText().length() == 0) {
+                    e.consume();
+                } else {
+                    if (!Character.isDigit(letra)) {
+                        e.consume();
+                    }
+                }
+            }
+
+        });
+
+        /**
+         * Método para validar el tamaño y tipo de texto dentro del cuadro de
+         * texto teléfono
+         */
+        this.tTelefono.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (tTelefono.getText().length() >= 10) {
+                    e.consume();
+                } else {
+                    char letra = e.getKeyChar();
+                    if (!Character.isDigit(letra)) {
+                        e.consume();
+                    }
+                }
+            }
+
+        });
+
+        /**
+         * Método para validar el tamaño y tipo de texto dentro del cuadro de
+         * texto correo
+         */
+        this.tCorreo.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (tCorreo.getText().length() >= 15) {
+                    e.consume();
+                } else {
+                    char letra = e.getKeyChar();
+                    if (!Character.isAlphabetic(letra)
+                            && !Character.isDigit(letra)) {
+                        e.consume();
+                    }
+                }
+            }
+
+        });
+
+        /**
+         * Método para validar el tamaño y tipo de texto dentro del cuadro de
+         * texto nombre del jugador
+         */
+        this.tNombreJugador.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (tNombreJugador.getText().length() >= 15) {
+                    e.consume();
+                } else {
+                    char letra = e.getKeyChar();
+                    if (!Character.isAlphabetic(letra)
+                            && !Character.isDigit(letra)) {
+                        e.consume();
+                    }
+                }
+            }
+
+        });
+
+        /**
+         * Método para validar el tamaño y tipo de texto dentro de un jPassword
+         */
+        this.jContrasenia.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                if (jContrasenia.getPassword().length >= 15) {
+                    e.consume();
+                }
+            }
+
+        });
     }
 
     @Override
@@ -574,5 +689,23 @@ public class Registro extends JFrame implements ActionListener {
             }
 
         });
+    }
+
+    /**
+     * Métodos para captar los eventos del teclado en el sistema
+     */
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
     }
 }
