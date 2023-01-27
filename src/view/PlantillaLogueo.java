@@ -58,6 +58,10 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
     private ImageIcon iFondo;
     private ImageIcon iDimAux;
     private ImageIcon iSvg1;
+    private ImageIcon iContrasena;
+    private ImageIcon iUsuario;
+    private JLabel lUsuario;
+    private JLabel lContraseña;
     private JLabel lFondo;
     private JLabel lSvg1;
     private JTextField tNombreUsuario;
@@ -96,7 +100,8 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
         iCerrar = new ImageIcon("resourses/images/cerrar2.png");
         iFondo = new ImageIcon("resourses/images/fondoL1.png");
         iSvg1 = new ImageIcon("resourses/images/fondoL.png");
-
+        iContrasena = new ImageIcon("resourses/images/pass.png");
+        iUsuario = new ImageIcon("resourses/images/avatarr.png");
         /**
          * Definición de los colores
          */
@@ -371,6 +376,39 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
                 panelIzquierdo.getHeight());
         lFondo.setIcon(iDimAux);
         panelIzquierdo.add(lFondo);
+        
+        
+        /**
+         * Se agrega una imagen para ícono de la caja nombre usuario del
+         * formulario
+         */
+        iDimAux = new ImageIcon(
+                iUsuario.getImage()
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
+        );
+
+        lUsuario = new JLabel();
+        lUsuario.setBounds(0, 0, 30, 30);
+        lUsuario.setLocation(0, 0);
+        lUsuario.setIcon(iDimAux);
+        lUsuario.setVisible(true);
+        tNombreUsuario.add(lUsuario);
+        /**
+         * Se agrega una imagen para ícono de la caja contraseña del formulario
+         */
+        iDimAux = new ImageIcon(
+                iContrasena.getImage()
+                        .getScaledInstance(30, 30,
+                                Image.SCALE_AREA_AVERAGING)
+        );
+
+        lContraseña = new JLabel();
+        lContraseña.setBounds(0, 0, 30, 28);
+        lContraseña.setLocation(0, 0);
+        lContraseña.setIcon(iDimAux);
+        lContraseña.setVisible(true);
+        jContrasenia.add(lContraseña);
 
         //configurar el jframe
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
