@@ -80,9 +80,18 @@ public class Registro extends JFrame implements ActionListener,
 
     private final int tamJtexts = 200;
 
+    /**
+     * Controllers
+     */
+    UsuarioController usuarioController;
+    JugadorController jugadorController;
+
     public Registro() {
         final int tamanioY = 30;
-
+        usuarioController = new UsuarioController();
+        jugadorController= new JugadorController();
+        usuarioController.init();
+        jugadorController.init();
         /**
          * Carga de imagen para el fondo
          */
@@ -252,18 +261,17 @@ public class Registro extends JFrame implements ActionListener,
             @Override
             public void mouseClicked(MouseEvent e
             ) {
-                UsuarioController controller = new UsuarioController();
 
-                Usuario user = controller.buscarRegistoNombre(
+                Usuario user = usuarioController.buscarRegistoNombre(
                         tNombreJugador.getText());
+
                 /**
                  * Primero validamos que el usuario no exista en la base de
                  * datos para poderlo registrar, de lo contrario enviar un aviso
                  * al usuario que esos datos ya existen en la BD
                  */
                 if (user == null) {
-                    JugadorController jugadorController
-                            = new JugadorController();
+                    
                     Jugador jugadorAux = new Jugador();
                     jugadorAux.setNombre(tNombreUsuario.getText());
                     jugadorAux.setEdad(Integer.valueOf(tEdad.getText()));
@@ -288,10 +296,10 @@ public class Registro extends JFrame implements ActionListener,
                         userAux.setNombre(tNombreJugador.getText());
                         userAux.setPassword(String.valueOf(
                                 jContrasenia.getPassword()));
-                        userAux.setId_rol(-1);
+                        userAux.setId_rol(1);
                         int idJugador = jugadorA.getId_jugador();
                         userAux.setId_jugador(idJugador);
-                        controller.crearActualizarUsuario(userAux);
+                        usuarioController.crearActualizarUsuario(userAux);
 
                         //creamos un registro en la tabla id_usuario_rol
                         PlantillaLogueo plantillaLogueo = new PlantillaLogueo();

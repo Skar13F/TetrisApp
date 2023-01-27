@@ -472,10 +472,10 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
             jcRol.addItem(listaRol.get(i).getRol());
         }
     }
-    
+
     /**
-     * Método para habilitar o deshabilitar el botón de ingreso, de acuerdo
-     * a los campos que el usuario debe rellenar antes de iniciar el sistema
+     * Método para habilitar o deshabilitar el botón de ingreso, de acuerdo a
+     * los campos que el usuario debe rellenar antes de iniciar el sistema
      */
     public boolean habilitarBotonIngresar() {
         if (this.tNombreUsuario.getText().equals("")

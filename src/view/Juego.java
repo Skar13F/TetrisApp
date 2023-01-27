@@ -156,6 +156,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         }
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             this.juego.rotate();
+            
         }
         if (e.getKeyCode() == KeyEvent.VK_P) {
             this.juego.pauseOrResumeGame();
