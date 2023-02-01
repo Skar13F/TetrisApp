@@ -268,7 +268,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             conexion = new Conexion();
-            String path="/home/labingsw02/NetBeansProjects/TetrisApp/src/reportes/report1.jasper";
+            String path="/home/labingsw03/NetBeansProjects/TetrisApp/src/reportes/report1.jasper";
             //String path="/home/oscar/NetBeansProjects/appReportes/src/main/java/unsis/app/reportes/appreportes/report2.jasper";
             
             JasperReport jr=null;
