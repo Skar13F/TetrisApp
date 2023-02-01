@@ -89,7 +89,7 @@ public class Registro extends JFrame implements ActionListener,
     public Registro() {
         final int tamanioY = 30;
         usuarioController = new UsuarioController();
-        jugadorController= new JugadorController();
+        jugadorController = new JugadorController();
         usuarioController.init();
         jugadorController.init();
         /**
@@ -271,7 +271,7 @@ public class Registro extends JFrame implements ActionListener,
                  * al usuario que esos datos ya existen en la BD
                  */
                 if (user == null) {
-                    
+
                     Jugador jugadorAux = new Jugador();
                     jugadorAux.setNombre(tNombreUsuario.getText());
                     jugadorAux.setEdad(Integer.valueOf(tEdad.getText()));
@@ -490,7 +490,8 @@ public class Registro extends JFrame implements ActionListener,
 
         /**
          * Método para validar el tamaño y tipo de texto dentro del cuadro de
-         * texto nombre
+         * texto nombre la logica de programación es confusa donde valida el
+         * la entrada del espacio
          */
         this.tNombreUsuario.addKeyListener(new KeyAdapter() {
             @Override
@@ -499,7 +500,8 @@ public class Registro extends JFrame implements ActionListener,
                     e.consume();
                 } else {
                     char letra = e.getKeyChar();
-                    if (!Character.isAlphabetic(letra)) {
+                    if (!Character.isAlphabetic(letra)
+                            && (e.getKeyCode() == KeyEvent.VK_SPACE)) {
                         e.consume();
                     }
                 }

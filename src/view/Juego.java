@@ -8,12 +8,19 @@
  */
 package view;
 
+import com.sun.jdi.connect.spi.Connection;
 import form.AdministradorDeJuego;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
+import reporte.Conexion;
 import utils.Constantes;
 
 public class Juego extends JFrame implements Runnable, KeyListener {
@@ -46,6 +53,9 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     private ImageIcon pause;
     private ImageIcon play;
 
+    private Connection conection;
+    private Conexion conexion;
+    
     public Juego() {
         initComponents();
         // #1: crea una instancia del juego
@@ -171,10 +181,9 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     private void initComponents() {
 
         btnAbajo = new javax.swing.JButton();
-        labelNivel = new javax.swing.JLabel();
-        cajaNivel = new javax.swing.JTextField();
         btnSalir = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         fondoJuego = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -191,17 +200,6 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         });
         getContentPane().add(btnAbajo);
         btnAbajo.setBounds(580, 220, 60, 60);
-
-        labelNivel.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
-        labelNivel.setForeground(new java.awt.Color(0, 204, 51));
-        labelNivel.setText("Nivel");
-        getContentPane().add(labelNivel);
-        labelNivel.setBounds(40, 190, 37, 18);
-
-        cajaNivel.setEnabled(false);
-        cajaNivel.setFocusable(false);
-        getContentPane().add(cajaNivel);
-        cajaNivel.setBounds(24, 230, 80, 24);
 
         btnSalir.setIcon(new javax.swing.ImageIcon("resourses/images/salir_1.png"));
         btnSalir.setText("Salir");
@@ -224,6 +222,15 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(30, 280, 60, 60);
+
+        jButton2.setText("Reporte");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(20, 190, 82, 24);
 
         fondoJuego.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         fondoJuego.setForeground(new java.awt.Color(255, 255, 255));
@@ -257,6 +264,23 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         this.juego.resetGame();
         this.btnAbajo.setIcon(pause);
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            conexion = new Conexion();
+            String path="/home/labingsw02/NetBeansProjects/TetrisApp/src/reportes/report1.jasper";
+            //String path="/home/oscar/NetBeansProjects/appReportes/src/main/java/unsis/app/reportes/appreportes/report2.jasper";
+            
+            JasperReport jr=null;
+            jr=(JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jp=JasperFillManager.fillReport(jr,null,conexion.getConnection());
+            JasperViewer jv= new JasperViewer(jp);
+            jv.setVisible(true);
+            jv.setTitle(path);
+            conexion.close();
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -268,9 +292,8 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAbajo;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JTextField cajaNivel;
     private javax.swing.JLabel fondoJuego;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel labelNivel;
+    private javax.swing.JButton jButton2;
     // End of variables declaration//GEN-END:variables
 }
