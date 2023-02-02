@@ -8,14 +8,23 @@
  */
 package view;
 
+import entity.Usuario;
+import java.awt.HeadlessException;
+
 public class PantallaJuego extends javax.swing.JFrame {
 
     /**
      * Constructor para inicializar los componentes del frame
      */
-    public PantallaJuego() {
+    private static Usuario usuario;
+    public PantallaJuego(Usuario user) {
         initComponents();
+        this.usuario=user;
     }
+
+    public PantallaJuego() throws HeadlessException {
+    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -82,7 +91,7 @@ public class PantallaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void btnJugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnJugarMouseClicked
-        Juego juego = new Juego();
+        Juego juego = new Juego(this.usuario);
         juego.setVisible(true);
         ocultar();
 

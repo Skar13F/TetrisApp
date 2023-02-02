@@ -291,11 +291,10 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
                     userAux.setId_jugador(cbTipoUsuario.getSelectedIndex() + 1);
                     Usuario user = usuarioController.buscarRegistoNC(
                             userAux);
-
                     if (user != null) {
                         cerrarFrame();
                         if ((cbTipoUsuario.getSelectedIndex() + 1) == 1) {
-                            PantallaJuego pantallaJuego = new PantallaJuego();
+                            PantallaJuego pantallaJuego = new PantallaJuego(user);
                             pantallaJuego.setVisible(true);
                         } else if ((cbTipoUsuario.getSelectedIndex() + 1)
                                 == 2) {;

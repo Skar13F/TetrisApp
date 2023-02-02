@@ -197,8 +197,6 @@ public class UsuarioModelImpl implements IUsuarioModel {
             usuario.setId_usuario(rs.getInt(3));
             usuario.setNombre(rs.getString(1));
             usuario.setPassword(rs.getString(2));
-            System.out.println(usuario.getId_usuario() + usuario.getNombre()
-                    + usuario.getPassword());
             stm.close();
             connection.close();
             return usuario;

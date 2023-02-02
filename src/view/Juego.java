@@ -9,7 +9,9 @@
 package view;
 
 import com.sun.jdi.connect.spi.Connection;
+import entity.Usuario;
 import form.AdministradorDeJuego;
+import java.awt.HeadlessException;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -56,13 +58,20 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     private Connection conection;
     private Conexion conexion;
     
-    public Juego() {
+    private Usuario usuario;
+    
+    public Juego(Usuario usuario) {
         initComponents();
         // #1: crea una instancia del juego
         this.juego = new AdministradorDeJuego();
 
         play=new ImageIcon("resourses/images/play.png");
         pause=new ImageIcon("resourses/images/pause.png");
+        
+        this.usuario=usuario;
+        if(this.usuario!=null){
+            System.out.println(usuario.getNombre());
+        }
         
         
         // #2: Define la ventana
@@ -83,6 +92,9 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
         new Thread(this).start();
 
+    }
+
+    public Juego() throws HeadlessException {
     }
 
     @Override
@@ -268,7 +280,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             conexion = new Conexion();
-            String path="/home/labingsw02/NetBeansProjects/TetrisApp/src/reportes/report1.jasper";
+            String path="reportes/report1.jasper";
             //String path="/home/oscar/NetBeansProjects/appReportes/src/main/java/unsis/app/reportes/appreportes/report2.jasper";
             
             JasperReport jr=null;
