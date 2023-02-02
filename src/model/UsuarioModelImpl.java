@@ -188,7 +188,7 @@ public class UsuarioModelImpl implements IUsuarioModel {
             ResultSet rs;
             conexion = new Conexion();
             connection = conexion.getConnection();
-            int aux = user.getId_jugador();
+            int aux = user.getId_rol();
             String query = "CALL buscarUsuarioNCP('" + user.getNombre()
                     + "','" + user.getPassword() + "','" + aux + "')";
             stm = connection.createStatement();
@@ -197,6 +197,7 @@ public class UsuarioModelImpl implements IUsuarioModel {
             usuario.setId_usuario(rs.getInt(3));
             usuario.setNombre(rs.getString(1));
             usuario.setPassword(rs.getString(2));
+            usuario.setId_jugador(rs.getInt(4));
             stm.close();
             connection.close();
             return usuario;
