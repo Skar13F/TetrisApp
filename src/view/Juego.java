@@ -70,7 +70,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         
         this.usuario=usuario;
         if(this.usuario!=null){
-            System.out.println(usuario.getNombre());
+            System.out.println(usuario.getId_jugador());
         }
         
         
