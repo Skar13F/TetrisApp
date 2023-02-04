@@ -235,15 +235,19 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         getContentPane().add(jButton1);
         jButton1.setBounds(30, 280, 60, 60);
 
-        jButton2.setIcon(new javax.swing.ImageIcon("/home/labingsw02/NetBeansProjects/TetrisApp/resourses/images/fondoPdf.jpg")); // NOI18N
         jButton2.setText("Reporte");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(20, 190, 322, 516);
+        jButton2.setBounds(10, 220, 82, 24);
 
         fondoJuego.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         fondoJuego.setForeground(new java.awt.Color(255, 255, 255));
@@ -279,11 +283,13 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         try {
             conexion = new Conexion();
-            String path="src/reportes/report1.jasper";
-            //String path="/home/oscar/NetBeansProjects/appReportes/src/main/java/unsis/app/reportes/appreportes/report2.jasper";
-            
+            String path="src/reportes/juego.jasper";
             JasperReport jr=null;
             jr=(JasperReport) JRLoader.loadObjectFromFile(path);
             JasperPrint jp=JasperFillManager.fillReport(jr,null,conexion.getConnection());
@@ -293,7 +299,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
             conexion.close();
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton2MouseClicked
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

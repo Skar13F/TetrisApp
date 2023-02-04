@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db64e75b-4d51-4395-82a7-53777024ad51">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea920127-ae0d-44b5-aa91-d188b61c166b">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="139"/>
 	<queryString language="SQL">
 		<![CDATA[select usuario.nombre, puntos from usuario inner join jugador where usuario.id_jugador=jugador.id_jugador;]]>
 	</queryString>
@@ -18,8 +18,8 @@
 	<title>
 		<band height="79" splitType="Stretch">
 			<image>
-				<reportElement x="33" y="0" width="488" height="79" uuid="9dc85b8a-84b0-4d08-8f83-dc6f16464299"/>
-				<imageExpression><![CDATA["/home/labingsw02/NetBeansProjects/TetrisApp/resourses/images/logoUnsis.jpeg"]]></imageExpression>
+				<reportElement x="53" y="0" width="449" height="79" uuid="0c6cba2c-5755-4a48-9232-7c109ad8342e"/>
+				<imageExpression><![CDATA["/home/oscar/NetBeansProjects/TetrisApp/resourses/images/logoUnsis.jpeg"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -29,12 +29,12 @@
 	<columnHeader>
 		<band height="61" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="277" height="20" uuid="a0cbff01-18fe-4c85-b5f3-96514236759f"/>
+				<reportElement x="0" y="0" width="277" height="20" uuid="39915887-5304-4804-ae72-6a846cbe1cc3"/>
 				<textElement textAlignment="Center"/>
 				<text><![CDATA[nombre]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="277" y="0" width="277" height="20" uuid="b8a219f6-15fa-44c7-8215-58287dc5507b"/>
+				<reportElement x="277" y="0" width="277" height="20" uuid="b275a2c1-9190-4c21-bc6c-da36290ee60c"/>
 				<text><![CDATA[puntos]]></text>
 			</staticText>
 		</band>
@@ -42,12 +42,12 @@
 	<detail>
 		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="277" height="20" uuid="e70c2267-6102-438a-90ae-9340c0a993d6"/>
+				<reportElement x="0" y="0" width="277" height="20" uuid="cab5c112-04b0-4e63-b96d-f20d879016cd"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="277" y="0" width="277" height="20" uuid="b0674990-93d0-4e18-886e-cb4fc6eb83ce"/>
+				<reportElement x="277" y="0" width="277" height="20" uuid="6c424ed1-e9b4-4bac-a781-a2b4559c6c8f"/>
 				<textFieldExpression><![CDATA[$F{puntos}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -55,7 +55,7 @@
 	<columnFooter>
 		<band height="45" splitType="Stretch">
 			<staticText>
-				<reportElement x="212" y="11" width="342" height="20" uuid="49740ecb-0b0d-4c2e-b7ef-f94d664f7a68"/>
+				<reportElement x="224" y="25" width="331" height="20" uuid="caca3e9f-c8df-424c-b3b3-e773851cc6e7"/>
 				<text><![CDATA[Desarrollado por: Nancy Obed Martínez y Oscar Fuentes Alvarado]]></text>
 			</staticText>
 		</band>
@@ -63,11 +63,11 @@
 	<pageFooter>
 		<band height="54" splitType="Stretch">
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="453" y="20" width="101" height="20" uuid="51fbfc33-6308-44d5-916a-b4f4aa10d777"/>
+				<reportElement x="427" y="17" width="128" height="20" uuid="750c1f96-b1ab-496d-b039-d1d61396d862"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="0" y="20" width="100" height="20" uuid="f463d64d-4f90-4bbf-a692-8509fe1a9da8"/>
+				<reportElement x="0" y="17" width="100" height="20" uuid="382d1e9f-996b-4a23-a053-11e1570845f2"/>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 		</band>
