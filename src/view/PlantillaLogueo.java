@@ -94,8 +94,8 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
          * Cargamos las imagenes
          */
         iCerrar = new ImageIcon("resourses/images/cerrar2.png");
-        iFondo = new ImageIcon("resourses/images/fondoL1.png");
-        iSvg1 = new ImageIcon("resourses/images/fondoL.png");
+        iFondo = new ImageIcon("resourses/images/fondoL1.jpg");
+        iSvg1 = new ImageIcon("resourses/images/fondoL.jpg");
 
         /**
          * Definición de los colores
@@ -134,7 +134,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
          * Componentes del panel derecho
          */
         tNombreUsuario = new JTextField("Nombre Usuario");
-        tNombreUsuario.setSize(260, 40);
+        tNombreUsuario.setSize(200, 40);
         tNombreUsuario.setLocation((panelDerecho.getWidth()
                 - tNombreUsuario.getWidth()) / 2, 60);
         tNombreUsuario.setOpaque(false);
@@ -152,7 +152,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
          */
         jContrasenia = new JPasswordField();
         jContrasenia.setText("////////");
-        jContrasenia.setSize(260, 40);
+        jContrasenia.setSize(200, 40);
         jContrasenia.setLocation(tNombreUsuario.getX(), tNombreUsuario.getY()
                 + tNombreUsuario.getHeight() + 10);
         jContrasenia.setOpaque(false);
@@ -210,7 +210,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
          */
         cbTipoUsuario = new JComboBox();
         aniadirItem(cbTipoUsuario);
-        cbTipoUsuario.setSize(220, 30);
+        cbTipoUsuario.setSize(200, 30);
         cbTipoUsuario.setLocation((panelDerecho.getWidth()
                 - cbTipoUsuario.getWidth()) / 2, jContrasenia.getY()
                 + jContrasenia.getHeight() + 10);
@@ -288,7 +288,7 @@ public class PlantillaLogueo extends JFrame implements ActionListener,
                     userAux.setNombre(tNombreUsuario.getText());
                     userAux.setPassword(String.valueOf(
                             jContrasenia.getPassword()));
-                    userAux.setId_jugador(cbTipoUsuario.getSelectedIndex() + 1);
+                    userAux.setId_rol(cbTipoUsuario.getSelectedIndex() + 1);
                     Usuario user = usuarioController.buscarRegistoNC(
                             userAux);
                     if (user != null) {

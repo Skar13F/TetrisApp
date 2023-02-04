@@ -95,7 +95,7 @@ public class Registro extends JFrame implements ActionListener,
         /**
          * Carga de imagen para el fondo
          */
-        iFondo = new ImageIcon("resourses/images/fondoL1.png");
+        iFondo = new ImageIcon("resourses/images/fondoL1.jpg");
         iNombre = new ImageIcon("resourses/images/nombre3.png");
         iCorreo = new ImageIcon("resourses/images/correo.png");
         iEdad = new ImageIcon("resourses/images/edad1.png");
@@ -186,7 +186,7 @@ public class Registro extends JFrame implements ActionListener,
         jContrasenia.setLocation(obtenerPosicionX(tamJtexts),
                 tNombreJugador.getY() + tamanioY + 20);
         jContrasenia.setHorizontalAlignment(SwingConstants.CENTER);
-        jContrasenia.setForeground(Color.BLACK);
+        jContrasenia.setForeground(Color.WHITE);
         jContrasenia.setBackground(Color.WHITE);
         jContrasenia.setCaretColor(Color.GRAY);
         jContrasenia.setFont(fontMedia);

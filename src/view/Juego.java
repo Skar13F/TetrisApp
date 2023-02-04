@@ -70,7 +70,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         
         this.usuario=usuario;
         if(this.usuario!=null){
-            System.out.println(usuario.getNombre());
+            System.out.println(usuario.getId_jugador());
         }
         
         
@@ -235,6 +235,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         getContentPane().add(jButton1);
         jButton1.setBounds(30, 280, 60, 60);
 
+        jButton2.setIcon(new javax.swing.ImageIcon("/home/labingsw02/NetBeansProjects/TetrisApp/resourses/images/fondoPdf.jpg")); // NOI18N
         jButton2.setText("Reporte");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,7 +243,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(20, 190, 82, 24);
+        jButton2.setBounds(20, 190, 322, 516);
 
         fondoJuego.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         fondoJuego.setForeground(new java.awt.Color(255, 255, 255));
@@ -280,7 +281,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             conexion = new Conexion();
-            String path="reportes/report1.jasper";
+            String path="src/reportes/report1.jasper";
             //String path="/home/oscar/NetBeansProjects/appReportes/src/main/java/unsis/app/reportes/appreportes/report2.jasper";
             
             JasperReport jr=null;
