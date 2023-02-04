@@ -23,4 +23,6 @@ public interface IJugadorModel {
     public Jugador buscarRegistro(String telefono);
 
     public void actualizarRegistro(Jugador jugador);
+    
+    public void actualizarPuntos(Jugador jugador);
 }

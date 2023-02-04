@@ -68,4 +68,12 @@ public class JugadorController extends RegistroControllerBase<Jugador> {
     public void eliminarRegistro(int id) {
         service.eliminarRegistro(id);
     }
+    
+     /**
+     * Metódo para buscar un registro en la base de datos mediante una varieble
+     * de tipo String
+     */
+    public void actualizarPuntos(Jugador jugador) {
+        service.actualizarPuntos(jugador);
+    }
 }

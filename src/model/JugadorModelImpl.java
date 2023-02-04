@@ -153,4 +153,20 @@ public class JugadorModelImpl implements IJugadorModel {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
+    @Override
+    public void actualizarPuntos(Jugador jugador) {
+        try {
+            conexion = new Conexion();
+            connection = conexion.getConnection();
+            String query = "CALL actualizarPuntos('" +jugador.getId_jugador()+ "','"
+                    + jugador.getPuntos()+ "')";
+            stm = connection.createStatement();
+            stm.execute(query);
+            System.out.println(jugador.getPuntos()+"   "+jugador.getId_jugador());
+            connection.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
 }

@@ -414,4 +414,13 @@ public class TableroTetris implements Drawable {
         this.isGameOver = isGameOver;
     }
 
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+    
+
 }

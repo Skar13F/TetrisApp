@@ -47,4 +47,9 @@ public class JugadorServiceImpl implements IJugadorService {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    @Override
+    public void actualizarPuntos(Jugador jugador) {
+        model.actualizarPuntos(jugador);
+    }
+
 }

@@ -52,4 +52,9 @@ public class UsuarioServiceImpl implements IUsuarioService {
         return model.buscarRegistro(nombre);
     }
 
+    @Override
+    public void actualizarPuntos(Usuario registro) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

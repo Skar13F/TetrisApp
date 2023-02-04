@@ -7,6 +7,7 @@
  */
 package controller.base;
 
+import entity.Jugador;
 import entity.base.IRegistroEntityBase;
 import java.util.List;
 import service.base.IRegistroServiceBase;
@@ -51,6 +52,13 @@ public abstract class RegistroControllerBase<T extends IRegistroEntityBase> {
      */
     public T buscarRegistro(String telefono) {
         return service.buscarRegistro(telefono);
+    }
+    
+    /**
+     * Método para actualizar los puntos del juego
+     */
+        public void actualizarPuntos() {
+        service.actualizarPuntos(registro);
     }
 
     //aquí se escribirán los demás métodos

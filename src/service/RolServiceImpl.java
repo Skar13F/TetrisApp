@@ -48,4 +48,9 @@ public class RolServiceImpl implements IRolService {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    @Override
+    public void actualizarPuntos(Rol registro) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

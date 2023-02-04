@@ -9,6 +9,8 @@
 package view;
 
 import com.sun.jdi.connect.spi.Connection;
+import controller.JugadorController;
+import entity.Jugador;
 import entity.Usuario;
 import form.AdministradorDeJuego;
 import java.awt.HeadlessException;
@@ -23,23 +25,25 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 import reporte.Conexion;
+import service.JugadorServiceImpl;
 import utils.Constantes;
 
 public class Juego extends JFrame implements Runnable, KeyListener {
+
     /**
      * Creamos una instancia de la clase administrador donde se cargará el juego
      */
     private AdministradorDeJuego juego;
 
     /**
-     * Tiempo de respuesta visual, intervalos en los que la imagen irá
-     * cambiando de posición
+     * Tiempo de respuesta visual, intervalos en los que la imagen irá cambiando
+     * de posición
      */
     private final double FramesPorSegundo = 60D;
     private final double ActualizacionesPorSegundo = 60D;
 
     /**
-     * El tiempo que se manejará es de nanosegundos, 
+     * El tiempo que se manejará es de nanosegundos,
      */
     private final double tiempoFps = 1000000000 / FramesPorSegundo;
     private final double tiempoAps = 1000000000 / ActualizacionesPorSegundo;
@@ -51,29 +55,34 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
     private boolean typeRight = false;
     private boolean typeLeft = false;
-    
+
     private ImageIcon pause;
     private ImageIcon play;
 
     private Connection conection;
     private Conexion conexion;
-    
+
     private Usuario usuario;
-    
+    /**
+     * Mediante este controller actualizaremos los puntos del usuario y veremos
+     * cual ha sido su mejor puntaje
+     */
+    private JugadorController jc;
+
+    private int puntos;
+
     public Juego(Usuario usuario) {
         initComponents();
         // #1: crea una instancia del juego
         this.juego = new AdministradorDeJuego();
+        this.jc=new JugadorController();
+        jc.init();
 
-        play=new ImageIcon("resourses/images/play.png");
-        pause=new ImageIcon("resourses/images/pause.png");
-        
-        this.usuario=usuario;
-        if(this.usuario!=null){
-            System.out.println(usuario.getId_jugador());
-        }
-        
-        
+        play = new ImageIcon("resourses/images/play.png");
+        pause = new ImageIcon("resourses/images/pause.png");
+
+        this.usuario = usuario;
+
         // #2: Define la ventana
         this.setVisible(true);
         //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,7 +141,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
 
                 this.deltaFps = 0;
             }
-
+            this.puntos = juego.getPuntos();
         }
 
     }
@@ -162,7 +171,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     }
 
     /**
-     * Método para setear a falso despues de haber presionado una tecla para 
+     * Método para setear a falso despues de haber presionado una tecla para
      * mover la imagen y que no se vaya la figura en una misma dirección
      */
     @Override
@@ -178,7 +187,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         }
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             this.juego.rotate();
-            
+
         }
         if (e.getKeyCode() == KeyEvent.VK_P) {
             this.juego.pauseOrResumeGame();
@@ -208,6 +217,11 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         btnAbajo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAbajoMouseClicked(evt);
+            }
+        });
+        btnAbajo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAbajoActionPerformed(evt);
             }
         });
         getContentPane().add(btnAbajo);
@@ -266,40 +280,52 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAbajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAbajoMouseClicked
-        if(this.btnAbajo.getIcon()==this.play){
+        if (this.btnAbajo.getIcon() == this.play) {
             this.juego.pauseOrResumeGame();
             this.btnAbajo.setIcon(pause);
-        }else{
+        } else {
             this.juego.pauseOrResumeGame();
             this.btnAbajo.setIcon(play);
         }
-        
-        
+
+
     }//GEN-LAST:event_btnAbajoMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        actualizarPuntos();
         this.juego.resetGame();
         this.btnAbajo.setIcon(pause);
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        actualizarPuntos();
         try {
             conexion = new Conexion();
-            String path="src/reportes/juego.jasper";
-            JasperReport jr=null;
-            jr=(JasperReport) JRLoader.loadObjectFromFile(path);
-            JasperPrint jp=JasperFillManager.fillReport(jr,null,conexion.getConnection());
-            JasperViewer jv= new JasperViewer(jp);
+            String path = "src/reportes/juego.jasper";
+            JasperReport jr = null;
+            jr = (JasperReport) JRLoader.loadObjectFromFile(path);
+            JasperPrint jp = JasperFillManager.fillReport(jr, null, conexion.getConnection());
+            JasperViewer jv = new JasperViewer(jp);
             jv.setVisible(true);
             jv.setTitle(path);
             conexion.close();
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton2MouseClicked
+
+    public void actualizarPuntos(){
+        Jugador jugador= new Jugador();
+        jugador.setId_jugador(this.usuario.getId_jugador());
+        jugador.setPuntos(this.puntos);
+        jc.actualizarPuntos(jugador);
+    }
+    private void btnAbajoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAbajoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAbajoActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

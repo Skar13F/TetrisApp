@@ -24,4 +24,6 @@ public interface IRegistroServiceBase<T> {
     public T buscarRegistro(String nombre);
 
     public void actualizarRegistro(T registro);
+    
+    public void actualizarPuntos(T registro);
 }
