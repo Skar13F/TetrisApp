@@ -163,7 +163,6 @@ public class JugadorModelImpl implements IJugadorModel {
                     + jugador.getPuntos()+ "')";
             stm = connection.createStatement();
             stm.execute(query);
-            System.out.println(jugador.getPuntos()+"   "+jugador.getId_jugador());
             connection.close();
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());

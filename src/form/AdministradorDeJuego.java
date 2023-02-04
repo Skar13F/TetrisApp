@@ -18,6 +18,7 @@ public class AdministradorDeJuego extends JPanel {
 
     TableroTetris board = new TableroTetris();
     private int puntos;
+    private boolean fin=false;
 
     public AdministradorDeJuego() {
     }
@@ -69,6 +70,7 @@ public class AdministradorDeJuego extends JPanel {
 
     public boolean isGameInPlay() {
         this.puntos=board.getPuntos();
+        board.setGameOver(fin);
         return !board.isGameOver() && !this.board.isStop();
     }
 
@@ -80,4 +82,7 @@ public class AdministradorDeJuego extends JPanel {
         this.puntos = puntos;
     }
 
+    public void setFin(boolean fin) {
+        this.fin = fin;
+    }
 }

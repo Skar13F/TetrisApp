@@ -37,6 +37,7 @@ public class PantallaJuego extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(550, 450));
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnSalir.setIcon(new javax.swing.ImageIcon("resourses/images/cerrar.png"));
@@ -50,6 +51,11 @@ public class PantallaJuego extends javax.swing.JFrame {
         btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalirMouseClicked(evt);
+            }
+        });
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
             }
         });
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 350, 140));
@@ -102,6 +108,10 @@ public class PantallaJuego extends javax.swing.JFrame {
                 logueo.getClass();
         ocultar();
     }//GEN-LAST:event_btnSalirMouseClicked
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
     
     /**
      * Método para ocultar este frame

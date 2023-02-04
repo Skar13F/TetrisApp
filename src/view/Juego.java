@@ -14,6 +14,7 @@ import entity.Jugador;
 import entity.Usuario;
 import form.AdministradorDeJuego;
 import java.awt.HeadlessException;
+import java.awt.Image;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -63,6 +64,9 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     private Conexion conexion;
 
     private Usuario usuario;
+    private ImageIcon iCerrar;
+    private ImageIcon iReporte;
+    private ImageIcon iDimAux;
     /**
      * Mediante este controller actualizaremos los puntos del usuario y veremos
      * cual ha sido su mejor puntaje
@@ -75,11 +79,27 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         initComponents();
         // #1: crea una instancia del juego
         this.juego = new AdministradorDeJuego();
-        this.jc=new JugadorController();
+        this.jc = new JugadorController();
         jc.init();
 
+        iCerrar = new ImageIcon("resourses/images/cerrar2.png");
+        iReporte = new ImageIcon("resourses/images/reporte.png");
         play = new ImageIcon("resourses/images/play.png");
         pause = new ImageIcon("resourses/images/pause.png");
+
+        iDimAux = new ImageIcon(iCerrar.getImage().getScaledInstance(
+                30, 30, Image.SCALE_AREA_AVERAGING));
+        this.btnSalir.setIcon(iDimAux);
+        this.btnSalir.setFocusable(false);
+        this.btnSalir.setBorder(null);
+        this.btnSalir.setContentAreaFilled(false);
+        
+        iDimAux = new ImageIcon(iReporte.getImage().getScaledInstance(
+                80, 80, Image.SCALE_AREA_AVERAGING));
+        this.jButton2.setIcon(iDimAux);
+        this.jButton2.setFocusable(false);
+        this.jButton2.setBorder(null);
+        this.jButton2.setContentAreaFilled(false);
 
         this.usuario = usuario;
 
@@ -89,7 +109,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         this.setResizable(false);
 
         this.pack();
-        this.setBounds((Constantes.SCREEN_WIDTH - 685) / 2, (Constantes.SCREEN_HEIGHT - 700) / 2, 685, 740);
+        this.setBounds((Constantes.SCREEN_WIDTH - 685) / 2, (Constantes.SCREEN_HEIGHT - 700) / 2, 685, 710);
         this.getContentPane().add(juego);
         //this.add(juego);
         this.juego.setVisible(true);
@@ -100,7 +120,6 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         this.setFocusable(true);
 
         new Thread(this).start();
-
     }
 
     public Juego() throws HeadlessException {
@@ -208,6 +227,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         fondoJuego = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setSize(new java.awt.Dimension(0, 0));
         getContentPane().setLayout(null);
 
@@ -227,15 +247,13 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         getContentPane().add(btnAbajo);
         btnAbajo.setBounds(580, 220, 60, 60);
 
-        btnSalir.setIcon(new javax.swing.ImageIcon("resourses/images/salir_1.png"));
-        btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
             }
         });
         getContentPane().add(btnSalir);
-        btnSalir.setBounds(580, 300, 72, 24);
+        btnSalir.setBounds(640, 10, 30, 30);
 
         jButton1.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         jButton1.setIcon(new javax.swing.ImageIcon("resourses/images/reset.png"));
@@ -247,9 +265,8 @@ public class Juego extends JFrame implements Runnable, KeyListener {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(30, 280, 60, 60);
+        jButton1.setBounds(580, 350, 60, 60);
 
-        jButton2.setText("Reporte");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);
@@ -261,7 +278,7 @@ public class Juego extends JFrame implements Runnable, KeyListener {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(10, 220, 82, 24);
+        jButton2.setBounds(10, 220, 80, 80);
 
         fondoJuego.setFont(new java.awt.Font("Liberation Sans", 1, 15)); // NOI18N
         fondoJuego.setForeground(new java.awt.Color(255, 255, 255));
@@ -274,12 +291,15 @@ public class Juego extends JFrame implements Runnable, KeyListener {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        PantallaJuego pantallajuego = new PantallaJuego();
-        pantallajuego.setVisible(true);
+        actualizarPuntos();
+        juego.setFin(true);
         this.setVisible(false);
+        PantallaJuego pantallaJuego = new PantallaJuego(usuario);
+        pantallaJuego.setVisible(true);
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAbajoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAbajoMouseClicked
+        actualizarPuntos();
         if (this.btnAbajo.getIcon() == this.play) {
             this.juego.pauseOrResumeGame();
             this.btnAbajo.setIcon(pause);
@@ -317,8 +337,8 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         }
     }//GEN-LAST:event_jButton2MouseClicked
 
-    public void actualizarPuntos(){
-        Jugador jugador= new Jugador();
+    public void actualizarPuntos() {
+        Jugador jugador = new Jugador();
         jugador.setId_jugador(this.usuario.getId_jugador());
         jugador.setPuntos(this.puntos);
         jc.actualizarPuntos(jugador);
