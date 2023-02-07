@@ -71,7 +71,8 @@ public class Juego extends JFrame implements Runnable, KeyListener {
         this.setResizable(false);
 
         this.pack();
-        this.setBounds((Constantes.SCREEN_WIDTH - 685) / 2, (Constantes.SCREEN_HEIGHT - 700) / 2, 685, 740);
+        this.setBounds((Constantes.SCREEN_WIDTH - 685) / 2,
+                (Constantes.SCREEN_HEIGHT - 700) / 2, 685, 740);
         this.getContentPane().add(juego);
         //this.add(juego);
         this.juego.setVisible(true);
